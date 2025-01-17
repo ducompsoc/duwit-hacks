@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import Image from "next/image"
 import "./globals.css"
 
 const geistSans = localFont({
@@ -25,20 +26,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    <body>
+    {/* Background with gradient and image */}
+    <div
+      id="this-is-the-background"
+      className="relative t-0 size-full"
       style={{
-        // Apply the gradient first, then the background image
-        background: `linear-gradient(180deg, rgba(73,9,200,1) 0%, rgba(46,56,203,1) 35%, rgba(100,134,164,1) 100%)`,
-        // backgroundImage: "url('/Background.png')",
-        backgroundSize: 'cover', // Ensure the image covers the entire viewport
-        backgroundPosition: 'center top', // Ensure proper positioning
-        backgroundRepeat: 'no-repeat', // Prevent image from repeating
-        minHeight: '100vh', // Ensure it fills the viewport
-        color: '#ffffff', // Text color for readability
+        background: "linear-gradient(180deg, rgba(73,9,200,1) 0%, rgba(46,56,203,1) 35%, rgba(100,134,164,1) 100%)",
       }}
     >
-    {children}
+      <Image
+        src="/Background.png"
+        alt="Photograph of starry night sky"
+        width={1440}
+        height={2699}
+        className="size-full object-cover"
+        style={{
+          opacity: 0.5, // Adjust opacity to allow gradient visibility
+        }}
+      />
+    </div>
+
+    {/* Content with relative positioning */}
+    <div className="relative">
+      {children}
+    </div>
+
     </body>
     </html>
   )
