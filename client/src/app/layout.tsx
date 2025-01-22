@@ -1,7 +1,14 @@
 import type { Metadata } from "next"
+import { Silkscreen } from "next/font/google"
 import localFont from "next/font/local"
 import Image from "next/image"
 import "./globals.css"
+
+const silkscreenFont = Silkscreen({
+  weight: "700",
+  subsets: ["latin"],
+  variable: "--font-silkscreen",
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,7 +55,14 @@ export default function RootLayout({
     </div>
 
     {/* Content with relative positioning */}
-    <div className="relative">
+    <div
+      className="relative"
+      style={{
+        position: "fixed",
+        top: 80,
+        left:1000,
+      }}
+        >
       {children}
     </div>
 

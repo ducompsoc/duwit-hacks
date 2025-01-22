@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root font and theme variables */
 :root {
+  --font-silkscreen: 'Silkscreen', cursive;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -19,3 +21,10 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-silkscreen);
+  font-weight: 100; /* Regular weight */
+}
+
