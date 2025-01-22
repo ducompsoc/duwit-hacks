@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Silkscreen } from "next/font/google"
+import { Silkscreen, Unica_One, Kode_Mono } from "next/font/google"
 import localFont from "next/font/local"
 import Image from "next/image"
 import "./globals.css"
@@ -8,6 +8,18 @@ const silkscreenFont = Silkscreen({
   weight: "700",
   subsets: ["latin"],
   variable: "--font-silkscreen",
+});
+
+const unicaoneFont = Unica_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-unicaone",
+});
+
+const kodemonoFont = Kode_Mono({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-kodemono",
 });
 
 const geistSans = localFont({
@@ -60,7 +72,7 @@ export default function RootLayout({
       style={{
         position: "fixed",
         top: 80,
-        left:1000,
+        left: 100,
       }}
         >
       {children}
