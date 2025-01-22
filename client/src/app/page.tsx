@@ -9,49 +9,183 @@ export default function Home() {
       }}
     >
       {/* Header */}
-      <header style={{ marginBottom: '50px' }}>
-        <h1 style={{ fontSize: '500px', marginBottom: '10px' }}>DUWIT HACKS</h1>
-        <p style={{ fontSize: '150px' }}>1-2 MARCH 2025</p>
+      <header style={{ marginBottom: "50px" }}>
+        <h1
+          style={{
+            fontSize: "clamp(2rem, 10vw, 200px)",
+            marginBottom: "10px",
+            fontFamily: "var(--font-silkscreen)",
+            background: "radial-gradient(circle,rgb(235, 209, 234) 30%, rgb(230, 199, 241) 70%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            display: "inline-block",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
+          DUWIT HACKS
+        </h1>
+        <p
+          style={{
+            fontSize: "clamp(1.5rem, 8vw, 70px)",
+            fontFamily: "var(--font-unicaone)",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            background: "radial-gradient(circle,rgb(194, 171, 204) 30%, rgb(245, 198, 245) 70%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            display: "inline-block",
+            textOverflow: "ellipsis",
+          }}
+        >
+          1-2 MARCH 2025
+        </p>
       </header>
 
       {/* About Section */}
-      <section style={{ marginBottom: '300px' }}>
-        <p style={{ fontSize: '100px', lineHeight: '1.5' }}>
-          Join us this March in Durham for Durham University Women in Tech's inaugural hackathon, DUWiT Hacks.
-          Running over 24-hours, DUWiT Hacks is a project creation competition, bringing together 150 members of
-          underrepresented groups in tech, including women and non-binary individuals.
+      <section style={{ marginBottom: "100px" }}>
+        <p
+          style={{
+            fontSize: "40px",
+            lineHeight: "1.5",
+            fontFamily: "var(--font-kodemono)",
+            padding: "0 20%",
+          }}
+        >
+          Join us for Durham University Women in Tech's inaugural hackathon, DUWiT Hacks!
         </p>
       </section>
 
+      <section style={{ marginBottom: "100px" }}>
+      <p
+          style={{
+            fontSize: "30px",
+            lineHeight: "1.5",
+            fontFamily: "var(--font-kodemono)",
+            padding: "0 20%",
+          }}
+        >
+          Running over 24-hours, DUWiT Hacks is a project creation competition,
+          bringing together 150 students from underrepresented groups to collaborate
+          and use tech to solve real world problems.
+        </p>
+        </section>
+
       {/* More info coming soon */}
-      <section style={{ marginBottom: '300px' }}>
-        <h2 style={{ fontSize: '220px', marginBottom: '20px' }}>COMING SOON...</h2>
+      <section style={{ marginBottom: "100px" }}>
+        <h2
+          style={{
+            fontSize: "100px",
+            marginBottom: "20px",
+            fontFamily: "var(--font-silkscreen)",
+            padding: "0 20%",
+          }}
+        >
+          MORE DETAILS
+          COMING SOON...
+
+        </h2>
       </section>
 
+      {/* Sponsors */}
 
-      {/*/!* What is a Hackathon *!/*/}
-      {/*<section style={{ marginBottom: '50px' }}>*/}
-      {/*  <h2 style={{ fontSize: '220px', marginBottom: '20px' }}>WHAT IS A HACKATHON?</h2>*/}
-      {/*  <p style={{ fontSize: '100px', lineHeight: '1.5' }}>*/}
-      {/*    A hackathon, or hack-marathon, is a tech competition, where attendees engage in rapid and collaborative*/}
-      {/*    project creation to build tech projects which solve real-world problems.*/}
-      {/*  </p>*/}
-      {/*</section>*/}
+      <section style={{ marginBottom: "100px", textAlign: "center" }}>
+      <h2
+        style={{
+          fontSize: "clamp(2rem, 10vw, 100px)",
+          marginBottom: "20px",
+          fontFamily: "var(--font-silkscreen)",
+        }}
+      >
+        SPONSORSHIP
+      </h2>
+      <p
+        style={{
+          fontSize: "clamp(1rem, 5vw, 30px)",
+          fontFamily: "var(--font-kodemono)",
+          lineHeight: "1.5",
+          padding: "0 20%",
+        }}
+      >
+        DUWiT Hacks is made possible by the incredible support of our sponsors,
+        partners, and other funds.
+      </p>
 
-      {/*/!* Sponsorship *!/*/}
-      {/*<section style={{ marginBottom: '50px' }}>*/}
-      {/*  <h2 style={{ fontSize: '220px', marginBottom: '20px' }}>SPONSORSHIP</h2>*/}
-      {/*  <p style={{ fontSize: '100px', lineHeight: '1.5' }}>*/}
-      {/*    DUWiT Hacks is made possible by the incredible support of our sponsors, partners, and other funds.*/}
-      {/*  </p>*/}
-      {/*</section>*/}
+      {/* Sponsor Logos */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "60px",
+          flexWrap: "wrap",
+          marginTop: "50px",
+        }}
+      >
+        {/* Sponsor 1 */}
+        <img
+          src="/Durham.svg"
+          alt="DU logo"
+          style={{
+            width: "200px",
+            height: "auto",
+          }}
+        />
+
+        {/* Sponsor 2 */}
+        <img
+          src="/RTC.png"
+          alt="RTC Logo"
+          style={{
+            width: "200px",
+            height: "auto",
+          }}
+        />
+
+        {/* MLH Logo */}
+        <img
+          src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.svg" // MLH Logo SVG
+          alt="MLH Logo"
+          style={{
+            width: "200px",
+            height: "auto",
+          }}
+        />
+      </div>
+    </section>
+
+
 
       {/* Contact */}
       <footer>
-        <h2 style={{ fontSize: '220px', marginBottom: '20px' }}>CONTACT</h2>
-        <p style={{ fontSize: '60px', lineHeight: '1.5' }}>
-          If you'd like to get involved or have any questions, please reach out to
-          <a href="mailto:hello@duwithacks.com" style={{ color: '#FFD700' }}> hello@duwithacks.com</a>.
+        <h2
+          style={{
+            fontSize: "clamp(2rem, 12vw, 100px)",
+            marginBottom: "20px",
+            fontFamily: "var(--font-silkscreen)",
+          }}
+        >
+          CONTACT
+        </h2>
+        <p
+          style={{
+            fontSize: "clamp(0.75rem, 4vw, 30px)",
+            lineHeight: "1.5",
+            fontFamily: "var(--font-kodemono)",
+            padding: "0 20%",
+          }}
+        >
+          If you'd like to get involved or have any questions, please reach out
+          to
+          <a
+            href="mailto:hello@duwithacks.com"
+            style={{ color: "#FFD700", fontFamily: "var(--font-kodemono)" }}
+          >
+            {" "}
+            hello@duwithacks.com
+          </a>
+          .
         </p>
       </footer>
     </div>

@@ -5,8 +5,10 @@
 /* Root font and theme variables */
 :root {
   --font-silkscreen: 'Silkscreen', cursive;
+  --font-unicaone: 'Unica One', sans-serif;
+  --font-kodemono: 'Kode Mono', monospace;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
