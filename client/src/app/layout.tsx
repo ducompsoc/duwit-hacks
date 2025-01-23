@@ -3,6 +3,7 @@ import Image from "next/image"
 import type * as React from "react"
 
 import { MLHBanner } from "@/components/mlh-banner"
+import "@/lib/fonts"
 
 import "./globals.css"
 
