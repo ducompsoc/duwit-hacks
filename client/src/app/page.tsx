@@ -1,11 +1,11 @@
-import * as React from 'react'
+import * as React from "react"
 
 export default function Home() {
   return (
     <div
       style={{
-        padding: '20px',
-        minHeight: '200vh', // Ensure the content's height is larger than the viewport
+        padding: "20px",
+        minHeight: "200vh", // Ensure the content's height is larger than the viewport
       }}
     >
       {/* Header */}
@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       <section style={{ marginBottom: "100px" }}>
-      <p
+        <p
           style={{
             fontSize: "30px",
             lineHeight: "1.5",
@@ -66,11 +66,10 @@ export default function Home() {
             padding: "0 20%",
           }}
         >
-          Running over 24-hours, DUWiT Hacks is a project creation competition,
-          bringing together 150 students from underrepresented groups to collaborate
-          and use tech to solve real world problems.
+          Running over 24-hours, DUWiT Hacks is a project creation competition, bringing together 150 students from
+          underrepresented groups to collaborate and use tech to solve real world problems.
         </p>
-        </section>
+      </section>
 
       {/* More info coming soon */}
       <section style={{ marginBottom: "100px" }}>
@@ -82,80 +81,75 @@ export default function Home() {
             padding: "0 20%",
           }}
         >
-          MORE DETAILS
-          COMING SOON...
-
+          MORE DETAILS COMING SOON...
         </h2>
       </section>
 
       {/* Sponsors */}
 
       <section style={{ marginBottom: "100px", textAlign: "center" }}>
-      <h2
-        style={{
-          fontSize: "clamp(2rem, 10vw, 100px)",
-          marginBottom: "20px",
-          fontFamily: "var(--font-silkscreen)",
-        }}
-      >
-        SPONSORSHIP
-      </h2>
-      <p
-        style={{
-          fontSize: "clamp(1rem, 5vw, 30px)",
-          fontFamily: "var(--font-kodemono)",
-          lineHeight: "1.5",
-          padding: "0 20%",
-        }}
-      >
-        DUWiT Hacks is made possible by the incredible support of our sponsors,
-        partners, and other funds.
-      </p>
-
-      {/* Sponsor Logos */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "60px",
-          flexWrap: "wrap",
-          marginTop: "50px",
-        }}
-      >
-        {/* Sponsor 1 */}
-        <img
-          src="/Durham.svg"
-          alt="DU logo"
+        <h2
           style={{
-            width: "200px",
-            height: "auto",
+            fontSize: "clamp(2rem, 10vw, 100px)",
+            marginBottom: "20px",
+            fontFamily: "var(--font-silkscreen)",
           }}
-        />
-
-        {/* Sponsor 2 */}
-        <img
-          src="/RTC.png"
-          alt="RTC Logo"
+        >
+          SPONSORSHIP
+        </h2>
+        <p
           style={{
-            width: "200px",
-            height: "auto",
+            fontSize: "clamp(1rem, 5vw, 30px)",
+            fontFamily: "var(--font-kodemono)",
+            lineHeight: "1.5",
+            padding: "0 20%",
           }}
-        />
+        >
+          DUWiT Hacks is made possible by the incredible support of our sponsors, partners, and other funds.
+        </p>
 
-        {/* MLH Logo */}
-        <img
-          src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.svg" // MLH Logo SVG
-          alt="MLH Logo"
+        {/* Sponsor Logos */}
+        <div
           style={{
-            width: "200px",
-            height: "auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "60px",
+            flexWrap: "wrap",
+            marginTop: "50px",
           }}
-        />
-      </div>
-    </section>
+        >
+          {/* Sponsor 1 */}
+          <img
+            src="/Durham.svg"
+            alt="DU logo"
+            style={{
+              width: "200px",
+              height: "auto",
+            }}
+          />
 
+          {/* Sponsor 2 */}
+          <img
+            src="/RTC.png"
+            alt="RTC Logo"
+            style={{
+              width: "200px",
+              height: "auto",
+            }}
+          />
 
+          {/* MLH Logo */}
+          <img
+            src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.svg" // MLH Logo SVG
+            alt="MLH Logo"
+            style={{
+              width: "200px",
+              height: "auto",
+            }}
+          />
+        </div>
+      </section>
 
       {/* Contact */}
       <footer>
@@ -176,12 +170,8 @@ export default function Home() {
             padding: "0 20%",
           }}
         >
-          If you'd like to get involved or have any questions, please reach out
-          to
-          <a
-            href="mailto:hello@duwithacks.com"
-            style={{ color: "#FFD700", fontFamily: "var(--font-kodemono)" }}
-          >
+          If you'd like to get involved or have any questions, please reach out to
+          <a href="mailto:hello@duwithacks.com" style={{ color: "#FFD700", fontFamily: "var(--font-kodemono)" }}>
             {" "}
             hello@duwithacks.com
           </a>

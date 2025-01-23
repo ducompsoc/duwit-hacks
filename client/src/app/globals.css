@@ -4,9 +4,9 @@
 
 /* Root font and theme variables */
 :root {
-  --font-silkscreen: 'Silkscreen', cursive;
-  --font-unicaone: 'Unica One', sans-serif;
-  --font-kodemono: 'Kode Mono', monospace;
+  --font-silkscreen: "Silkscreen", cursive;
+  --font-unicaone: "Unica One", sans-serif;
+  --font-kodemono: "Kode Mono", monospace;
   --background: #ffffff;
   --foreground: #ffffff;
 }
@@ -32,7 +32,12 @@ body {
 }
 
 /* Apply Silkscreen font to all headings (h1 to h6) */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-silkscreen);
   font-weight: 300; /* Regular weight for all headings */
   text-align: center; /* Horizontally center headings */
