@@ -31,7 +31,7 @@ export default function RootLayout({
           />
         </div>
         {/* Header */}
-        <header className="flex justify-between items-center fixed top-0 w-full px-[10px] py-[20px] z-[1000]">
+        <header className="flex justify-between items-center fixed top-0 w-full px-[20px] py-[10px] z-[1000]">
           {/* Logo */}
           <div className="w-[100px] h-auto">
             <Image src="/HexLogo.svg" alt="DUWiT Hacks Logo" width={100} height={100} className="object-contain" />
