@@ -15,7 +15,7 @@ function Section({ children, className, ...props }: React.HTMLAttributes<HTMLDiv
 
 function ChonkyHeading({ children, className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2 className={cn("text-8xl mb-[20px] uppercase", silkscreen.className, className)} {...props}>
+    <h2 className={cn("text-3xl md:text-8xl mb-[20px] uppercase", silkscreen.className, className)} {...props}>
       {children}
     </h2>
   )
