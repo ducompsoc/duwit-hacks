@@ -1,38 +1,7 @@
 import type { Metadata } from "next"
-import { Kode_Mono, Silkscreen, Unica_One } from "next/font/google"
-import localFont from "next/font/local"
 import Image from "next/image"
 import type * as React from "react"
 import "./globals.css"
-
-const silkscreenFont = Silkscreen({
-  weight: "700",
-  subsets: ["latin"],
-  variable: "--font-silkscreen",
-})
-
-const unicaoneFont = Unica_One({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-unicaone",
-})
-
-const kodemonoFont = Kode_Mono({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-kodemono",
-})
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-})
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-})
 
 export const metadata: Metadata = {
   title: "Create Next App",
