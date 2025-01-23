@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import type * as React from "react"
+
+import { MLHBanner } from "@/components/mlh-banner"
+
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -69,38 +72,12 @@ export default function RootLayout({
         </header>
 
         {/* MLH Banner */}
-        <a
-          id="mlh-trust-badge"
-          style={{
-            display: "block",
-            maxWidth: "100px",
-            minWidth: "60px",
-            position: "fixed",
-            right: "50px",
-            top: "0",
-            width: "10%",
-            zIndex: 10000,
-          }}
-          href="https://mlh.io/eu?utm_source=eu-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-white.svg"
-            alt="Major League Hacking 2025 Hackathon Season"
-            style={{ width: "100%" }}
-          />
-        </a>
+        <div className="fixed top-0 overflow-visible w-[100%] z-50">
+          <MLHBanner variant="white" />
+        </div>
 
         {/* Content */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          {children}
-        </div>
+        <div className="relative z-1">{children}</div>
       </body>
     </html>
   )
