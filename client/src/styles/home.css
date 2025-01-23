@@ -1,0 +1,23 @@
+.main-title {
+  @apply uppercase text-8xl;
+  margin-bottom: 20px;
+  font-family: var(--font-silkscreen);
+  background: radial-gradient(circle, rgb(235, 209, 234) 30%, rgb(230, 199, 241) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.date-callout {
+  @apply uppercase text-5xl;
+  line-height: 1.25;
+  font-family: var(--font-unicaone);
+  background: radial-gradient(circle, rgb(194, 171, 204) 30%, rgb(245, 198, 245) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

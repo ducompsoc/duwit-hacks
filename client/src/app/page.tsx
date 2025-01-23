@@ -1,183 +1,127 @@
-import * as React from "react"
+import Image from "next/image"
+import type * as React from "react"
+
+import { kodeMono, silkscreen } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
+import "@/styles/home.css"
+
+function Section({ children, className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <section className={cn("mb-[100px]", className)} {...props}>
+      {children}
+    </section>
+  )
+}
+
+function ChonkyHeading({ children, className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h2 className={cn("text-8xl mb-[20px] uppercase", silkscreen.className, className)} {...props}>
+      {children}
+    </h2>
+  )
+}
+
+function Paragraph({ children, className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <p className={cn("text-3xl px-[20%]", kodeMono.className, className)} {...props}>
+      {children}
+    </p>
+  )
+}
+
+function Header() {
+  return (
+    <header className="mb-[50px]">
+      <h1 className="main-title">DUWiT Hacks</h1>
+      <p className="date-callout">
+        1<sup>st</sup>-2<sup>nd</sup> March 2025
+      </p>
+    </header>
+  )
+}
+
+function Tagline() {
+  return (
+    <Section>
+      <Paragraph className="text-4xl">
+        Join us for Durham University Women in Tech's inaugural hackathon, DUWiT Hacks!
+      </Paragraph>
+    </Section>
+  )
+}
+
+function About() {
+  return (
+    <Section>
+      <Paragraph>
+        Running over 24-hours, DUWiT Hacks is&nbsp;a project creation competition, bringing together 150 students from
+        underrepresented groups to collaborate and use tech to solve real world problems.
+      </Paragraph>
+    </Section>
+  )
+}
+
+function ComingSoon() {
+  return (
+    <Section>
+      <ChonkyHeading className="text-4xl">More details coming soon...</ChonkyHeading>
+    </Section>
+  )
+}
+
+function Sponsorship() {
+  return (
+    <Section className="text-center">
+      <ChonkyHeading>Sponsorship</ChonkyHeading>
+      <Paragraph>
+        DUWiT Hacks is made possible by the incredible support of our sponsors, partners, and other funds.
+      </Paragraph>
+
+      {/* Sponsor Logos */}
+      <div className="flex flex-wrap mt-[50px] justify-center items-center gap-16">
+        {/* Sponsor 1 */}
+        <img className="w-[200px] h-auto" src="/Durham.svg" alt="DU logo" width={240} height={99} />
+
+        {/* Sponsor 2 */}
+        <Image className="w-[200px] h-auto" src="/RTC.png" alt="RTC Logo" width={3001} height={2712} />
+
+        {/* MLH Logo */}
+        <Image
+          className="w-[200px] h-auto"
+          src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.svg" // MLH Logo SVG
+          alt="MLH Logo"
+          width={310.59}
+          height={130.78}
+        />
+      </div>
+    </Section>
+  )
+}
+
+function Contact() {
+  return (
+    <footer>
+      <ChonkyHeading>Contact</ChonkyHeading>
+      <Paragraph>
+        If you'd like to get involved or have any questions, please reach out to{" "}
+        <a href="mailto:hello@duwithacks.com" className="text-[#FFD700]">
+          hello@duwithacks.com
+        </a>
+        .
+      </Paragraph>
+    </footer>
+  )
+}
 
 export default function Home() {
   return (
-    <div
-      style={{
-        padding: "20px",
-        minHeight: "200vh", // Ensure the content's height is larger than the viewport
-      }}
-    >
-      {/* Header */}
-      <header style={{ marginBottom: "50px" }}>
-        <h1
-          style={{
-            fontSize: "clamp(2rem, 10vw, 200px)",
-            marginBottom: "10px",
-            fontFamily: "var(--font-silkscreen)",
-            background: "radial-gradient(circle,rgb(235, 209, 234) 30%, rgb(230, 199, 241) 70%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            display: "inline-block",
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-        >
-          DUWIT HACKS
-        </h1>
-        <p
-          style={{
-            fontSize: "clamp(1.5rem, 8vw, 70px)",
-            fontFamily: "var(--font-unicaone)",
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            background: "radial-gradient(circle,rgb(194, 171, 204) 30%, rgb(245, 198, 245) 70%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            display: "inline-block",
-            textOverflow: "ellipsis",
-          }}
-        >
-          1-2 MARCH 2025
-        </p>
-      </header>
-
-      {/* About Section */}
-      <section style={{ marginBottom: "100px" }}>
-        <p
-          style={{
-            fontSize: "40px",
-            lineHeight: "1.5",
-            fontFamily: "var(--font-kodemono)",
-            padding: "0 20%",
-          }}
-        >
-          Join us for Durham University Women in Tech's inaugural hackathon, DUWiT Hacks!
-        </p>
-      </section>
-
-      <section style={{ marginBottom: "100px" }}>
-        <p
-          style={{
-            fontSize: "30px",
-            lineHeight: "1.5",
-            fontFamily: "var(--font-kodemono)",
-            padding: "0 20%",
-          }}
-        >
-          Running over 24-hours, DUWiT Hacks is a project creation competition, bringing together 150 students from
-          underrepresented groups to collaborate and use tech to solve real world problems.
-        </p>
-      </section>
-
-      {/* More info coming soon */}
-      <section style={{ marginBottom: "100px" }}>
-        <h2
-          style={{
-            fontSize: "100px",
-            marginBottom: "20px",
-            fontFamily: "var(--font-silkscreen)",
-            padding: "0 20%",
-          }}
-        >
-          MORE DETAILS COMING SOON...
-        </h2>
-      </section>
-
-      {/* Sponsors */}
-
-      <section style={{ marginBottom: "100px", textAlign: "center" }}>
-        <h2
-          style={{
-            fontSize: "clamp(2rem, 10vw, 100px)",
-            marginBottom: "20px",
-            fontFamily: "var(--font-silkscreen)",
-          }}
-        >
-          SPONSORSHIP
-        </h2>
-        <p
-          style={{
-            fontSize: "clamp(1rem, 5vw, 30px)",
-            fontFamily: "var(--font-kodemono)",
-            lineHeight: "1.5",
-            padding: "0 20%",
-          }}
-        >
-          DUWiT Hacks is made possible by the incredible support of our sponsors, partners, and other funds.
-        </p>
-
-        {/* Sponsor Logos */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "60px",
-            flexWrap: "wrap",
-            marginTop: "50px",
-          }}
-        >
-          {/* Sponsor 1 */}
-          <img
-            src="/Durham.svg"
-            alt="DU logo"
-            style={{
-              width: "200px",
-              height: "auto",
-            }}
-          />
-
-          {/* Sponsor 2 */}
-          <img
-            src="/RTC.png"
-            alt="RTC Logo"
-            style={{
-              width: "200px",
-              height: "auto",
-            }}
-          />
-
-          {/* MLH Logo */}
-          <img
-            src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.svg" // MLH Logo SVG
-            alt="MLH Logo"
-            style={{
-              width: "200px",
-              height: "auto",
-            }}
-          />
-        </div>
-      </section>
-
-      {/* Contact */}
-      <footer>
-        <h2
-          style={{
-            fontSize: "clamp(2rem, 12vw, 100px)",
-            marginBottom: "20px",
-            fontFamily: "var(--font-silkscreen)",
-          }}
-        >
-          CONTACT
-        </h2>
-        <p
-          style={{
-            fontSize: "clamp(0.75rem, 4vw, 30px)",
-            lineHeight: "1.5",
-            fontFamily: "var(--font-kodemono)",
-            padding: "0 20%",
-          }}
-        >
-          If you'd like to get involved or have any questions, please reach out to
-          <a href="mailto:hello@duwithacks.com" style={{ color: "#FFD700", fontFamily: "var(--font-kodemono)" }}>
-            {" "}
-            hello@duwithacks.com
-          </a>
-          .
-        </p>
-      </footer>
+    <div className="p-5 min-h-[200vh]">
+      <Header />
+      <Tagline />
+      <About />
+      <ComingSoon />
+      <Sponsorship />
+      <Contact />
     </div>
   )
 }
