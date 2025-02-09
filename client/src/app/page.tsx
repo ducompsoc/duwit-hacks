@@ -55,7 +55,7 @@ function SignUp() {
     <Section>
       <Paragraph className="flex justify-center">
         <a href="https://form.typeform.com/to/ZRb48NqE" target="_blank">
-          <img src="/sign_up_pressed.svg" alt="" />
+          <img src="/sign_up_unpressed.svg" alt="" />
         </a>
       </Paragraph>
     </Section>
