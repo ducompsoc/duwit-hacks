@@ -34,7 +34,7 @@ function Header() {
     <header className="mb-[50px]">
       <h1 className="main-title">DUWiT Hacks</h1>
       <p className="date-callout">
-        1<sup>st</sup>-2<sup>nd</sup> March 2025
+        1st-2nd March 2025
       </p>
     </header>
   )
@@ -45,6 +45,18 @@ function Tagline() {
     <Section>
       <Paragraph className="text-4xl">
         Join us for Durham University Women in Tech's inaugural hackathon, DUWiT Hacks!
+      </Paragraph>
+    </Section>
+  )
+}
+
+function SignUp() {
+  return (
+    <Section>
+      <Paragraph className="flex justify-center">
+        <a href="https://form.typeform.com/to/ZRb48NqE" target="_blank">
+          <img src="/sign_up_pressed.svg" alt="" />
+        </a>
       </Paragraph>
     </Section>
   )
@@ -118,6 +130,7 @@ export default function Home() {
     <div className="p-5 min-h-[200vh]">
       <Header />
       <Tagline />
+      <SignUp />
       <About />
       <ComingSoon />
       <Sponsorship />
