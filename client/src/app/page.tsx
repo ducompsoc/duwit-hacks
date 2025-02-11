@@ -114,7 +114,7 @@ function Contact() {
   return (
     <footer>
       <ChonkyHeading>Contact</ChonkyHeading>
-      <Paragraph>
+      <Paragraph className="text-xl md:text-3xl">
         If you'd like to get involved or have any questions, please reach out to{" "}
         <a href="mailto:hello@duwithacks.com" className="text-[#FFD700]">
           hello@duwithacks.com
