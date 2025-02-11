@@ -23,7 +23,7 @@ function ChonkyHeading({ children, className, ...props }: React.HTMLAttributes<H
 
 function Paragraph({ children, className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className={cn("text-3xl px-[20%]", kodeMono.className, className)} {...props}>
+    <p className={cn("text-3xl sm:px-[20%]", kodeMono.className, className)} {...props}>
       {children}
     </p>
   )
