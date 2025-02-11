@@ -95,7 +95,7 @@ function Sponsorship() {
         <img className="w-[200px] h-auto" src="/Durham.svg" alt="DU logo" width={240} height={99} />
 
         {/* Sponsor 2 */}
-        <Image className="w-[200px] h-auto" src="/RTC.png" alt="RTC Logo" width={3001} height={2712} />
+        <Image className="w-[200px] h-auto" src="/rewriting-the-code.svg" alt="RTC Logo" width={3001} height={2712} />
 
         {/* MLH Logo */}
         <Image
