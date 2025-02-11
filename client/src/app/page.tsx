@@ -90,7 +90,7 @@ function Sponsorship() {
       {/* Sponsor Logos */}
       <div className="flex flex-wrap mt-[50px] justify-center items-center gap-16">
         {/* Sponsor 1 */}
-        <img className="w-[200px] h-auto" src="/Durham.svg" alt="DU logo" width={240} height={99} />
+        <Image className="w-[200px] h-auto" src="/Durham.svg" alt="DU logo" width={240} height={99} />
 
         {/* Sponsor 2 */}
         <Image className="w-[200px] h-auto" src="/rewriting-the-code.svg" alt="RTC Logo" width={3001} height={2712} />
