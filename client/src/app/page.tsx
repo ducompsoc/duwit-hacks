@@ -33,9 +33,7 @@ function Header() {
   return (
     <header className="mb-[50px]">
       <h1 className="main-title">DUWiT Hacks</h1>
-      <p className="date-callout">
-        1st-2nd March 2025
-      </p>
+      <p className="date-callout">1st-2nd March 2025</p>
     </header>
   )
 }
