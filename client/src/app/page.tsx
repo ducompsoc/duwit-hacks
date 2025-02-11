@@ -52,7 +52,7 @@ function SignUp() {
   return (
     <Section>
       <Paragraph className="flex justify-center">
-        <a href="https://form.typeform.com/to/ZRb48NqE" target="_blank" rel="noreferrer">
+        <a href="https://forms.gle/ngDdviKZJ6RfBvHZ8" target="_blank" rel="noreferrer">
           <img src="/sign_up_unpressed.svg" alt="" />
         </a>
       </Paragraph>
