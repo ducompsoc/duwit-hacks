@@ -44,7 +44,7 @@ export default function RootLayout({
         </div>
 
         {/* Content */}
-        <div className="relative z-1">{children}</div>
+        <div className="relative z-1 max-w-screen overflow-clip">{children}</div>
       </body>
     </html>
   )
