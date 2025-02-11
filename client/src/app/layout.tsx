@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="relative">
         {/* Background with gradient and image */}
         <div className="background-purple-gradient absolute top-0 size-full">
