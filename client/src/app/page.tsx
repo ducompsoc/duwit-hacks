@@ -152,11 +152,11 @@ function FAQ() {
         <br />
         Registration will open at 9:30 am on Saturday and we aim to end the event by 4pm on Sunday 2nd March
       </Paragraph>
-      <Paragraph>
+      {/* <Paragraph>
         <strong>I'm not from Durham, can I get travel re-imbursed</strong>
         <br />
         You will be able to get your travel partially re-imbursed. More details on this to come soon.
-      </Paragraph>
+      </Paragraph> */}
       <Paragraph>
         <strong>I've never coded before - can I still join</strong>
         <br />
