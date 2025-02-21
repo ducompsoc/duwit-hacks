@@ -127,14 +127,15 @@ function FAQ() {
   return (
     <Section>
       <ChonkyHeading>FAQ</ChonkyHeading>
-      <Paragraph>
+      <Paragraph className="text-2xl">
         <strong>Who can partake in this event?</strong>
         <br />
         If you identify as part of an underrepresented group in tech, such as women or non-binary individuals, we'd love to have you join as a hacker!
         <br />
         If you don't identify as part of an underrepresented group in tech, we'd still love to have you at our event as a volunteer or mentor
       </Paragraph>
-      <Paragraph>
+      <br />
+      <Paragraph className="text-2xl">
         <strong>Where is the event taking place?</strong>
         <br />
         Mathematical Sciences & Computer Science Building
@@ -147,17 +148,19 @@ function FAQ() {
         <br />
         DH1 3LE
       </Paragraph>
-      <Paragraph>
+      <br />
+      <Paragraph className="text-2xl">
         <strong>What time is the event taking place</strong>
         <br />
         Registration will open at 9:30 am on Saturday and we aim to end the event by 4pm on Sunday 2nd March
       </Paragraph>
+      <br />
       {/* <Paragraph>
         <strong>I'm not from Durham, can I get travel re-imbursed</strong>
         <br />
         You will be able to get your travel partially re-imbursed. More details on this to come soon.
       </Paragraph> */}
-      <Paragraph>
+      <Paragraph className="text-2xl">
         <strong>I've never coded before - can I still join</strong>
         <br />
         Yes! This is an entirely beginner friendly event, and you'll have support from mentors and your peers to learn some new skills and build a project you're proud of. Enthusiasm is half the job!
