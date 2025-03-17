@@ -174,7 +174,7 @@ export default function Home() {
     <div className="p-5 min-h-[200vh]">
       <Header />
       <Tagline />
-      <SignUp />
+      {/* <SignUp /> */}
       <About />
       <FAQ />
       {/* <ComingSoon /> */}
