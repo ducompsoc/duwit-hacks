@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root font and theme variables */
+:root {
+  --font-zendots: "Zen Dots", Regular;
+  --font-unicaone: "Unica One", sans-serif;
+  --font-kodemono: "Kode Mono", monospace;
+  --background: #ffffff;
+  --foreground: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-zendots);
+
+  /* Center the entire body content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center; /* Horizontally centers text */
+}
+
+/* Apply Zen Dots font to all headings (h1 to h6) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-zendots);
+  font-weight: 300; /* Regular weight for all headings */
+  text-align: center; /* Horizontally center headings */
+}
+
+/* Optional: Center paragraphs and other text elements */
+p {
+  text-align: center; /* Center text in paragraphs */
+}
