@@ -87,7 +87,28 @@ function Sponsorship() {
         {/* Add sponsor logos here */}
       </div>
     </section>
-  );
+  )
+}
+
+function SecondRoadPattern() {
+  return (
+    <div className="road-pattern flex items-center justify-start">
+      <Image
+        src="/new_assets/red car.png"
+        alt="car"
+        width={290}
+        height={290}
+        className="rotate-90 absolute left-[170px]"
+      />
+      <Image
+        src="/new_assets/red blue white car.png"
+        alt="car"
+        width={290}
+        height={290}
+        className="rotate-90 absolute right-[50px]"
+      />
+    </div>
+  )
 }
 
 function FAQSection() {
@@ -96,28 +117,51 @@ function FAQSection() {
       <h2 className="text-[3rem] text-left text-[#000000] mb-8">FAQs</h2>
       {/* Add FAQ content here */}
     </section>
-  );
+  )
+}
+
+function ThirdRoadPattern() {
+  return (
+    <div className="road-pattern flex items-center">
+      <Image
+        src="/new_assets/red white car.png"
+        alt="car"
+        width={290}
+        height={290}
+        className="rotate-90 absolute left-[500px]"
+      />
+    </div>
+  )
 }
 
 function ContactSection() {
   return (
     <section id="contact" className="py-10 px-4">
-      <h2 className="text-[3rem] text-left text-[#000000] mb-8">Contact</h2>
+      <h2 className="text-[3rem] text-left text-[#000000] mb-8">Contact Us</h2>
       <div id="contact-info" className="space-y-2">
-        <h3>Contact Us</h3>
-        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
-        <p>Email: hello@duwithacks.com</p>
-        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
-        <p>Instagram: @duwithacks</p>
-        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
-        <p>Tiktok: @duwit.hacks</p>
-        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
-        <p>LinkedIn: DUWiT Hacks</p>
-        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
-        <p>Sponsors please contact: sponsor@duwithacks.com</p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          Email: hello@duwithacks.com
+        </p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          Instagram: @duwithacks
+        </p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          Tiktok: @duwit.hacks
+        </p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          LinkedIn: DUWiT Hacks
+        </p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          Sponsors please contact: sponsor@duwithacks.com
+        </p>
       </div>
     </section>
-  );
+  )
 }
 
 export default function Home() {
@@ -128,7 +172,9 @@ export default function Home() {
       <AboutSection />
       <FirstRoadPattern />
       <Sponsorship />
+      <SecondRoadPattern />
       <FAQSection />
+      <ThirdRoadPattern />
       <ContactSection />
     </>
   )
