@@ -81,55 +81,43 @@ function FirstRoadPattern() {
 
 function Sponsorship() {
   return (
-    <div id="Sponsorship" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
-      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
-        <h2>Sponsors</h2>
+    <section id="sponsors" className="py-10 px-4">
+      <h2 className="text-[3rem] text-left text-[#000000] mb-8">Sponsors</h2>
+      <div id="sponsor-logos" className="flex flex-wrap justify-center gap-4 mt-4">
+        {/* Add sponsor logos here */}
       </div>
-      <div id="sponsor-logos">
-        {/*
-        <Image src="" alt=""/>
-        <Image src="" alt=""/>
-        <Image src="" alt=""/>
-        <Image src="" alt=""/>
-        <Image src="" alt=""/>*/}
-      </div>
-    </div>
-  )
+    </section>
+  );
 }
 
 function FAQSection() {
   return (
-    <div id="FAQ" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
-      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
-        <h2>FAQs</h2>
-      </div>
-      <Image
-        src="/new_assets/Car Blue White.png"
-        alt="Divider Waves"
-        width={290}
-        height={230}
-        className="right-0 top-50 object-cover -ms-7"
-      />
-    </div>
-  )
+    <section id="faq" className="py-10 px-4">
+      <h2 className="text-[3rem] text-left text-[#000000] mb-8">FAQs</h2>
+      {/* Add FAQ content here */}
+    </section>
+  );
 }
 
 function ContactSection() {
   return (
-    <div id="Contact" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
-      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
-        <h2>Contact</h2>
-      </div>
-      <div id="contact-info">
-        <p>Contact Us</p>
+    <section id="contact" className="py-10 px-4">
+      <h2 className="text-[3rem] text-left text-[#000000] mb-8">Contact</h2>
+      <div id="contact-info" className="space-y-2">
+        <h3>Contact Us</h3>
+        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
         <p>Email: hello@duwithacks.com</p>
+        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
         <p>Instagram: @duwithacks</p>
+        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
         <p>Tiktok: @duwit.hacks</p>
+        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
         <p>LinkedIn: DUWiT Hacks</p>
+        <Image src="/new_assets/Flags.png" alt="Flag" width={20} height={20} unoptimized />
         <p>Sponsors please contact: sponsor@duwithacks.com</p>
       </div>
-    </div>
-  )
+    </section>
+  );
 }
 
 export default function Home() {
