@@ -86,11 +86,12 @@ function Sponsorship() {
         <h2>Sponsors</h2>
       </div>
       <div id="sponsor-logos">
+        {/*
         <Image src="" alt=""/>
         <Image src="" alt=""/>
         <Image src="" alt=""/>
         <Image src="" alt=""/>
-        <Image src="" alt=""/>
+        <Image src="" alt=""/>*/}
       </div>
     </div>
   )
