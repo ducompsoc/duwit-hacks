@@ -79,6 +79,58 @@ function FirstRoadPattern() {
   return <div className="road-pattern" />
 }
 
+function Sponsorship() {
+  return (
+    <div id="Sponsorship" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
+      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
+        <h2>Sponsors</h2>
+      </div>
+      <div id="sponsor-logos">
+        <Image src="" alt=""/>
+        <Image src="" alt=""/>
+        <Image src="" alt=""/>
+        <Image src="" alt=""/>
+        <Image src="" alt=""/>
+      </div>
+    </div>
+  )
+}
+
+function FAQSection() {
+  return (
+    <div id="FAQ" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
+      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
+        <h2>FAQs</h2>
+      </div>
+      <Image
+        src="/new_assets/Car Blue White.png"
+        alt="Divider Waves"
+        width={290}
+        height={230}
+        className="right-0 top-50 object-cover -ms-7"
+      />
+    </div>
+  )
+}
+
+function ContactSection() {
+  return (
+    <div id="Contact" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
+      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
+        <h2>Contact</h2>
+      </div>
+      <div id="contact-info">
+        <p>Contact Us</p>
+        <p>Email: hello@duwithacks.com</p>
+        <p>Instagram: @duwithacks</p>
+        <p>Tiktok: @duwit.hacks</p>
+        <p>LinkedIn: DUWiT Hacks</p>
+        <p>Sponsors please contact: sponsor@duwithacks.com</p>
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <>
@@ -86,6 +138,9 @@ export default function Home() {
       <FirstDivider />
       <AboutSection />
       <FirstRoadPattern />
+      <Sponsorship />
+      <FAQSection />
+      <ContactSection />
     </>
   )
 }

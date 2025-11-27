@@ -54,4 +54,4 @@
 !public
 
 # Explicit exceptions/ignores
-
+/client/node_modules
