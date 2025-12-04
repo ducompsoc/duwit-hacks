@@ -91,16 +91,11 @@ function Sponsorship() {
           className="w-full"
         />
         <div className="absolute top-[-9%] left-[-1.68%] w-full flex justify-left px-4 py-2">
-          <Image
-            src="/new_assets/Trees.png"
-            alt="Trees"
-            width={470}
-            height={10}
-          />
+          <Image src="/new_assets/Trees.png" alt="Trees" width={470} height={10} />
         </div>
       </div>
       <div className="absolute top-[41.5%] w-full h-[7rem] flex justify-left px-4 py-2">
-        <div className="w-[25%]"> 
+        <div className="w-[25%]">
           <h2 className="text-[3rem] text-left text-[#FFFFFF] mb-8 relative top-[5%]">Sponsors</h2>
         </div>
         <div id="sponsor-logos" className="flex flex-row w-[75%] justify-end">
