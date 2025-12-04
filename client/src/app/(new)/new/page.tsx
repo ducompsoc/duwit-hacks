@@ -76,15 +76,36 @@ function AboutSection() {
   )
 }
 function FirstRoadPattern() {
-  return <div className="road-pattern" />
+  return <div className="road-pattern w-full" />
 }
 
 function Sponsorship() {
   return (
-    <section id="sponsors" className="py-10 px-4">
-      <h2 className="text-[3rem] text-left text-[#000000] mb-8">Sponsors</h2>
-      <div id="sponsor-logos" className="flex flex-wrap justify-center gap-4 mt-4">
-        {/* Add sponsor logos here */}
+    <section id="sponsors" className="relative w-full">
+      <div className="flex items-center justify-center">
+        <Image
+          src="/new_assets/Track with stand.png"
+          alt="Divider Waves"
+          width={1000}
+          height={1000}
+          className="w-full"
+        />
+        <div className="absolute top-[-9%] left-[-1.68%] w-full flex justify-left px-4 py-2">
+          <Image
+            src="/new_assets/Trees.png"
+            alt="Trees"
+            width={470}
+            height={10}
+          />
+        </div>
+      </div>
+      <div className="absolute top-[41.5%] w-full h-[7rem] flex justify-left px-4 py-2">
+        <div className="w-[25%]"> 
+          <h2 className="text-[3rem] text-left text-[#FFFFFF] mb-8 relative top-[5%]">Sponsors</h2>
+        </div>
+        <div id="sponsor-logos" className="flex flex-row w-[75%] justify-end">
+          {/* Add sponsor logos here */}
+        </div>
       </div>
     </section>
   )
@@ -98,14 +119,14 @@ function SecondRoadPattern() {
         alt="car"
         width={290}
         height={290}
-        className="rotate-90 absolute left-[170px]"
+        className="rotate-90 absolute left-[17%]"
       />
       <Image
         src="/new_assets/red blue white car.png"
         alt="car"
         width={290}
         height={290}
-        className="rotate-90 absolute right-[50px]"
+        className="rotate-90 absolute right-[5%]"
       />
     </div>
   )
