@@ -76,39 +76,75 @@ function AboutSection() {
   )
 }
 function FirstRoadPattern() {
-  return <div className="road-pattern" />
+  return <div className="road-pattern w-full" />
 }
 
 function Sponsorship() {
   return (
-    <div id="Sponsorship" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
-      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
-        <h2>Sponsors</h2>
+    <section id="sponsors" className="relative w-full">
+      <div className="flex items-center justify-center">
+        <Image
+          src="/new_assets/Track with stand.png"
+          alt="Divider Waves"
+          width={1000}
+          height={1000}
+          className="w-full"
+        />
+        <div className="absolute top-[-9%] left-[-1.68%] w-full flex justify-left px-4 py-2">
+          <Image src="/new_assets/Trees.png" alt="Trees" width={470} height={10} />
+        </div>
       </div>
-      <div id="sponsor-logos">
-        {/*
-        <Image src="" alt=""/>
-        <Image src="" alt=""/>
-        <Image src="" alt=""/>
-        <Image src="" alt=""/>
-        <Image src="" alt=""/>*/}
+      <div className="absolute top-[41.5%] w-full h-[7rem] flex justify-left px-4 py-2">
+        <div className="w-[25%]">
+          <h2 className="text-[3rem] text-left text-[#FFFFFF] mb-8 relative top-[5%]">Sponsors</h2>
+        </div>
+        <div id="sponsor-logos" className="flex flex-row w-[75%] justify-end">
+          {/* Add sponsor logos here */}
+        </div>
       </div>
+    </section>
+  )
+}
+
+function SecondRoadPattern() {
+  return (
+    <div className="road-pattern flex items-center justify-start">
+      <Image
+        src="/new_assets/red car.png"
+        alt="car"
+        width={290}
+        height={290}
+        className="rotate-90 absolute left-[17%]"
+      />
+      <Image
+        src="/new_assets/red blue white car.png"
+        alt="car"
+        width={290}
+        height={290}
+        className="rotate-90 absolute right-[5%]"
+      />
     </div>
   )
 }
 
 function FAQSection() {
   return (
-    <div id="FAQ" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
-      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
-        <h2>FAQs</h2>
-      </div>
+    <section id="faq" className="py-10 px-4">
+      <h2 className="text-[3rem] text-left text-[#000000] mb-8">FAQs</h2>
+      {/* Add FAQ content here */}
+    </section>
+  )
+}
+
+function ThirdRoadPattern() {
+  return (
+    <div className="road-pattern flex items-center">
       <Image
-        src="/new_assets/Car Blue White.png"
-        alt="Divider Waves"
+        src="/new_assets/red white car.png"
+        alt="car"
         width={290}
-        height={230}
-        className="right-0 top-50 object-cover -ms-7"
+        height={290}
+        className="rotate-90 absolute left-[500px]"
       />
     </div>
   )
@@ -116,19 +152,31 @@ function FAQSection() {
 
 function ContactSection() {
   return (
-    <div id="Contact" className="w-full h-[5rem] bg-[#666666] flex justify-center py-2">
-      <div className="w-full bg-[#760000] py-4 text-white text-[1.5rem]">
-        <h2>Contact</h2>
+    <section id="contact" className="py-10 px-4">
+      <h2 className="text-[3rem] text-left text-[#000000] mb-8">Contact Us</h2>
+      <div id="contact-info" className="space-y-2">
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          Email: hello@duwithacks.com
+        </p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          Instagram: @duwithacks
+        </p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          Tiktok: @duwit.hacks
+        </p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          LinkedIn: DUWiT Hacks
+        </p>
+        <p className="flex items-center gap-2">
+          <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
+          Sponsors please contact: sponsor@duwithacks.com
+        </p>
       </div>
-      <div id="contact-info">
-        <p>Contact Us</p>
-        <p>Email: hello@duwithacks.com</p>
-        <p>Instagram: @duwithacks</p>
-        <p>Tiktok: @duwit.hacks</p>
-        <p>LinkedIn: DUWiT Hacks</p>
-        <p>Sponsors please contact: sponsor@duwithacks.com</p>
-      </div>
-    </div>
+    </section>
   )
 }
 
@@ -140,7 +188,9 @@ export default function Home() {
       <AboutSection />
       <FirstRoadPattern />
       <Sponsorship />
+      <SecondRoadPattern />
       <FAQSection />
+      <ThirdRoadPattern />
       <ContactSection />
     </>
   )

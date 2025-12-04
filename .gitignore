@@ -32,6 +32,7 @@
 !biome.json
 !/biome-base.json
 
+
 ## Husky
 !.husky
 
@@ -55,3 +56,4 @@
 
 # Explicit exceptions/ignores
 /client/node_modules
+/.DS_Store
