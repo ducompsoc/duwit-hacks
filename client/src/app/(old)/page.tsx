@@ -130,9 +130,11 @@ function FAQ() {
       <Paragraph className="text-2xl">
         <strong>Who can partake in this event?</strong>
         <br />
-        If you identify as part of an underrepresented group in tech, such as women or non-binary individuals, we'd love to have you join as a hacker!
+        If you identify as part of an underrepresented group in tech, such as women or non-binary individuals, we'd love
+        to have you join as a hacker!
         <br />
-        If you don't identify as part of an underrepresented group in tech, we'd still love to have you at our event as a volunteer or mentor
+        If you don't identify as part of an underrepresented group in tech, we'd still love to have you at our event as
+        a volunteer or mentor
       </Paragraph>
       <br />
       <Paragraph className="text-2xl">
@@ -163,11 +165,12 @@ function FAQ() {
       <Paragraph className="text-2xl">
         <strong>I've never coded before - can I still join</strong>
         <br />
-        Yes! This is an entirely beginner friendly event, and you'll have support from mentors and your peers to learn some new skills and build a project you're proud of. Enthusiasm is half the job!
+        Yes! This is an entirely beginner friendly event, and you'll have support from mentors and your peers to learn
+        some new skills and build a project you're proud of. Enthusiasm is half the job!
       </Paragraph>
     </Section>
   )
-} 
+}
 
 export default function Home() {
   return (
