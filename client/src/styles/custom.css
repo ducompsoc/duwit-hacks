@@ -9,11 +9,23 @@
   background-repeat: repeat-x;
 }
 
+.footer-block {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  background-color: #003049;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
 /* #about {
-    background-image: 
+    background-image:
         url('/new_assets/bg_top_car.png'),
         url('/new_assets/bg_side_car.png');
-    
+
     background-position:
         0 0,
         0 0;
