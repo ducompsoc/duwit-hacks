@@ -104,7 +104,7 @@ function FirstRoadPattern() {
 
 function Sponsorship() {
   return (
-    <section id="Sponsorship" className="flex flex-col w-full py-10 px-4 gap-8 md:gap-12">
+    <section id="Sponsorship" className="flex flex-col w-full py-10 px-4 gap-8 md:gap-12 md:px-[10%]">
       <div id="sponsors" className="flex justify-center md:justify-start py-2">
         <h2 className="text-3xl md:text-[3.5rem] text-left text-[#FFFFFF] [-webkit-text-stroke:1px_#003049] md:[-webkit-text-stroke:3px_#003049] font-bold">
           Sponsors
