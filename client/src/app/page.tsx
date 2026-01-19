@@ -30,7 +30,7 @@ function Header() {
         DUWiT Hacks
       </h1>
       <div className="text-2xl md:text-[60px] relative md:mt-12">
-        <p className="md:mb-8">7 - 8th March 2025</p>
+        <p className="md:mb-8">7 - 8th March 2026</p>
         <p className="">Durham University</p>
         <Image
           src="/new_assets/Flags.png"
