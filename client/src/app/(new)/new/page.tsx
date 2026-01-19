@@ -216,8 +216,12 @@ function Footer() {
   return (
     <footer className="relative w-full">
       <div className="footer-block">
-        <p className="text-[1rem] text-[#FFFFFF] text-center p-4">DUWiT Hacks follows the MLH Code of Conduct.
-          DUWiT is an event hosted by Durham University Computing Society (compsoc.tech), which is a student society affiliated with Durham Students' Union (durhamsu.com). Durham Students' Union is registered in England as a company limited by guarantee (07689815) and a charity (1145400), with VAT number 119733690 and registered office Dunelm House, New Elvet, Durham DH1 3AN.</p>
+        <p className="text-[1rem] text-[#FFFFFF] text-center p-4">
+          DUWiT Hacks follows the MLH Code of Conduct. DUWiT is an event hosted by Durham University Computing Society
+          (compsoc.tech), which is a student society affiliated with Durham Students' Union (durhamsu.com). Durham
+          Students' Union is registered in England as a company limited by guarantee (07689815) and a charity (1145400),
+          with VAT number 119733690 and registered office Dunelm House, New Elvet, Durham DH1 3AN.
+        </p>
       </div>
     </footer>
   )

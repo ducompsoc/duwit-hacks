@@ -21,7 +21,7 @@ export const unicaOne = Unica_One({
   variable: "--font-unicaone",
 })
 
-export const kodeMono = Kode_Mono({ 
+export const kodeMono = Kode_Mono({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-kodemono",
