@@ -12,7 +12,7 @@ interface NavButtonProps {
 function NavButton({ section }: NavButtonProps) {
   return (
     <div className="border-white">
-      <div className="border border-[#780000] text-sm md:text-[1.3rem] border-4 md:border-8 p-2 md:p-3 w-auto md:w-[11rem] h-auto md:h-[4.5rem] flex justify-center items-center bg-white rounded-full md:rounded-[60px]">
+      <div className="border border-[#780000] text-sm md:text-[1.3rem] border-4 md:border-8 p-2 md:p-3 w-auto md:w-[11.7rem] h-auto md:h-[4.5rem] flex justify-center items-center bg-white rounded-full md:rounded-[60px]">
         <a href={`#${section}`} className="text-black mx-2 md:mx-4 whitespace-nowrap">
           {section}
         </a>
