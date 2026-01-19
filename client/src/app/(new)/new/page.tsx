@@ -2,6 +2,8 @@ import Image from "next/image"
 
 import "@/styles/custom.css"
 
+import { zenDots } from "@/lib/fonts"
+
 interface HeaderButtonsProps {
   text: string
 }
@@ -81,22 +83,52 @@ function FirstRoadPattern() {
 
 function Sponsorship() {
   return (
-    <section id="sponsors" className="relative w-full">
-      <div className="flex items-center justify-center">
-        <Image
-          src="/new_assets/Track with stand.png"
-          alt="Divider Waves"
-          width={1000}
-          height={1000}
-          className="w-full"
-        />
-        <div className="absolute top-[-9%] left-[-1.68%] w-full flex justify-left px-4 py-2">
-          <Image src="/new_assets/Trees.png" alt="Trees" width={470} height={10} />
+    <section id="sponsorship" className="relative flex w-full h-[1000px]">
+      <div id="sponsors" className="flex justify-left px-4 py-2">
+        <h2 className="text-[3rem] text-left text-[#000000]">Sponsors</h2>
+      </div>
+      <div className="absolute top-[10%] left-[10%]">
+        <h3 className="text-[1.5rem] text-left text-[#000000] mb-8">Champion</h3>
+        <div className="flex items-center gap-8">
+          <Image src="/new_assets/_ block.png" alt="" width={120} height={120} />
+          <Image src="/new_assets/Neptune North.png" alt="" width={120} height={120} />
+          <Image src="/new_assets/Accenture.png" alt="" width={120} height={120} />
+          <Image src="/new_assets/_ block.png" alt="" width={120} height={120} />
         </div>
       </div>
+      <div className="absolute top-[30%] left-[10%]">
+        <h3 className="text-[1.5rem] text-left text-[#000000] mb-8">Podium Finisher</h3>
+        <div className="flex items-center gap-8">
+          <Image src="/new_assets/_ block.png" alt="" width={120} height={120} />
+          <Image src="/new_assets/_ block.png" alt="" width={120} height={120} />
+          <Image src="/new_assets/_ block.png" alt="" width={120} height={120} />
+        </div>
+      </div>
+      <div className="absolute top-[50%] left-[10%]">
+        <h3 className="text-[1.5rem] text-left text-[#000000] mb-8">Pit Crew</h3>
+        <div className="flex items-center gap-8">
+          <Image src="/new_assets/_ block.png" alt="" width={120} height={120} />
+          <Image src="/new_assets/RTC.png" alt="" width={120} height={120} />
+          <Image src="/new_assets/_ block.png" alt="" width={120} height={120} />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Partners() {
+  return (
+    <section id="partners" className="flex relative justify-left">
+      <Image
+        src="/new_assets/Sponsorship-Section.png"
+        alt="Sponsorship Section"
+        width={1000}
+        height={1000}
+        className="w-full"
+      />
       <div className="absolute top-[41.5%] w-full h-[7rem] flex justify-left px-4 py-2">
         <div className="w-[25%]">
-          <h2 className="text-[3rem] text-left text-[#FFFFFF] mb-8 relative top-[5%]">Sponsors</h2>
+          <h2 className="text-[3rem] text-left text-[#FFFFFF] mb-8 relative top-[30%]">Partners</h2>
         </div>
         <div id="sponsor-logos" className="flex flex-row w-[75%] justify-end">
           {/* Add sponsor logos here */}
@@ -155,28 +187,39 @@ function ContactSection() {
     <section id="contact" className="py-10 px-4">
       <h2 className="text-[3rem] text-left text-[#000000] mb-8">Contact Us</h2>
       <div id="contact-info" className="space-y-2">
-        <p className="flex items-center gap-2">
+        <p className="flex items-center gap-2 text-[#000000]">
           <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
           Email: hello@duwithacks.com
         </p>
-        <p className="flex items-center gap-2">
+        <p className="flex items-center gap-2 text-[#000000]">
           <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
           Instagram: @duwithacks
         </p>
-        <p className="flex items-center gap-2">
+        <p className="flex items-center gap-2 text-[#000000]">
           <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
           Tiktok: @duwit.hacks
         </p>
-        <p className="flex items-center gap-2">
+        <p className="flex items-center gap-2 text-[#000000]">
           <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
           LinkedIn: DUWiT Hacks
         </p>
-        <p className="flex items-center gap-2">
+        <p className="flex items-center gap-2 text-[#000000]">
           <Image src="/new_assets/Flags.png" alt="Flag" width={80} height={80} />
           Sponsors please contact: sponsor@duwithacks.com
         </p>
       </div>
     </section>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="relative w-full">
+      <div className="footer-block">
+        <p className="text-[1rem] text-[#FFFFFF] text-center p-4">DUWiT Hacks follows the MLH Code of Conduct.
+          DUWiT is an event hosted by Durham University Computing Society (compsoc.tech), which is a student society affiliated with Durham Students' Union (durhamsu.com). Durham Students' Union is registered in England as a company limited by guarantee (07689815) and a charity (1145400), with VAT number 119733690 and registered office Dunelm House, New Elvet, Durham DH1 3AN.</p>
+      </div>
+    </footer>
   )
 }
 
@@ -188,10 +231,12 @@ export default function Home() {
       <AboutSection />
       <FirstRoadPattern />
       <Sponsorship />
+      <Partners />
       <SecondRoadPattern />
       <FAQSection />
       <ThirdRoadPattern />
       <ContactSection />
+      <Footer />
     </>
   )
 }

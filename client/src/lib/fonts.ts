@@ -1,6 +1,14 @@
 import { Kode_Mono, Silkscreen, Unica_One } from "next/font/google"
 import localFont from "next/font/local"
 
+import { Zen_Dots } from "next/font/google"
+
+export const zenDots = Zen_Dots({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-zen-dots",
+})
+
 export const silkscreen = Silkscreen({
   weight: "700",
   subsets: ["latin"],

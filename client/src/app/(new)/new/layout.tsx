@@ -3,6 +3,7 @@ import type * as React from "react"
 
 import "@/styles/new_globals.css"
 import "@/styles/root-layout.css"
+import { zenDots } from "@/lib/fonts"
 
 interface NavButtonProps {
   section: string
@@ -26,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={zenDots.variable}>
       <body className="block background-cream-gradient min-h-screen">
-        <div className="w-full bg-[#003049] h-[9rem] text-white flex items-center px-4 gap-4">
+        <div className="w-full bg-[#003049] min-h-[9rem] text-white flex flex-wrap items-center px-4 gap-4">
           <Image src="/new_assets/logo.png" alt="DUWiT Hacks Logo" width={100} height={100} className="" />
           <NavButton section="About" />
           <NavButton section="Sponsorship" />
