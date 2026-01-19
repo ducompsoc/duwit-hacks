@@ -48,8 +48,8 @@ function Header() {
         />
       </div>
       <div className="flex flex-col md:flex-row gap-6 items-center justify-center mt-12 md:mt-20 px-4 md:px-0">
-        <HeaderButtons text="Sign Up Now" />
-        <HeaderButtons text="Submit Your CV" onClick={() => alert("Unavailable at the moment")} />
+        <HeaderButtons text="Sign Up Now" onClick={() => window.open("https://forms.cloud.microsoft/e/2J7u4GthXP", "_blank")} />
+        <HeaderButtons text="Submit Your CV" onClick={() => window.open("mailto:hello@duwithacks.com", "_blank")} />
       </div>
     </header>
   )
@@ -156,16 +156,23 @@ function Sponsorship() {
 
 function Partners() {
   return (
-    <section id="partners" className="relative w-full min-h-[150px] md:min-h-[400px]">
-      <Image
+    <section id="partners" className="relative w-full min-h-[150px] md:min-h-[400px] bg-[#B1C9D9]">
+      {/* <Image
         src="/new_assets/Sponsorship-Section.png"
         alt="Sponsorship Section"
         width={1920}
         height={1080}
         className="w-full h-full object-cover"
+      /> */}
+      <Image
+        src="/new_assets/grandstand+trees.png"
+        alt="Partners Section"
+        width={1920}
+        height={1080}
+        className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 flex items-center px-6 md:px-[10%]">
-        <div className="w-full flex flex-row items-center justify-between gap-4 transform translate-y-3 md:translate-y-8">
+      <div className="inset-0 flex items-center px-6 md:px-[10%] bg-[#0B2639] py-4">
+        <div className="w-full flex flex-row items-center justify-between gap-4 transform">
           <h2 className="text-3xl md:text-[3.5rem] text-left text-[#FFFFFF] [-webkit-text-stroke:1px_#780000] md:[-webkit-text-stroke:3px_#780000] font-bold">
             Partners
           </h2>
@@ -180,6 +187,13 @@ function Partners() {
           </div>
         </div>
       </div>
+      <Image
+        src="/new_assets/Track.png"
+        alt="Partners Section Bottom"
+        width={1920}
+        height={1080}
+        className="w-full h-full object-cover mt-[-4px]"
+      />
     </section>
   )
 }
