@@ -58,3 +58,33 @@
   /* Flip every other repetition */
   /* transform: scaleX(-1); */
 }
+
+/* @keyframes drive {
+  from {
+    transform: translateX(-20vw) rotate(90deg);
+  }
+  to {
+    transform: translateX(120vw) rotate(90deg);
+  }
+} */
+
+@keyframes drive {
+  0% {
+    /* Start at the very left edge of the parent */
+    transform: translateX(0) rotate(90deg);
+  }
+  100% {
+    /* Move to the very right edge of the parent */
+    /* Subtracting car width (e.g., 290px) keeps it from disappearing too late */
+    transform: translateX(calc(100vw - 150px)) rotate(90deg);
+  }
+}
+
+.animate-drive {
+  animation: drive var(--speed, 8s) linear infinite;
+}
+
+/* Optional: Offset the second car so they don't overlap perfectly */
+.delay-animation {
+  animation-delay: -5s; 
+}

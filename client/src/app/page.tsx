@@ -206,14 +206,14 @@ function SecondRoadPattern() {
         alt="car"
         width={150}
         height={150}
-        className="rotate-90 absolute left-[10%] md:left-[17%] md:w-[290px]"
+        className="rotate-90 absolute md:w-[290px] animate-drive"
       />
       <Image
         src="/new_assets/red blue white car.png"
         alt="car"
         width={150}
         height={150}
-        className="rotate-90 absolute right-[5%] md:w-[290px]"
+        className="rotate-90 absolute md:w-[290px] animate-drive delay-animation"
       />
     </div>
   )
@@ -315,7 +315,8 @@ function ThirdRoadPattern() {
         alt="car"
         width={150}
         height={150}
-        className="rotate-90 absolute left-[10%] md:left-[500px] md:w-[290px]"
+        style={{ '--speed': '5s' }}
+        className="rotate-90 absolute md:w-[290px] animate-drive"
       />
     </div>
   )
