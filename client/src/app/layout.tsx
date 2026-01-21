@@ -28,6 +28,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={zenDots.variable}>
+      <head>
+        <title>DUWiT Hacks 2026</title>
+        <meta name="description" content="DUWiT Hacks 2026 - Durham University" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
       <body className="block background-cream-gradient min-h-screen">
         <div className="w-full bg-[#003049] min-h-[5rem] md:min-h-[9rem] text-white flex flex-wrap items-center justify-center md:justify-start px-4 py-4 md:py-0 gap-2 md:gap-4">
           <Image
