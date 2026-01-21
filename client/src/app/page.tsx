@@ -324,7 +324,7 @@ function ThirdRoadPattern() {
 
 function ContactSection() {
   return (
-    <section id="Contact Us" className="py-10 px-6 md:px-[10%]">
+    <section id="Contact us" className="py-10 px-6 md:px-[10%]">
       <h2 className="text-3xl md:text-[3.5rem] text-left text-[#FFFFFF] mb-8 font-bold [-webkit-text-stroke:1px_#003049] md:[-webkit-text-stroke:3px_#003049]">
         Contact Us
       </h2>
