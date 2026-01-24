@@ -104,7 +104,7 @@ function FirstRoadPattern() {
 
 function Sponsorship() {
   return (
-    <section id="Sponsorship" className="flex flex-col w-full py-10 px-4 gap-8 md:gap-12 md:px-[10%]">
+    <section id="Sponsorship" className="flex flex-col w-full py-10 px-4 gap-8 md:gap-12 md:px-[10%] text-[#780000] font-bold md:text-4xl text-xl">
       <div id="sponsors" className="flex justify-center md:justify-start py-2">
         <h2 className="text-3xl md:text-[3.5rem] text-left text-[#FFFFFF] [-webkit-text-stroke:1px_#003049] md:[-webkit-text-stroke:3px_#003049] font-bold">
           Sponsors
@@ -112,42 +112,106 @@ function Sponsorship() {
       </div>
       <div className="px-4 md:px-[10%]">
         <div className="flex items-center gap-4 mb-4 md:mb-8">
-          <h3 className="text-xl md:text-[1.5rem] text-left text-[#000000] tracking-[.15em]">Champion</h3>
+          <h3 className="text-xl md:text-[3rem] text-left text-[#000000] tracking-[.15em]">Champion</h3>
           <Image src="/new_assets/Trophy.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
         </div>
         <div className="flex flex-wrap items-center gap-4 md:gap-8 justify-center">
-          <Image src="/new_assets/_ block.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
-          <Image
-            src="/new_assets/Neptune North.png"
-            alt=""
-            width={80}
-            height={80}
-            className="md:w-[120px] md:h-[120px]"
-          />
-          <Image src="/new_assets/Accenture.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
-          <Image src="/new_assets/_ block.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
+          {/* placeholder sponsor */}
+          <div className="border-[#780000] p-1 md:border-[20px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[240px] md:h-[240px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              ?
+            </div>
+          </div>
+          {/* accenture */}
+          <div className="border-[#780000] p-1 md:border-[20px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[240px] md:h-[240px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src="/new_assets/accenture logo.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          {/* Neptune North */}
+          <div className="border-[#780000] p-1 md:border-[20px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[240px] md:h-[240px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src="/new_assets/neptune north logo.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          {/* placeholder sponsor */}
+          <div className="border-[#780000] p-1 md:border-[20px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[240px] md:h-[240px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              ?
+            </div>
+          </div>
         </div>
       </div>
       <div className="px-4 md:px-[10%]">
         <div className="flex items-center gap-4 mb-4 md:mb-8">
-          <h3 className="text-xl md:text-[1.5rem] text-left text-[#000000] tracking-[.15em]">Podium Finisher</h3>
+          <h3 className="text-xl md:text-[2.3rem] text-left text-[#000000] tracking-[.15em]">Podium Finisher</h3>
           <Image src="/new_assets/Silver Medal.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
         </div>
         <div className="flex flex-wrap items-center gap-4 md:gap-8 justify-center">
-          <Image src="/new_assets/_ block.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
-          <Image src="/new_assets/_ block.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
-          <Image src="/new_assets/_ block.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
+          {/* placeholder */}
+          <div className="border-[#780000] p-1 md:border-[15px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[200px] md:h-[200px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              ?
+            </div>
+          </div>
+          {/* Github */}
+          <div className="border-[#780000] p-1 md:border-[15px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[200px] md:h-[200px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src="/new_assets/github logo black.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          {/* placeholder */}
+          <div className="border-[#780000] p-1 md:border-[15px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[200px] md:h-[200px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              ?
+            </div>
+          </div>
         </div>
       </div>
       <div className="px-4 md:px-[10%]">
         <div className="flex items-center gap-4 mb-4 md:mb-8">
-          <h3 className="text-xl md:text-[1.5rem] text-left text-[#000000] tracking-[.15em]">Pit Crew</h3>
+          <h3 className="text-xl md:text-[1.8rem] text-left text-[#000000] tracking-[.15em]">Pit Crew</h3>
           <Image src="/new_assets/Wrench.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
         </div>
         <div className="flex flex-wrap items-center gap-4 md:gap-8 justify-center">
-          <Image src="/new_assets/_ block.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
-          <Image src="/new_assets/RTC.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
-          <Image src="/new_assets/_ block.png" alt="" width={80} height={80} className="md:w-[120px] md:h-[120px]" />
+          {/* placeholder */}
+          <div className="border-[#780000] p-1 md:border-[10px] border-[5px] md:rounded-[30px] rounded-[8px] w-[80px] h-[80px] md:w-[160px] md:h-[160px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              ?
+            </div>
+          </div>
+          {/* RTC logo */}
+          <div className="border-[#780000] p-1 md:border-[10px] border-[5px] md:rounded-[30px] rounded-[8px] w-[80px] h-[80px] md:w-[160px] md:h-[160px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src="/new_assets/rtc logo.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          {/* placeholder */}
+          <div className="border-[#780000] p-1 md:border-[10px] border-[5px] md:rounded-[30px] rounded-[8px] w-[80px] h-[80px] md:w-[160px] md:h-[160px] bg-white">
+            <div className="relative w-full h-full flex items-center justify-center">
+              ?
+            </div>
+          </div>
         </div>
       </div>
     </section>
