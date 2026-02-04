@@ -460,7 +460,7 @@ function Footer() {
           <a href="https://mlh.io/code-of-conduct" className="underline">
             MLH Code of Conduct
           </a>
-          . DUWiT is an event hosted by Durham University Computing Society (
+          . DUWiT Hacks is an event hosted by Durham University Computing Society (
           <a href="https://compsoc.tech" className="underline">
             compsoc.tech
           </a>
