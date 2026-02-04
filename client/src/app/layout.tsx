@@ -3,6 +3,7 @@ import type * as React from "react"
 
 import "@/styles/new_globals.css"
 import "@/styles/root-layout.css"
+import { MLHBanner } from "@/components/mlh-banner"
 import { zenDots } from "@/lib/fonts"
 
 interface NavButtonProps {
@@ -52,6 +53,10 @@ export default function RootLayout({
           <NavButton section="Sponsorship" />
           <NavButton section="FAQs" />
           <NavButton section="Contact us" />
+        </div>
+        {/* MLH Banner */}
+        <div className="fixed top-0 overflow-visible w-[100%] z-50">
+          <MLHBanner season={2026} variant="white" region="eu" />
         </div>
         {children}
       </body>
