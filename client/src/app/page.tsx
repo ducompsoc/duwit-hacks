@@ -240,13 +240,21 @@ function Partners() {
           <h2 className="text-3xl md:text-[3.5rem] text-left text-[#FFFFFF] [-webkit-text-stroke:1px_#780000] md:[-webkit-text-stroke:3px_#780000] font-bold">
             Partners
           </h2>
-          <div id="sponsor-logos" className="flex flex-row flex-wrap justify-end items-center gap-2 md:gap-4">
+          <div id="sponsor-logos" className="flex flex-row flex-wrap justify-end items-center gap-2 md:gap-5">
             <Image
               src="/new_assets/Group 619.png"
               alt=""
               width={60}
               height={60}
               className="w-[30px] h-[30px] md:w-[80px] md:h-[80px] translate-x-[-2px]"
+            />
+            {/* MLH Logo */}
+            <Image
+              className="w-[30px] h-[30px] md:w-[120px] md:h-[120px] translate-x-[-2px]"
+              src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.svg" // MLH Logo SVG
+              alt="MLH Logo"
+              width={80}
+              height={80}
             />
           </div>
         </div>
