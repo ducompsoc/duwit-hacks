@@ -242,15 +242,15 @@ function Partners() {
           </h2>
           <div id="sponsor-logos" className="flex flex-row flex-wrap justify-end items-center gap-2 md:gap-5">
             <Image
-              src="/new_assets/Group 619.png"
+              src="/new_assets/tenzing_logo_vanilla.svg"
               alt=""
               width={60}
               height={60}
-              className="w-[30px] h-[30px] md:w-[80px] md:h-[80px] translate-x-[-2px]"
+              className="w-[40px] h-[40px] md:w-[120px] md:h-[120px]"
             />
             {/* MLH Logo */}
             <Image
-              className="w-[30px] h-[30px] md:w-[120px] md:h-[120px] translate-x-[-2px]"
+              className="w-[30px] h-[30px] md:w-[120px] md:h-[120px]"
               src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.svg" // MLH Logo SVG
               alt="MLH Logo"
               width={80}
