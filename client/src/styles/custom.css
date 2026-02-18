@@ -23,8 +23,8 @@
 
 /* #about {
     background-image:
-        url('/new_assets/bg_top_car.png'),
-        url('/new_assets/bg_side_car.png');
+        url('bg_top_car.png'),
+        url('bg_side_car.png');
 
     background-position:
         0 0,
@@ -42,8 +42,8 @@
 /* Alternative pattern with flipped images */
 #about {
   background-color: chocolate;
-  background-image: url("/new_assets/bg_top_car.png"), url("/new_assets/bg_top_car.png"),
-    url("/new_assets/bg_side_car.png"), url("/new_assets/bg_side_car.png");
+  background-image: url("/bg_top_car.png"), url("/bg_top_car.png"),
+    url("/bg_side_car.png"), url("/bg_side_car.png");
 
   background-position: 0 0, 100px 0, 0 0, 0 100px;
 

@@ -33,14 +33,14 @@ function Header() {
         <p className="md:mb-8">7 - 8th March 2026</p>
         <p className="">Durham University</p>
         <Image
-          src="/new_assets/Flags.png"
+          src="/Flags.png"
           alt="Hero Image"
           width={150}
           height={150}
           className="absolute left-0 -top-5 md:-top-16 -z-10 w-[80px] md:w-[350px]"
         />
         <Image
-          src="/new_assets/Flags.png"
+          src="/Flags.png"
           alt="Hero Image"
           width={150}
           height={150}
@@ -64,7 +64,7 @@ function FirstDivider() {
         </p>
       </div>
       <Image
-        src="/new_assets/bw car.png"
+        src="/bw car.png"
         alt=""
         width={80}
         height={80}
@@ -79,14 +79,14 @@ function AboutSection() {
     <section id="About" className="relative w-full min-h-[300px]">
       <div className="w-full h-full">
         <Image
-          src="/new_assets/Background.png"
+          src="/Background.png"
           alt=""
           width={1920}
           height={1080}
           className="w-full h-full min-h-[300px] object-cover"
         />
       </div>
-      <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-[10%]">
+      <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-[10%] py-4">
         <h2 className="text-3xl md:text-[3.5rem] text-left text-[#FFFFFF] mb-2 md:mb-8 [-webkit-text-stroke:1px_#780000] md:[-webkit-text-stroke:3px_#780000] font-bold">
           About
         </h2>
@@ -113,7 +113,7 @@ function Sponsorship() {
       <div className="px-4 md:px-[10%]">
         <div className="flex items-center gap-4 mb-4 md:mb-8">
           <h3 className="text-xl md:text-[3rem] text-left text-[#000000] tracking-[.15em]">Champion</h3>
-          <Image src="/new_assets/Trophy.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
+          <Image src="/Trophy.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
         </div>
         <div className="flex flex-wrap items-center gap-4 md:gap-8 justify-center">
           {/* placeholder sponsor */}
@@ -126,7 +126,7 @@ function Sponsorship() {
           <div className="border-[#780000] p-1 md:border-[20px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[240px] md:h-[240px] bg-white">
             <div className="relative w-full h-full flex items-center justify-center">
               <Image
-                src="/new_assets/accenture logo.png"
+                src="/accenture logo.png"
                 alt=""
                 fill
                 className="object-contain"
@@ -137,7 +137,7 @@ function Sponsorship() {
           <div className="border-[#780000] p-1 md:border-[20px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[240px] md:h-[240px] bg-white">
             <div className="relative w-full h-full flex items-center justify-center">
               <Image
-                src="/new_assets/neptune north logo.png"
+                src="/neptune north logo.png"
                 alt=""
                 fill
                 className="object-contain"
@@ -155,7 +155,7 @@ function Sponsorship() {
       <div className="px-4 md:px-[10%]">
         <div className="flex items-center gap-4 mb-4 md:mb-8">
           <h3 className="text-xl md:text-[2.3rem] text-left text-[#000000] tracking-[.15em]">Podium Finisher</h3>
-          <Image src="/new_assets/Silver Medal.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
+          <Image src="/Silver Medal.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
         </div>
         <div className="flex flex-wrap items-center gap-4 md:gap-8 justify-center">
           {/* placeholder */}
@@ -168,7 +168,7 @@ function Sponsorship() {
           <div className="border-[#780000] p-1 md:border-[15px] border-[7px] md:rounded-[40px] rounded-[10px] w-[100px] h-[100px] md:w-[200px] md:h-[200px] bg-white">
             <div className="relative w-full h-full flex items-center justify-center">
               <Image
-                src="/new_assets/github logo black.png"
+                src="/github logo black.png"
                 alt=""
                 fill
                 className="object-contain"
@@ -186,7 +186,7 @@ function Sponsorship() {
       <div className="px-4 md:px-[10%]">
         <div className="flex items-center gap-4 mb-4 md:mb-8">
           <h3 className="text-xl md:text-[1.8rem] text-left text-[#000000] tracking-[.15em]">Pit Crew</h3>
-          <Image src="/new_assets/Wrench.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
+          <Image src="/Wrench.png" alt="" width={40} height={40} className="md:w-[60px] md:h-[60px]" />
         </div>
         <div className="flex flex-wrap items-center gap-4 md:gap-8 justify-center">
           {/* placeholder */}
@@ -199,7 +199,7 @@ function Sponsorship() {
           <div className="border-[#780000] p-1 md:border-[10px] border-[5px] md:rounded-[30px] rounded-[8px] w-[80px] h-[80px] md:w-[160px] md:h-[160px] bg-white">
             <div className="relative w-full h-full flex items-center justify-center">
               <Image
-                src="/new_assets/rtc logo.png"
+                src="/rtc logo.png"
                 alt=""
                 fill
                 className="object-contain"
@@ -222,14 +222,14 @@ function Partners() {
   return (
     <section id="partners" className="relative w-full min-h-[150px] md:min-h-[400px] bg-[#B1C9D9]">
       {/* <Image
-        src="/new_assets/Sponsorship-Section.png"
+        src="/Sponsorship-Section.png"
         alt="Sponsorship Section"
         width={1920}
         height={1080}
         className="w-full h-full object-cover"
       /> */}
       <Image
-        src="/new_assets/grandstand+trees.png"
+        src="/grandstand+trees.png"
         alt="Partners Section"
         width={1920}
         height={1080}
@@ -241,8 +241,17 @@ function Partners() {
             Partners
           </h2>
           <div id="sponsor-logos" className="flex flex-row flex-wrap justify-end items-center gap-2 md:gap-5">
+            {/* Hackathons UK */}
             <Image
-              src="/new_assets/tenzing_logo_vanilla.svg"
+              className=""
+              src="/hackathons_uk_white.png" // Hackathons UK Logo
+              alt="Hackathons UK Logo"
+              width={180}
+              height={30}
+            />
+            {/* Tenzig */}
+            <Image
+              src="/tenzing_logo_vanilla.svg"
               alt=""
               width={60}
               height={60}
@@ -256,11 +265,12 @@ function Partners() {
               width={80}
               height={80}
             />
+            
           </div>
         </div>
       </div>
       <Image
-        src="/new_assets/Track.png"
+        src="/Track.png"
         alt="Partners Section Bottom"
         width={1920}
         height={1080}
@@ -274,14 +284,14 @@ function SecondRoadPattern() {
   return (
     <div className="road-pattern relative flex items-center justify-start overflow-hidden">
       <Image
-        src="/new_assets/red car.png"
+        src="/red car.png"
         alt="car"
         width={150}
         height={150}
         className="rotate-90 absolute md:w-[290px] animate-drive"
       />
       <Image
-        src="/new_assets/red blue white car.png"
+        src="/red blue white car.png"
         alt="car"
         width={150}
         height={150}
@@ -383,7 +393,7 @@ function ThirdRoadPattern() {
   return (
     <div className="road-pattern relative flex items-center overflow-hidden">
       <Image
-        src="/new_assets/red white car.png"
+        src="/red white car.png"
         alt="car"
         width={150}
         height={150}
@@ -402,7 +412,7 @@ function ContactSection() {
       </h2>
       <div id="contact-info" className="space-y-4 md:space-y-2 text-base md:text-[2rem]">
         <p className="flex items-center gap-4 text-[#000000]">
-          <Image src="/new_assets/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
+          <Image src="/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
           <span>
             Email:{" "}
             <a href="mailto:hello@duwithacks.com" className="text-[#003049] underline break-all">
@@ -411,7 +421,7 @@ function ContactSection() {
           </span>
         </p>
         <p className="flex items-center gap-4 text-[#000000]">
-          <Image src="/new_assets/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
+          <Image src="/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
           <span>
             Instagram:{" "}
             <a href="https://www.instagram.com/duwithacks/" className="text-[#003049] underline">
@@ -420,7 +430,7 @@ function ContactSection() {
           </span>
         </p>
         <p className="flex items-center gap-4 text-[#000000]">
-          <Image src="/new_assets/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
+          <Image src="/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
           <span>
             Tiktok:{" "}
             <a href="https://www.tiktok.com/@duwit.hacks" className="text-[#003049] underline">
@@ -429,7 +439,7 @@ function ContactSection() {
           </span>
         </p>
         <p className="flex items-center gap-4 text-[#000000]">
-          <Image src="/new_assets/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
+          <Image src="/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
           <span>
             LinkedIn:{" "}
             <a href="https://www.linkedin.com/company/duwit-hacks/" className="text-[#003049] underline">
@@ -438,7 +448,7 @@ function ContactSection() {
           </span>
         </p>
         <p className="flex items-center gap-4 text-[#000000]">
-          <Image src="/new_assets/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
+          <Image src="/Flags.png" alt="Flag" width={40} height={40} className="md:w-[80px] md:h-[80px]" />
           <span>
             Sponsors:{" "}
             <a href="mailto:sponsor@duwithacks.com" className="text-[#003049] underline break-all">

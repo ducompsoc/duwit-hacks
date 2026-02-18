@@ -43,7 +43,7 @@ export default function RootLayout({
       <body className="block background-cream-gradient min-h-screen">
         <div className="w-full bg-[#003049] min-h-[5rem] md:min-h-[9rem] text-white flex flex-wrap items-center justify-center md:justify-start px-4 py-4 md:py-0 gap-2 md:gap-4">
           <Image
-            src="/new_assets/logo.png"
+            src="/logo.png"
             alt="DUWiT Hacks Logo"
             width={60}
             height={60}
