@@ -66,8 +66,15 @@ function Header() {
               <li>Your CV may include personal data such as your name, contact details, education history, employment history and any other information you choose to include.</li>
               <li>Your CV will be shared with DUWiT Hacks' Sponsors and Partners for the purpose of potential recruitment and networking opportunities.</li>
               <li>The lawful basis for processing is your consent. By submitting your CV, you agree to it being shared for this purpose.</li>
-              <li>DUWiT Hacks and Durham Students' Union will not retain copies of CVs beyond the event unless explicitly stated. All copies will be securely deleted within [X days - e.g. 7 days] of the event.</li>
-              <li>Participating employers will process your data in accordance with their own privacy notices. You can find these [include the sponsors privacy notice]</li>
+              <li>DUWiT Hacks and Durham Students' Union will not retain copies of CVs beyond the event unless explicitly stated. All copies will be securely deleted within 7 days of the event.</li>
+              <li>Participating employers will process your data in accordance with their own privacy notices. You can find these here
+                <ul className="list-disc list-inside">
+                  <li><a href="https://www.accenture.com/gb-en/careers/support/privacy-statement" className="underline">Accenture</a></li>
+                  <li><a href="https://www.neptunenorth.co.uk/privacy-policy" className="underline">Neptune North</a></li>
+                  <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-candidate-privacy-policy" className="underline">GitHub</a></li>
+                  <li><a href="https://rewritingthecode.org/privacy-policy/" className="underline">Rewriting The Code (RTC)</a></li>
+                </ul>
+              </li>
             </ul>
             For more information about how Durham Students' Union processes personal data, please see the Union's main Privacy Notice: <a href="https://www.durhamsu.com/privacy">Privacy information</a>
           </p>
