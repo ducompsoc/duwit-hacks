@@ -51,6 +51,28 @@ function Header() {
         <HeaderButtons text="Sign Up Now" onClick={() => window.open("https://forms.cloud.microsoft/e/2J7u4GthXP", "_blank")} />
         <HeaderButtons text="Submit Your CV" onClick={() => window.open("mailto:hello@duwithacks.com", "_blank")} />
       </div>
+      {/* privacy notice drop down */}
+      <div>
+        <details className="mt-6 text-sm md:text-base">
+          <summary className="cursor-pointer text-[#000000]">
+            Privacy Notice
+          </summary>
+          <p className="mt-2 text-[#000000]">
+            DUWiT Hacks is part of Durham Students' Union and processes personal data in line with the Union's Data Protection Policy.
+          </p>
+          <p className="text-[#000000]">
+            If you choose to submit your CV for this event, please note:
+            <ul className="list-disc list-inside">
+              <li>Your CV may include personal data such as your name, contact details, education history, employment history and any other information you choose to include.</li>
+              <li>Your CV will be shared with DUWiT Hacks' Sponsors and Partners for the purpose of potential recruitment and networking opportunities.</li>
+              <li>The lawful basis for processing is your consent. By submitting your CV, you agree to it being shared for this purpose.</li>
+              <li>DUWiT Hacks and Durham Students' Union will not retain copies of CVs beyond the event unless explicitly stated. All copies will be securely deleted within [X days - e.g. 7 days] of the event.</li>
+              <li>Participating employers will process your data in accordance with their own privacy notices. You can find these [include the sponsors privacy notice]</li>
+            </ul>
+            For more information about how Durham Students' Union processes personal data, please see the Union's main Privacy Notice: <a href="https://www.durhamsu.com/privacy">Privacy information</a>
+          </p>
+        </details>
+      </div>
     </header>
   )
 }
