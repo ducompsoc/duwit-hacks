@@ -270,6 +270,14 @@ function Partners() {
             Partners
           </h2>
           <div id="sponsor-logos" className="flex flex-row flex-wrap justify-end items-center gap-2 md:gap-5">
+            {/* Tail'ed Community */}
+            <Image
+              className=""
+              src="/Tail'ed Community logo.svg" // Hackathons UK Logo
+              alt="Hackathons UK Logo"
+              width={180}
+              height={30}
+            />
             {/* Hackathons UK */}
             <Image
               className=""
