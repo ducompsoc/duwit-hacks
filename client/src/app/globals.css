@@ -1,26 +1,361 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --space-primary: #ae4b7e;
+  --space-primary-light: #cf83ce;
+  --space-primary-muted: #bd9bbd;
+  --space-secondary: #5f4c9b;
+  --space-deep: #292398;
+  --space-deep-dark: #1a1560;
+  --space-gold: #ffaa16;
+  --space-gold-light: #ffbf38;
+  --space-cream: #ffe7a9;
+  --space-lime: #b7de24;
+  --space-teal: #41636b;
+  --space-void: #07051a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-space-primary: var(--space-primary);
+  --color-space-primary-light: var(--space-primary-light);
+  --color-space-primary-muted: var(--space-primary-muted);
+  --color-space-secondary: var(--space-secondary);
+  --color-space-deep: var(--space-deep);
+  --color-space-deep-dark: var(--space-deep-dark);
+  --color-space-gold: var(--space-gold);
+  --color-space-gold-light: var(--space-gold-light);
+  --color-space-cream: var(--space-cream);
+  --color-space-lime: var(--space-lime);
+  --color-space-teal: var(--space-teal);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--space-void);
+  color: var(--space-cream);
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.title-gradient {
+  background: linear-gradient(135deg, #ffe7a9 0%, #ffbf38 28%, #cf83ce 62%, #ae4b7e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 110%, rgb(41 35 152 / 0.45), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 0%, rgb(174 75 126 / 0.22), transparent 50%),
+    #07051a;
+}
+
+.starfield::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgb(0 0 0 / 0.12) 3px,
+    rgb(0 0 0 / 0.12) 4px
+  );
+  opacity: 0.35;
+}
+
+.nebula {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.nebula-a {
+  width: 42vw;
+  height: 42vw;
+  left: -8%;
+  top: 18%;
+  background: rgb(95 76 155 / 0.45);
+}
+
+.nebula-b {
+  width: 36vw;
+  height: 36vw;
+  right: -10%;
+  top: -8%;
+  background: rgb(174 75 126 / 0.38);
+}
+
+.nebula-c {
+  width: 28vw;
+  height: 28vw;
+  right: 18%;
+  bottom: -6%;
+  background: rgb(255 170 22 / 0.12);
+}
+
+.star {
+  position: absolute;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 6px rgb(255 231 169 / 0.8);
+  animation: twinkle ease-in-out infinite;
+}
+
+.star-far {
+  transform: scale(0.7);
+}
+
+.star-near {
+  box-shadow: 0 0 10px rgb(255 191 56 / 0.9);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgb(255 170 22 / 0.45);
+  border-radius: 999px;
+  background: rgb(26 21 96 / 0.45);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--space-gold-light);
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--space-lime);
+  box-shadow: 0 0 10px var(--space-lime);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.terminal-panel {
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 1rem;
+  background: rgb(7 5 26 / 0.55);
+  padding: 1.25rem 1.35rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 1px rgb(207 131 206 / 0.08), 0 20px 50px rgb(0 0 0 / 0.35);
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 0.55rem;
+  height: 1em;
+  margin-left: 0.15rem;
+  background: var(--space-lime);
+  vertical-align: text-bottom;
+  animation: blink 1.1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.mission-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  background: rgb(255 255 255 / 0.06);
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.mission-card:hover {
+  transform: translateY(-2px);
+  border-color: rgb(255 191 56 / 0.55);
+  background: rgb(255 255 255 / 0.1);
+}
+
+.archive-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  background: #07051a;
+}
+
+/* Hide the 2027 MLH banner while viewing an archived site (iframe has its own). */
+body:has(.archive-shell) .mlh-banner-slot {
+  display: none;
+}
+
+.archive-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.7rem 1rem;
+  padding-right: 11rem;
+  border-bottom: 1px solid rgb(255 255 255 / 0.12);
+  background: rgb(26 21 96 / 0.92);
+}
+
+.archive-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-left: auto;
+}
+
+.archive-back {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--space-cream);
+  background: transparent;
+  border: 1px solid rgb(255 231 169 / 0.3);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.archive-back:hover {
+  border-color: var(--space-gold);
+  color: var(--space-gold-light);
+}
+
+.archive-toolbar-title {
+  flex: 1;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgb(255 231 169 / 0.6);
+}
+
+.archive-open-tab {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--space-gold-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.archive-years {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.archive-year-btn {
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  color: var(--space-cream);
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.archive-year-btn.is-active {
+  background: var(--space-gold);
+  color: var(--space-deep-dark);
+  border-color: var(--space-gold);
+}
+
+.archive-stage {
+  flex: 1;
+  min-height: 0;
+  background: #111;
+}
+
+.archive-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.archive-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 40%, rgb(95 76 155 / 0.35), transparent 70%),
+    #07051a;
+}
+
+.btn-archive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--space-deep-dark);
+  background: linear-gradient(135deg, var(--space-gold) 0%, var(--space-gold-light) 100%);
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star,
+  .status-dot,
+  .cursor-blink {
+    animation: none;
+  }
 }
