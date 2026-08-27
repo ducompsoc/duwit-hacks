@@ -17,15 +17,12 @@ export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?:
 
   return (
     <>
-      <main className="relative z-10 flex min-h-dvh flex-col px-5 py-8 md:px-10 md:py-12">
-        <header className="flex items-start justify-between gap-4">
-          <p className="font-mono text-[10px] tracking-[0.35em] text-space-cream/55 uppercase md:text-xs">
-            DUWiT // Durham University Women in Tech
-          </p>
-        </header>
-
+      <main className="relative z-10 flex min-h-dvh flex-col px-5 pb-8 pt-14 md:px-10 md:pb-12 md:pt-16">
         <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center text-center">
-          <h1 className="font-display text-5xl leading-none tracking-wide md:text-7xl lg:text-8xl">
+          <p className="font-mono text-[10px] tracking-[0.28em] text-space-cream/55 uppercase md:text-xs">
+            Durham University Women in Tech
+          </p>
+          <h1 className="font-display mt-3 text-5xl leading-none tracking-wide md:mt-4 md:text-7xl lg:text-8xl">
             <span className="title-gradient">DUWiT</span>
           </h1>
           <p className="font-display mt-2 text-xl tracking-[0.38em] text-space-cream md:text-3xl">HACKS 2027</p>
@@ -53,7 +50,7 @@ export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?:
                   <button
                     key={entry.year}
                     type="button"
-                    className="mission-card"
+                    className="mission-card text-center sm:text-left"
                     onClick={() => setArchiveYear(entry.year)}
                   >
                     <span className="font-display block text-2xl text-space-cream">{entry.year}</span>
@@ -65,7 +62,7 @@ export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?:
                     href={entry.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="mission-card"
+                    className="mission-card text-center sm:text-left"
                   >
                     <span className="font-display block text-2xl text-space-cream">{entry.year}</span>
                     <span className="mt-1 block font-body text-xs text-space-cream/65">View Archived Devpost</span>

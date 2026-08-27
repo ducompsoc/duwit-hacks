@@ -20,8 +20,25 @@ const shareTechMono = Share_Tech_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://duwithacks.com"),
   title: "DUWiT Hacks 2027",
-  description:"Durham University Women in Tech Hackathon. The 2027 website is in production. Browse previous missions while you wait.",
+  description:
+    "Durham University Women in Tech Hackathon. The 2027 website is in production. Browse previous missions while you wait.",
+  openGraph: {
+    title: "DUWiT Hacks 2027",
+    description:
+      "Durham University Women in Tech Hackathon. The 2027 website is in production. Browse previous missions while you wait.",
+    url: "https://duwithacks.com",
+    siteName: "DUWiT Hacks",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DUWiT Hacks 2027",
+    description:
+      "Durham University Women in Tech Hackathon. The 2027 website is in production. Browse previous missions while you wait.",
+  },
 }
 
 export default function RootLayout({
