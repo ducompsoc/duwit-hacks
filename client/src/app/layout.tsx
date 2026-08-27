@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Orbitron, Outfit, Share_Tech_Mono } from "next/font/google"
 import { MLHBanner } from "@/components/mlh-banner"
+import { siteDescription } from "@/lib/site"
 import "./globals.css"
 
 const orbitron = Orbitron({
@@ -22,12 +23,10 @@ const shareTechMono = Share_Tech_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://duwithacks.com"),
   title: "DUWiT Hacks 2027",
-  description:
-    "Durham University Women in Tech Hackathon. The 2027 website is in production. Browse previous missions while you wait.",
+  description: siteDescription,
   openGraph: {
     title: "DUWiT Hacks 2027",
-    description:
-      "Durham University Women in Tech Hackathon. The 2027 website is in production. Browse previous missions while you wait.",
+    description: siteDescription,
     url: "https://duwithacks.com",
     siteName: "DUWiT Hacks",
     locale: "en_GB",
@@ -36,8 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "DUWiT Hacks 2027",
-    description:
-      "Durham University Women in Tech Hackathon. The 2027 website is in production. Browse previous missions while you wait.",
+    description: siteDescription,
   },
 }
 
