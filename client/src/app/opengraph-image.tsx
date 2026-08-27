@@ -170,16 +170,17 @@ export default async function Image() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            padding: "0 80px",
+            width: "72%",
+            maxWidth: 860,
+            padding: "0 48px",
             textAlign: "center",
           }}
         >
-
           <p
             style={{
-              margin: "18px 0 0",
+              margin: 0,
               fontFamily: "Orbitron",
-              fontSize: 130,
+              fontSize: 100,
               fontWeight: 300,
               lineHeight: 1,
               letterSpacing: "0.04em",
@@ -195,12 +196,12 @@ export default async function Image() {
 
           <p
             style={{
-              margin: "12px 0 0",
+              margin: "14px 0 0",
               fontFamily: "Orbitron",
-              fontSize: 76,
+              fontSize: 60,
               fontWeight: 300,
-              lineHeight: 1,
-              letterSpacing: "0.32em",
+              lineHeight: 1.1,
+              letterSpacing: "0.21em",
               color: "rgba(255, 231, 169, 0.82)",
             }}
           >
