@@ -235,20 +235,48 @@ body:has(.archive-shell) .mlh-banner-slot {
 
 .archive-toolbar {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1rem;
-  padding: 0.7rem 1rem;
-  padding-right: 11rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid rgb(255 255 255 / 0.12);
   background: rgb(26 21 96 / 0.92);
 }
 
-.archive-toolbar-actions {
+.archive-toolbar-primary {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem 1rem;
-  margin-left: auto;
+}
+
+.archive-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .archive-toolbar {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    padding-right: 11rem;
+  }
+
+  .archive-toolbar-primary {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .archive-toolbar-actions {
+    width: auto;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
 }
 
 .archive-back {
@@ -286,17 +314,30 @@ body:has(.archive-shell) .mlh-banner-slot {
   color: var(--space-gold-light);
   text-decoration: underline;
   text-underline-offset: 3px;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgb(255 191 56 / 0.35);
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
 .archive-years {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.4rem;
+}
+
+@media (min-width: 768px) {
+  .archive-years {
+    justify-content: flex-end;
+  }
 }
 
 .archive-year-btn {
   font-family: var(--font-display), sans-serif;
   font-size: 0.95rem;
-  padding: 0.3rem 0.75rem;
+  min-width: 3.25rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 0.5rem;
   border: 1px solid rgb(255 255 255 / 0.18);
   color: var(--space-cream);

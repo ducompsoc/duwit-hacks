@@ -42,10 +42,12 @@ export function ArchiveExplorer({ year, onClose, onSelectYear }: ArchiveExplorer
   return (
     <div className="archive-shell" role="dialog" aria-modal="true" aria-label={`Archive: ${entry.title}`}>
       <div className="archive-toolbar">
-        <button type="button" className="archive-back" onClick={onClose}>
-          ← Return to 2027
-        </button>
-        <p className="archive-toolbar-title">Archived websites</p>
+        <div className="archive-toolbar-primary">
+          <button type="button" className="archive-back" onClick={onClose}>
+            ← Return to 2027
+          </button>
+          <p className="archive-toolbar-title">Archived websites</p>
+        </div>
         <div className="archive-toolbar-actions">
           {entry.kind === "snapshot" && snapshotState === "ready" && (
             <a href={entry.href} target="_blank" rel="noreferrer" className="archive-open-tab">
