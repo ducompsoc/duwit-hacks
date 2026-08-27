@@ -19,14 +19,14 @@ export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?:
     <>
       <main className="relative z-10 flex min-h-dvh flex-col px-5 pb-8 pt-14 md:px-10 md:pb-12 md:pt-16">
         <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center text-center">
-          <p className="font-mono text-[10px] tracking-[0.28em] text-space-cream/55 uppercase md:text-xs">
-            Durham University Women in Tech
-          </p>
-          <h1 className="font-display mt-3 text-5xl leading-none tracking-wide md:mt-4 md:text-7xl lg:text-8xl">
+          <h1 className="font-display text-5xl leading-none tracking-wide md:text-7xl lg:text-8xl">
             <span className="title-gradient">DUWiT</span>
           </h1>
           <p className="font-display mt-2 text-xl tracking-[0.38em] text-space-cream md:text-3xl">HACKS 2027</p>
-
+          <p className="font-mono mt-4 max-w-xs text-[10px] leading-relaxed tracking-[0.22em] text-space-cream/55 uppercase sm:max-w-md md:mt-5 md:text-xs md:tracking-[0.28em]">
+            Durham University Women in Tech
+          </p>
+          
           <div className="terminal-panel mt-8 w-full max-w-xl text-left">
             <p className="font-mono text-[10px] tracking-[0.3em] text-space-gold uppercase">Mission control</p>
             <p className="font-mono mt-3 text-sm leading-relaxed text-space-lime md:text-base">
