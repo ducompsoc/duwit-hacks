@@ -4,6 +4,7 @@ import { useState } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { ArchiveExplorer } from "@/components/archive-explorer"
 import { archives } from "@/lib/archives"
+import { siteDescription } from "@/lib/site"
 
 export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?: number | null }) {
   const [archiveYear, setArchiveYear] = useState<number | null>(initialArchiveYear)
@@ -23,7 +24,7 @@ export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?:
             <span className="title-gradient">DUWiT</span>
           </h1>
           <p className="font-display mt-2 text-xl tracking-[0.38em] text-space-cream md:text-3xl">HACKS 2027</p>
-          <p className="font-mono mt-4 max-w-xs text-[10px] leading-relaxed tracking-[0.22em] text-space-cream/55 uppercase sm:max-w-md md:mt-5 md:text-xs md:tracking-[0.28em]">
+          <p className="font-mono mt-4 max-w-xs text-[10px] leading-relaxed tracking-[0.22em] text-space-cream/80 uppercase sm:max-w-md md:mt-5 md:text-xs md:tracking-[0.28em]">
             Durham University Women in Tech
           </p>
           
@@ -36,6 +37,10 @@ export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?:
               <span className="cursor-blink" />
             </p>
           </div>
+
+          <p className="font-body mt-6 max-w-lg text-sm leading-relaxed text-space-cream/88 md:text-base">
+            {siteDescription}
+          </p>
 
           <section className="mt-10 w-full max-w-xl" aria-labelledby="archive-heading">
             <h2
