@@ -53,6 +53,7 @@
 ## Sources
 !src
 !public
+!content
 
 # Explicit exceptions/ignores
 /client/node_modules
