@@ -164,7 +164,9 @@ body {
 }
 
 .rig-core {
-  --orbit-size: clamp(20rem, min(104vw, 108dvh), 46rem);
+  --orbit-size: clamp(20rem, min(4rem + 88vw, 78dvh + 18vw), 70rem);
+  --orbit-lift: clamp(0rem, calc((100vw - 50rem) * 0.025), 1.2rem);
+  --orbit-extra-tilt: clamp(0deg, calc((100vw - 50rem) / 40rem * 6deg), 6deg);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -184,7 +186,7 @@ body {
   z-index: 1;
   margin: 0;
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(2.6rem, min(2.4rem + 8.6vw, 18dvh), 15rem);
+  font-size: clamp(2.6rem, min(2rem + 10vw, 24dvh, calc(var(--orbit-size) * 0.2)), 13rem);
   font-weight: 900;
   line-height: 0.92;
   letter-spacing: 0.02em;
@@ -227,7 +229,7 @@ body {
   z-index: 1;
   margin: 0.22em 0 0;
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(0.72rem, min(0.62rem + 1.9vw, 4.2dvh), 2.6rem);
+  font-size: clamp(0.72rem, min(0.55rem + 2vw, 4.5dvh, calc(var(--orbit-size) * 0.038)), 2.4rem);
   font-weight: 700;
   letter-spacing: clamp(0.28em, 0.18em + 0.7vw, 0.62em);
   margin-right: calc(clamp(0.28em, 0.18em + 0.7vw, 0.62em) * -1);
@@ -239,7 +241,7 @@ body {
 .title-tag {
   position: absolute;
   left: 50%;
-  top: calc(50% + (var(--orbit-size) * 0.22) + 0.55rem);
+  top: calc(50% + (var(--orbit-size) * 0.2) + 0.7rem - var(--orbit-lift));
   z-index: 3;
   width: max-content;
   max-width: min(26rem, 90vw);
@@ -264,7 +266,7 @@ body {
   top: 50%;
   width: var(--orbit-size);
   aspect-ratio: 1;
-  translate: -50% -50%;
+  translate: -50% calc(-50% - var(--orbit-lift));
   perspective: 1600px;
   opacity: var(--ring-alpha);
   pointer-events: none;
@@ -282,7 +284,7 @@ body {
 .orbit-plane {
   width: 100%;
   height: 100%;
-  transform: rotateX(var(--ring-tilt)) rotateZ(-8deg) scale(var(--ring-scale));
+  transform: rotateX(calc(var(--ring-tilt) + var(--orbit-extra-tilt))) rotateZ(-8deg) scale(var(--ring-scale));
   will-change: transform;
 }
 
