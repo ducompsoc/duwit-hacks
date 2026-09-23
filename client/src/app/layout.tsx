@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Orbitron, Outfit, Share_Tech_Mono } from "next/font/google"
+import { Analytics } from "@/components/analytics"
 import { MLHBanner } from "@/components/mlh-banner"
 import { siteDescription } from "@/lib/site"
 import "./globals.css"
@@ -24,6 +25,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://duwithacks.com"),
   title: "DUWiT Hacks 2027",
   description: siteDescription,
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
     title: "DUWiT Hacks 2027",
     description: siteDescription,
@@ -51,6 +54,7 @@ export default function RootLayout({
           <MLHBanner season={2027} variant="white" region="eu" />
         </div>
         {children}
+        <Analytics />
       </body>
     </html>
   )
