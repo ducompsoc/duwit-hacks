@@ -12,6 +12,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: "https://duwithacks.com/privacy",
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: "https://duwithacks.com/terms",
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ]
 
   if (!blogEnabled) return entries

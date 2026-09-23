@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation"
 import { ComingSoon } from "@/components/coming-soon"
-import { Starfield } from "@/components/starfield"
 import { getArchive } from "@/lib/archives"
 
 export default async function ArchiveYearPage({
@@ -16,10 +15,5 @@ export default async function ArchiveYearPage({
     notFound()
   }
 
-  return (
-    <>
-      <Starfield />
-      <ComingSoon initialArchiveYear={parsed} />
-    </>
-  )
+  return <ComingSoon initialArchiveYear={parsed} />
 }

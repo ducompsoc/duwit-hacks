@@ -3,8 +3,9 @@
 import { useState } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { ArchiveExplorer } from "@/components/archive-explorer"
+import { LaunchSequence } from "@/components/launch-sequence"
+import { MissionLog } from "@/components/mission-log"
 import { archives } from "@/lib/archives"
-import { siteDescription } from "@/lib/site"
 
 export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?: number | null }) {
   const [archiveYear, setArchiveYear] = useState<number | null>(initialArchiveYear)
@@ -18,83 +19,25 @@ export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?:
 
   return (
     <>
-      <main className="relative z-10 flex min-h-dvh flex-col px-5 pb-8 pt-14 md:px-10 md:pb-12 md:pt-16">
-        <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center text-center">
-          <h1 className="font-display text-5xl leading-none tracking-wide md:text-7xl lg:text-8xl">
-            <span className="title-gradient">DUWiT</span>
-          </h1>
-          <p className="font-display mt-2 text-xl tracking-[0.38em] text-space-cream md:text-3xl">HACKS 2027</p>
-          <p className="font-mono mt-4 max-w-xs text-[10px] leading-relaxed tracking-[0.22em] text-space-cream/80 uppercase sm:max-w-md md:mt-5 md:text-xs md:tracking-[0.28em]">
-            Durham University Women in Tech
+      <main className="page">
+        <LaunchSequence />
+        <MissionLog entries={archives} onOpen={setArchiveYear} />
+
+        <footer className="colophon">
+          <p className="colophon-mark" aria-hidden="true">
+            DUWiT
           </p>
-          
-          <div className="terminal-panel mt-8 w-full max-w-xl text-left">
-            <p className="font-mono text-[10px] tracking-[0.3em] text-space-gold uppercase">Mission control</p>
-            <p className="font-mono mt-3 text-sm leading-relaxed text-space-lime md:text-base">
-              <span className="text-space-primary-light">$</span> status --website 2027
-              <br />
-              <span className="text-space-cream/90">coming soon_</span>
-              <span className="cursor-blink" />
-            </p>
+          <div className="colophon-row">
+            <a href="mailto:hello@duwithacks.com">hello@duwithacks.com</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms</a>
+            <span>Durham University Women in Tech</span>
           </div>
-
-          <p className="font-body mt-6 max-w-lg text-sm leading-relaxed text-space-cream/88 md:text-base">
-            {siteDescription}
-          </p>
-
-          <section className="mt-10 w-full max-w-xl" aria-labelledby="archive-heading">
-            <h2
-              id="archive-heading"
-              className="font-mono text-[10px] tracking-[0.35em] text-space-cream/60 uppercase"
-            >
-              Archived websites
-            </h2>
-            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {archives.map((entry) =>
-                entry.kind === "snapshot" ? (
-                  <button
-                    key={entry.year}
-                    type="button"
-                    className="mission-card text-center sm:text-left"
-                    onClick={() => setArchiveYear(entry.year)}
-                  >
-                    <span className="font-display block text-2xl text-space-cream">{entry.year}</span>
-                    <span className="mt-1 block font-body text-xs text-space-cream/65">View Archived Website</span>
-                  </button>
-                ) : (
-                  <a
-                    key={entry.year}
-                    href={entry.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mission-card text-center sm:text-left"
-                  >
-                    <span className="font-display block text-2xl text-space-cream">{entry.year}</span>
-                    <span className="mt-1 block font-body text-xs text-space-cream/65">View Archived Devpost</span>
-                  </a>
-                ),
-              )}
-            </div>
-          </section>
-        </div>
-
-        <footer className="mx-auto mt-8 w-full max-w-3xl text-center">
-          <p className="font-body text-[11px] text-space-cream/50">
-            <a className="underline decoration-space-gold/40 underline-offset-4 hover:text-space-cream" href="mailto:hello@duwithacks.com">
-              hello@duwithacks.com
-            </a>
-            {" · "}
-            DUWiT Hacks 2027
-          </p>
         </footer>
       </main>
 
       {archiveYear !== null && (
-        <ArchiveExplorer
-          year={archiveYear}
-          onClose={closeArchive}
-          onSelectYear={setArchiveYear}
-        />
+        <ArchiveExplorer year={archiveYear} onClose={closeArchive} onSelectYear={setArchiveYear} />
       )}
     </>
   )

@@ -153,6 +153,7 @@ export function MLHBanner({
     <a
       id="mlh-trust-badge"
       data-slot="mlh-trust-badge"
+      aria-label={`Major League Hacking ${season} official season`}
       style={{ ...mlhBannerLinkStyle, ...variants[variant] }}
       href={`https://mlh.io/${region}?utm_source=${region}-hackathon&utm_medium=TrustBadge&utm_campaign=${season}-season&utm_content=${variant}`}
       target="_blank"
