@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { type FormEvent, useState } from "react"
 import { siteDescription } from "@/lib/site"
-import { isValidEmail, isValidName, NAME_MAX, normalizeEmail, normalizeName } from "@/lib/waitlist"
+import { emailIssue, nameIssue, NAME_MAX, normalizeEmail, normalizeName, sanitizeNameInput } from "@/lib/waitlist"
 
 type Status = "idle" | "submitting" | "success" | "already" | "error"
 type Field = "firstName" | "lastName" | "email" | null
@@ -18,12 +18,19 @@ export function Uplink() {
   const [error, setError] = useState("")
   const [invalid, setInvalid] = useState<Field>(null)
 
-  function clearError() {
-    if (status === "error") {
-      setStatus("idle")
-      setError("")
-      setInvalid(null)
+  function resolveField(field: Field, value: string) {
+    if (invalid !== field) return
+    const issue =
+      field === "email"
+        ? emailIssue(value)
+        : nameIssue(value, field === "firstName" ? "first name" : "last name")
+    if (issue) {
+      setError(issue)
+      return
     }
+    setInvalid(null)
+    setError("")
+    if (status === "error") setStatus("idle")
   }
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -38,24 +45,27 @@ export function Uplink() {
       return
     }
 
-    if (!isValidName(first)) {
+    const firstIssue = nameIssue(first, "first name")
+    if (firstIssue) {
       setStatus("error")
       setInvalid("firstName")
-      setError("Enter your first name.")
+      setError(firstIssue)
       return
     }
 
-    if (!isValidName(last)) {
+    const lastIssue = nameIssue(last, "last name")
+    if (lastIssue) {
       setStatus("error")
       setInvalid("lastName")
-      setError("Enter your last name.")
+      setError(lastIssue)
       return
     }
 
-    if (!isValidEmail(mail)) {
+    const mailIssue = emailIssue(mail)
+    if (mailIssue) {
       setStatus("error")
       setInvalid("email")
-      setError("That doesn't look like an email address.")
+      setError(mailIssue)
       return
     }
 
@@ -123,13 +133,14 @@ export function Uplink() {
                     maxLength={NAME_MAX}
                     value={firstName}
                     onChange={(event) => {
-                      setFirstName(event.target.value)
-                      clearError()
+                      const next = sanitizeNameInput(event.target.value)
+                      setFirstName(next)
+                      resolveField("firstName", next)
                     }}
                     disabled={submitting}
                     required
                     aria-invalid={invalid === "firstName"}
-                    aria-describedby={status === "error" ? "uplink-error" : "uplink-note"}
+                    aria-describedby={error ? "uplink-error uplink-note" : "uplink-note"}
                   />
                 </div>
 
@@ -147,13 +158,14 @@ export function Uplink() {
                     maxLength={NAME_MAX}
                     value={lastName}
                     onChange={(event) => {
-                      setLastName(event.target.value)
-                      clearError()
+                      const next = sanitizeNameInput(event.target.value)
+                      setLastName(next)
+                      resolveField("lastName", next)
                     }}
                     disabled={submitting}
                     required
                     aria-invalid={invalid === "lastName"}
-                    aria-describedby={status === "error" ? "uplink-error" : "uplink-note"}
+                    aria-describedby={error ? "uplink-error uplink-note" : "uplink-note"}
                   />
                 </div>
               </div>
@@ -173,13 +185,14 @@ export function Uplink() {
                     spellCheck={false}
                     value={email}
                     onChange={(event) => {
-                      setEmail(event.target.value)
-                      clearError()
+                      const next = event.target.value
+                      setEmail(next)
+                      resolveField("email", next)
                     }}
                     disabled={submitting}
                     required
                     aria-invalid={invalid === "email"}
-                    aria-describedby={status === "error" ? "uplink-error" : "uplink-note"}
+                    aria-describedby={error ? "uplink-error uplink-note" : "uplink-note"}
                   />
                 </div>
 
@@ -188,16 +201,15 @@ export function Uplink() {
                 </button>
               </div>
 
-              {status === "error" ? (
+              {error ? (
                 <p id="uplink-error" className="uplink-error" role="alert">
                   {error}
                 </p>
-              ) : (
-                <p id="uplink-note" className="uplink-notice">
-                  We&apos;ll use your details to manage your hackathon registration and send you information about the
-                  event. See our <Link href="/privacy">Privacy Policy</Link> for how we use and protect your data.
-                </p>
-              )}
+              ) : null}
+              <p id="uplink-note" className="uplink-notice">
+                We&apos;ll use your details to manage your hackathon registration and send you information about the
+                event. See our <Link href="/privacy">Privacy Policy</Link> for how we use and protect your data.
+              </p>
             </form>
           )}
         </div>

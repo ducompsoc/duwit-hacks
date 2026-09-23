@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { clientKey, isRateLimited } from "@/lib/rate-limit"
-import { isValidEmail, isValidName, normalizeEmail, normalizeName, WAITLIST_EMAIL_MAX } from "@/lib/waitlist"
+import { emailIssue, nameIssue, normalizeEmail, normalizeName, WAITLIST_EMAIL_MAX } from "@/lib/waitlist"
 
 const MAILERLITE_SUBSCRIBE_URL = "https://connect.mailerlite.com/api/subscribers"
 const GENERIC_ERROR = "Could not submit your application. Please try again."
@@ -11,12 +11,6 @@ type WaitlistBody = {
   firstName?: unknown
   lastName?: unknown
   company?: unknown
-}
-
-function readName(value: unknown): string | null {
-  if (typeof value !== "string") return null
-  const name = normalizeName(value)
-  return isValidName(name) ? name : null
 }
 
 export async function POST(request: Request) {
@@ -35,22 +29,32 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Too many attempts. Please wait a minute and try again." }, { status: 429 })
   }
 
-  const firstName = readName(body.firstName)
-  const lastName = readName(body.lastName)
-  if (!firstName) {
+  if (typeof body.firstName !== "string") {
     return NextResponse.json({ ok: false, error: "Enter your first name." }, { status: 400 })
   }
-  if (!lastName) {
+  if (typeof body.lastName !== "string") {
     return NextResponse.json({ ok: false, error: "Enter your last name." }, { status: 400 })
   }
 
+  const firstName = normalizeName(body.firstName)
+  const lastName = normalizeName(body.lastName)
+  const firstIssue = nameIssue(firstName, "first name")
+  if (firstIssue) {
+    return NextResponse.json({ ok: false, error: firstIssue }, { status: 400 })
+  }
+  const lastIssue = nameIssue(lastName, "last name")
+  if (lastIssue) {
+    return NextResponse.json({ ok: false, error: lastIssue }, { status: 400 })
+  }
+
   if (typeof body.email !== "string" || body.email.length > WAITLIST_EMAIL_MAX) {
-    return NextResponse.json({ ok: false, error: "Please enter a valid email." }, { status: 400 })
+    return NextResponse.json({ ok: false, error: "Enter a valid email address." }, { status: 400 })
   }
 
   const email = normalizeEmail(body.email)
-  if (!isValidEmail(email)) {
-    return NextResponse.json({ ok: false, error: "Please enter a valid email." }, { status: 400 })
+  const mailIssue = emailIssue(email)
+  if (mailIssue) {
+    return NextResponse.json({ ok: false, error: mailIssue }, { status: 400 })
   }
 
   const token = process.env.MAILERLITE_API_TOKEN

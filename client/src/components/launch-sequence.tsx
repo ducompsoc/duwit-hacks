@@ -84,8 +84,6 @@ export function LaunchSequence() {
     const stage = stageRef.current
     if (!section || !stage) return
 
-    const compact = window.matchMedia("(max-width: 640px)").matches
-
     const paint = (p: number) => {
       const warp = ease.inOutCubic(progress(p, 0.02, 0.5))
       const zoom = ease.inQuart(progress(p, 0.04, 0.48))
@@ -95,10 +93,10 @@ export function LaunchSequence() {
 
       const vars: Record<string, string | number> = {
         "--p": p,
-        "--title-scale": 1 + zoom * (compact ? 3.2 : 8),
+        "--title-scale": 1 + zoom * 8,
         "--title-alpha": 1 - progress(p, 0.2, 0.44),
         "--ghost": progress(p, 0.04, 0.26) * (1 - progress(p, 0.36, 0.46)),
-        "--ring-scale": 1 + warp * (compact ? 1.55 : 3.4),
+        "--ring-scale": 1 + warp * 3.4,
         "--ring-tilt": `${68 + warp * 18}deg`,
         "--ring-alpha": 1 - progress(p, 0.28, 0.48),
         "--flash": bump(p, 0.5, 0.07),
@@ -182,17 +180,19 @@ export function LaunchSequence() {
             <div className="rig-inner">
               <div className="rig-core">
                 <Orbit id="orbit-back" className="orbit orbit-back" />
-                <p className="title" data-text="DUWiT">
-                  {TITLE.map((letter, i) => (
-                    <span key={i} className="title-letter" style={{ "--i": i } as CSSProperties}>
-                      {letter}
-                    </span>
-                  ))}
-                </p>
-                <p className="title-sub">HACKS 2027</p>
+                <div className="title-lock">
+                  <p className="title" data-text="DUWiT">
+                    {TITLE.map((letter, i) => (
+                      <span key={i} className="title-letter" style={{ "--i": i } as CSSProperties}>
+                        {letter}
+                      </span>
+                    ))}
+                  </p>
+                  <p className="title-sub">HACKS 2027</p>
+                </div>
                 <Orbit id="orbit-front" className="orbit orbit-front" />
+                <p className="title-tag">Durham University Women in Tech</p>
               </div>
-              <p className="title-tag">Durham University Women in Tech</p>
             </div>
           </div>
 
@@ -202,18 +202,12 @@ export function LaunchSequence() {
           <div className="launch-hint">
             <div className="launch-hint-inner">
               <button type="button" className="launch-skip" onClick={skip}>
-                Skip to apply
+                Scroll to Apply
               </button>
             </div>
           </div>
 
           <div className="arrival">
-            <div className="lockup" aria-hidden="true">
-              <p className="lockup-title">DUWiT</p>
-              <p className="lockup-sub">HACKS 2027</p>
-              <p className="lockup-tag">Durham University Women in Tech</p>
-            </div>
-
             <div
               className="uplink-dock"
               onFocus={() => {
