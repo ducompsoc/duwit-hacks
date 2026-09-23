@@ -61,7 +61,8 @@ export default function PrivacyPage() {
         This site can use <strong>Google Analytics</strong> (Google Ireland Limited) to understand how the site is used.
         That is a non-essential tracker. We only load it if you accept analytics cookies. If you reject them, we do not
         set analytics cookies. You can change your choice by clearing this site&apos;s stored data in your browser and
-        visiting again. Applying does not set an analytics cookie.
+        visiting again. Applying does not set an analytics cookie. It does store one cookie so the same browser cannot
+        submit the form over and over. That cookie is not used for advertising.
       </p>
       <p>
         Google&apos;s privacy information is at{" "}

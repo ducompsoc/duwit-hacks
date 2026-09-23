@@ -3,7 +3,17 @@
 import Link from "next/link"
 import { type FormEvent, useState } from "react"
 import { siteDescription } from "@/lib/site"
-import { emailIssue, nameIssue, NAME_MAX, normalizeEmail, normalizeName, sanitizeNameInput } from "@/lib/waitlist"
+import {
+  emailIssue,
+  nameIssue,
+  FIRST_NAME_MAX,
+  LAST_NAME_MAX,
+  normalizeEmail,
+  normalizeName,
+  sanitizeEmailInput,
+  sanitizeNameInput,
+  WAITLIST_EMAIL_MAX,
+} from "@/lib/waitlist"
 
 type Status = "idle" | "submitting" | "success" | "already" | "error"
 type Field = "firstName" | "lastName" | "email" | null
@@ -130,10 +140,10 @@ export function Uplink() {
                     name="firstName"
                     autoComplete="given-name"
                     spellCheck={false}
-                    maxLength={NAME_MAX}
+                    maxLength={FIRST_NAME_MAX}
                     value={firstName}
                     onChange={(event) => {
-                      const next = sanitizeNameInput(event.target.value)
+                      const next = sanitizeNameInput(event.target.value, FIRST_NAME_MAX)
                       setFirstName(next)
                       resolveField("firstName", next)
                     }}
@@ -155,10 +165,10 @@ export function Uplink() {
                     name="lastName"
                     autoComplete="family-name"
                     spellCheck={false}
-                    maxLength={NAME_MAX}
+                    maxLength={LAST_NAME_MAX}
                     value={lastName}
                     onChange={(event) => {
-                      const next = sanitizeNameInput(event.target.value)
+                      const next = sanitizeNameInput(event.target.value, LAST_NAME_MAX)
                       setLastName(next)
                       resolveField("lastName", next)
                     }}
@@ -183,9 +193,10 @@ export function Uplink() {
                     autoComplete="email"
                     inputMode="email"
                     spellCheck={false}
+                    maxLength={WAITLIST_EMAIL_MAX}
                     value={email}
                     onChange={(event) => {
-                      const next = event.target.value
+                      const next = sanitizeEmailInput(event.target.value)
                       setEmail(next)
                       resolveField("email", next)
                     }}
