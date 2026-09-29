@@ -1,13 +1,11 @@
 "use client"
 
 import { type CSSProperties, useEffect, useRef } from "react"
-import { Beam } from "@/components/beam"
-import { Uplink } from "@/components/uplink"
 import { WarpField, type WarpSignal } from "@/components/warp-field"
-import { bump, clamp, ease, progress } from "@/lib/motion"
+import { clamp, ease, progress } from "@/lib/motion"
+import { isProgrammaticScroll, NAV_LOCK_EVENT, NAV_UNLOCK_EVENT } from "@/lib/scroll"
 
 const TITLE = ["D", "U", "W", "i", "T"]
-const LIVE_AT = 0.84
 
 function Orbit({ id, className }: { id: string; className: string }) {
   return (
@@ -77,43 +75,29 @@ export function LaunchSequence() {
   const sectionRef = useRef<HTMLElement>(null)
   const stageRef = useRef<HTMLDivElement>(null)
   const signal = useRef<WarpSignal>({ speed: 0 })
-  const liveRef = useRef(false)
-
   useEffect(() => {
     const section = sectionRef.current
     const stage = stageRef.current
     if (!section || !stage) return
 
     const paint = (p: number) => {
-      const warp = ease.inOutCubic(progress(p, 0.02, 0.5))
-      const zoom = ease.inQuart(progress(p, 0.04, 0.48))
-      const drop = progress(p, 0.5, 0.64)
-      const reveal = ease.inOutCubic(progress(p, 0.6, 0.76))
-      const speed = warp * (1 - drop)
+      const warp = ease.inOutCubic(progress(p, 0.02, 0.94))
+      const zoom = ease.inQuart(progress(p, 0.04, 0.94))
+      const speed = warp * (1 - progress(p, 0.9, 1))
 
       const vars: Record<string, string | number> = {
         "--p": p,
-        "--title-scale": 1 + zoom * 8,
-        "--title-alpha": 1 - progress(p, 0.2, 0.44),
-        "--ghost": progress(p, 0.04, 0.26) * (1 - progress(p, 0.36, 0.46)),
-        "--ring-scale": 1 + warp * 3.4,
-        "--ring-tilt": `${68 + warp * 18}deg`,
-        "--ring-alpha": 1 - progress(p, 0.28, 0.48),
-        "--flash": bump(p, 0.5, 0.07),
-        "--arrive": ease.outCubic(progress(p, 0.5, 0.7)),
-        "--lockup": ease.outCubic(progress(p, 0.56, 0.72)),
-        "--reveal": reveal,
-        "--scan": Math.sin(reveal * Math.PI),
-        "--output": progress(p, 0.78, 0.86),
+        "--title-scale": 1 + zoom * 5.2,
+        "--title-alpha": 1 - progress(p, 0.88, 1),
+        "--ghost": progress(p, 0.06, 0.34) * (1 - progress(p, 0.7, 0.94)),
+        "--ring-scale": 1 + warp * 2.6,
+        "--ring-tilt": `${68 + warp * 14}deg`,
+        "--ring-alpha": 1 - progress(p, 0.86, 1),
       }
       for (const key in vars) stage.style.setProperty(key, String(vars[key]))
 
       signal.current.speed = speed
-
       stage.dataset.moved = String(p > 0.004)
-      const live = p >= LIVE_AT
-      stage.dataset.live = String(live)
-      liveRef.current = live
     }
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -133,9 +117,29 @@ export function LaunchSequence() {
     let last = 0
     let frameId = 0
 
+    const lockNav = () => {
+      stage.dataset.nav = "true"
+      signal.current.speed = 0
+    }
+
+    const unlockNav = () => {
+      shown = targetProgress()
+      paint(shown)
+      painted = shown
+      signal.current.speed = 0
+      stage.dataset.nav = "false"
+    }
+
     const frame = (now: number) => {
       const dt = last ? Math.min(64, now - last) : 16.67
       last = now
+
+      if (isProgrammaticScroll()) {
+        signal.current.speed = 0
+        frameId = requestAnimationFrame(frame)
+        return
+      }
+
       const target = targetProgress()
 
       if (shown < 0) shown = target
@@ -149,21 +153,15 @@ export function LaunchSequence() {
       frameId = requestAnimationFrame(frame)
     }
 
+    window.addEventListener(NAV_LOCK_EVENT, lockNav)
+    window.addEventListener(NAV_UNLOCK_EVENT, unlockNav)
     frameId = requestAnimationFrame(frame)
-    return () => cancelAnimationFrame(frameId)
+    return () => {
+      window.removeEventListener(NAV_LOCK_EVENT, lockNav)
+      window.removeEventListener(NAV_UNLOCK_EVENT, unlockNav)
+      cancelAnimationFrame(frameId)
+    }
   }, [])
-
-  function jumpToEnd(behavior: ScrollBehavior) {
-    const section = sectionRef.current
-    if (!section) return
-    const rect = section.getBoundingClientRect()
-    window.scrollTo({ top: window.scrollY + rect.top + rect.height - window.innerHeight, behavior })
-  }
-
-  function skip() {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    jumpToEnd(reduce ? "auto" : "smooth")
-  }
 
   return (
     <>
@@ -171,7 +169,7 @@ export function LaunchSequence() {
       <div className="warp-grain" aria-hidden="true" />
 
       <section ref={sectionRef} className="launch" aria-labelledby="launch-title">
-        <div ref={stageRef} className="launch-stage" data-moved="false" data-live="false">
+        <div ref={stageRef} className="launch-stage" data-moved="false">
           <h1 id="launch-title" className="sr-only">
             DUWiT Hacks 2027 — Durham University Women in Tech
           </h1>
@@ -196,28 +194,10 @@ export function LaunchSequence() {
             </div>
           </div>
 
-          <div className="launch-flash" aria-hidden="true" />
-          <Beam />
-
-          <div className="launch-hint">
+          <div className="launch-hint" aria-hidden="true">
             <div className="launch-hint-inner">
-              <button type="button" className="launch-skip" onClick={skip}>
-                Scroll to Apply
-              </button>
-            </div>
-          </div>
-
-          <div className="arrival">
-            <div
-              className="uplink-dock"
-              onFocus={() => {
-                if (!liveRef.current) jumpToEnd("auto")
-              }}
-            >
-              <div className="uplink-reveal">
-                <Uplink />
-              </div>
-              <span className="uplink-scan" aria-hidden="true" />
+              <span className="launch-scroll">Scroll</span>
+              <span className="launch-chevron">↓</span>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Orbitron, Outfit, Share_Tech_Mono } from "next/font/google"
 import { Analytics } from "@/components/analytics"
 import { MLHBanner } from "@/components/mlh-banner"
+import { SiteNav } from "@/components/site-nav"
 import { siteDescription } from "@/lib/site"
 import "./globals.css"
 
@@ -50,9 +51,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${orbitron.variable} ${outfit.variable} ${shareTechMono.variable} h-full`}>
       <body className="relative min-h-full font-body antialiased">
-        <div className="mlh-banner-slot fixed top-0 z-50 w-full overflow-visible">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if("scrollRestoration"in history)history.scrollRestoration="manual";if(location.hash){history.replaceState(null,"",location.pathname+location.search);window.scrollTo(0,0);}}catch(e){}})();`,
+          }}
+        />
+        <div className="mlh-banner-slot fixed top-0 z-[10002] w-full overflow-visible pointer-events-none">
           <MLHBanner season={2027} variant="white" region="eu" />
         </div>
+        <SiteNav />
         {children}
         <Analytics />
       </body>

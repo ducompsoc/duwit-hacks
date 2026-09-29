@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { HashLink } from "@/components/hash-link"
+import { DocLayout } from "@/components/doc-layout"
 
 export const metadata: Metadata = {
   title: "Terms — DUWiT Hacks 2027",
@@ -9,11 +11,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="legal">
-      <div className="warp-grain" aria-hidden="true" />
-      <h1 className="legal-title">Terms</h1>
-      <p className="legal-updated">23 September 2026</p>
-
+    <DocLayout title="Terms" meta="Last updated 23 September 2026">
       <p>
         These terms cover applications and participation in <strong>DUWiT Hacks 2027</strong>, organised by Durham
         University Women in Tech. Dates, venue and detailed rules will be confirmed closer to the event. If anything
@@ -29,7 +27,7 @@ export default function TermsPage() {
       <h2>Registration</h2>
       <p>
         Apply with your real first name, last name and email. Keep your details accurate. We may close applications,
-        run a waitlist, or refuse a place if information is false or if we are oversubscribed.
+        or refuse a place if information is false or if we are oversubscribed.
       </p>
 
       <h2>Participation</h2>
@@ -43,8 +41,8 @@ export default function TermsPage() {
 
       <h2>Cancellation</h2>
       <p>
-        We may change, postpone or cancel the event if we have to (for example venue, weather, or safety). We will tell
-        applicants as soon as we reasonably can.
+        We may change, postpone or cancel the event if we have to (for example venue, weather, or safety). We will
+        tell applicants as soon as we reasonably can.
       </p>
 
       <h2>Contact</h2>
@@ -54,8 +52,10 @@ export default function TermsPage() {
       </p>
 
       <p className="legal-back">
-        <Link href="/">Home</Link>
+        <HashLink href="/">Home</HashLink>
+        <span aria-hidden="true"> · </span>
+        <Link href="/privacy">Privacy Policy</Link>
       </p>
-    </main>
+    </DocLayout>
   )
 }
