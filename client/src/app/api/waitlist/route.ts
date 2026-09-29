@@ -27,10 +27,10 @@ export async function POST(request: Request) {
   }
 
   const browser = browserKey(request)
-  if (browser && isRateLimited(`browser:${browser}`, BROWSER_LIMITS)) {
+  if (browser && (await isRateLimited(`browser:${browser}`, BROWSER_LIMITS))) {
     return reply(request, { ok: false, error: "Too many attempts from this browser. Please wait and try again." }, 429)
   }
-  if (isRateLimited(`ip:${clientKey(request)}`, NETWORK_LIMITS)) {
+  if (await isRateLimited(`ip:${clientKey(request)}`, NETWORK_LIMITS)) {
     return reply(
       request,
       { ok: false, error: "Too many people are applying from this network right now. Please wait and try again." },
