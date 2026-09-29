@@ -1,4 +1,7 @@
-type Limit = { max: number; windowMs: number }
+import { Ratelimit } from "@upstash/ratelimit"
+import { Redis } from "@upstash/redis"
+
+export type Limit = { max: number; windowMs: number }
 
 export const BROWSER_LIMITS: Limit[] = [{ max: 5, windowMs: 60 * 60_000 }]
 export const NETWORK_LIMITS: Limit[] = [{ max: 200, windowMs: 10 * 60_000 }]
@@ -8,7 +11,32 @@ const BROWSER_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-
 const LONGEST_WINDOW_MS = 60 * 60_000
 const hits = new Map<string, number[]>()
 
-export function isRateLimited(key: string, limits: Limit[]) {
+let browserRatelimit: Ratelimit | null = null
+let networkRatelimit: Ratelimit | null = null
+
+function upstashConfigured() {
+  return Boolean(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN)
+}
+
+function getUpstashLimiters() {
+  if (!upstashConfigured()) return null
+  if (!browserRatelimit || !networkRatelimit) {
+    const redis = Redis.fromEnv()
+    browserRatelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(BROWSER_LIMITS[0].max, `${BROWSER_LIMITS[0].windowMs} ms`),
+      prefix: "duwit:waitlist:browser",
+    })
+    networkRatelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(NETWORK_LIMITS[0].max, `${NETWORK_LIMITS[0].windowMs} ms`),
+      prefix: "duwit:waitlist:ip",
+    })
+  }
+  return { browserRatelimit, networkRatelimit }
+}
+
+function isRateLimitedInMemory(key: string, limits: Limit[]) {
   const now = Date.now()
   const recent = (hits.get(key) ?? []).filter((time) => now - time < LONGEST_WINDOW_MS)
   const limited = limits.some(
@@ -19,6 +47,25 @@ export function isRateLimited(key: string, limits: Limit[]) {
   else hits.set(key, recent)
   prune(now)
   return limited
+}
+
+/** Returns true when the client should be blocked (rate limited). */
+export async function isRateLimited(key: string, limits: Limit[]) {
+  const upstash = getUpstashLimiters()
+  if (upstash) {
+    if (key.startsWith("browser:")) {
+      const id = key.slice("browser:".length)
+      const { success } = await upstash.browserRatelimit.limit(id)
+      return !success
+    }
+    if (key.startsWith("ip:")) {
+      const id = key.slice("ip:".length)
+      const { success } = await upstash.networkRatelimit.limit(id)
+      return !success
+    }
+  }
+
+  return isRateLimitedInMemory(key, limits)
 }
 
 export function clientKey(request: Request) {
