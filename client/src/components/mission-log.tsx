@@ -1,16 +1,19 @@
 import type { ArchiveEntry } from "@/lib/archives"
+import { Reveal } from "@/components/reveal"
 
 export function MissionLog({ entries, onOpen }: { entries: ArchiveEntry[]; onOpen: (year: number) => void }) {
   return (
-    <section className="log" aria-labelledby="log-heading">
-      <header className="log-head">
-        <h2 id="log-heading" className="log-title">
-          Previous events
-        </h2>
-      </header>
+    <section className="log" id="previous-hackathons" aria-labelledby="log-heading">
+      <Reveal>
+        <header className="log-head">
+          <h2 id="log-heading" className="log-title">
+            Previous Hackathons
+          </h2>
+        </header>
+      </Reveal>
 
       <ol className="log-list">
-        {entries.map((entry) => {
+        {entries.map((entry, index) => {
           const body = (
             <>
               <span className="log-year" data-year={entry.year}>
@@ -28,15 +31,17 @@ export function MissionLog({ entries, onOpen }: { entries: ArchiveEntry[]; onOpe
 
           return (
             <li key={entry.year}>
-              {entry.kind === "snapshot" ? (
-                <button type="button" className="log-entry" onClick={() => onOpen(entry.year)}>
-                  {body}
-                </button>
-              ) : (
-                <a className="log-entry" href={entry.href} target="_blank" rel="noreferrer">
-                  {body}
-                </a>
-              )}
+              <Reveal delay={index * 90}>
+                {entry.kind === "snapshot" ? (
+                  <button type="button" className="log-entry" onClick={() => onOpen(entry.year)}>
+                    {body}
+                  </button>
+                ) : (
+                  <a className="log-entry" href={entry.href} target="_blank" rel="noreferrer">
+                    {body}
+                  </a>
+                )}
+              </Reveal>
             </li>
           )
         })}

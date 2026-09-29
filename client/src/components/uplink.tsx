@@ -107,10 +107,9 @@ export function Uplink() {
   const submitting = status === "submitting"
 
   return (
-    <div className="uplink" id="apply">
+    <div className="uplink">
       <div className="uplink-inner">
         <div className="uplink-body">
-          <h2 className="uplink-heading">Apply for 2027</h2>
           <p className="uplink-lead">{siteDescription}</p>
 
           {status === "success" || status === "already" ? (

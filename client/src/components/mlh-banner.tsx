@@ -135,7 +135,8 @@ const mlhBannerLinkStyle: React.CSSProperties = {
   right: "50px",
   top: "0",
   width: "10%",
-  zIndex: "10000",
+  zIndex: 1,
+  pointerEvents: "auto",
 }
 
 export function MLHBanner({

@@ -2,6 +2,7 @@
 
 import { type RefObject, useEffect, useRef } from "react"
 import { clamp } from "@/lib/motion"
+import { isProgrammaticScroll } from "@/lib/scroll"
 
 export type WarpSignal = { speed: number }
 
@@ -192,8 +193,10 @@ export function WarpField({ signal }: { signal: RefObject<WarpSignal> }) {
 
     const draw = (dt: number) => {
       time += dt
-      const target = reduceMotion ? 0 : clamp(signal.current?.speed ?? 0)
-      speed += (target - speed) * (1 - 0.88 ** (dt / 16.67))
+      const locked = isProgrammaticScroll()
+      const target = reduceMotion || locked ? 0 : Math.min(0.7, clamp(signal.current?.speed ?? 0))
+      if (locked) speed = 0
+      else speed += (target - speed) * (1 - 0.88 ** (dt / 16.67))
 
       const cx = width / 2
       const cy = height / 2
