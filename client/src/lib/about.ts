@@ -22,11 +22,7 @@ export const socialLinks = [
 export const societyPillars = [
   {
     title: "Community",
-    body: "Socials, mentorship, and a room full of people who get why tech still feels like a boys' club sometimes — and want that to change.",
-  },
-  {
-    title: "Careers",
-    body: "Workshops, networking, and conversations with women actually working in the roles you're aiming for.",
+    body: "Socials, and a room full of people who get why tech still feels like a boys' club sometimes — and want that to change.",
   },
   {
     title: "Hackathon",
@@ -77,13 +73,12 @@ export const aboutSections = {
   expect: {
     title: "What to expect",
     body:
-      "Early 2027 — exact dates TBC (likely February). Team-based hackathon tracks, career workshops run by women in the roles you're aiming for, time with sponsor engineers and recruiters, and — a DUWiT tradition — a midnight donut run and bracelet making to get everyone through the small hours. Whether you're writing your first line of code or your fiftieth project, you'll leave with something built and a network that didn't exist forty-eight hours earlier.",
+      "Early 2027 — exact dates TBC (likely February). Team-based hackathon, and socials run by women in the roles you're aiming for. Whether you're writing your first line of code or your fiftieth project, you'll leave with something built that didn't exist forty-eight hours earlier.",
   },
   track: {
     title: "Our track record",
     paragraphs: [
-      "We launched in 2024 with a single question: could this even get off the ground? Edition II answered it — attendance jumped to 180 students, with a bigger sponsor roster, more career workshops, and a mentorship programme attendees told us actually changed their job search.",
-      "One of our proudest moments: a founding organiser came back to sponsor Edition II from her own seat at GitHub — proof that DUWiT Hacks isn't just a weekend, it's a pipeline.",
+      "We launched in 2024 with a single question: could this even get off the ground? Edition II answered it — attendance jumped to 75+ students, with a bigger sponsor roster, and attendees telling us it actually changed their job search.",
       "Edition III is the biggest mission yet.",
     ],
   },
