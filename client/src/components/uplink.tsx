@@ -1,19 +1,19 @@
 "use client"
 
-import Link from "next/link"
-import { type FormEvent, useState } from "react"
-import { siteDescription } from "@/lib/site"
+import { mailingListDescription } from "@/lib/site"
 import {
-  emailIssue,
-  nameIssue,
   FIRST_NAME_MAX,
   LAST_NAME_MAX,
+  WAITLIST_EMAIL_MAX,
+  emailIssue,
+  nameIssue,
   normalizeEmail,
   normalizeName,
   sanitizeEmailInput,
   sanitizeNameInput,
-  WAITLIST_EMAIL_MAX,
 } from "@/lib/waitlist"
+import Link from "next/link"
+import { type FormEvent, useEffect, useRef, useState } from "react"
 
 type Status = "idle" | "submitting" | "success" | "already" | "error"
 type Field = "firstName" | "lastName" | "email" | null
@@ -27,13 +27,17 @@ export function Uplink() {
   const [status, setStatus] = useState<Status>("idle")
   const [error, setError] = useState("")
   const [invalid, setInvalid] = useState<Field>(null)
+  const errorRef = useRef<HTMLParagraphElement>(null)
+
+  useEffect(() => {
+    if (status !== "error" || !error) return
+    errorRef.current?.focus()
+  }, [status, error])
 
   function resolveField(field: Field, value: string) {
     if (invalid !== field) return
     const issue =
-      field === "email"
-        ? emailIssue(value)
-        : nameIssue(value, field === "firstName" ? "first name" : "last name")
+      field === "email" ? emailIssue(value) : nameIssue(value, field === "firstName" ? "first name" : "last name")
     if (issue) {
       setError(issue)
       return
@@ -110,7 +114,7 @@ export function Uplink() {
     <div className="uplink">
       <div className="uplink-inner">
         <div className="uplink-body">
-          <p className="uplink-lead">{siteDescription}</p>
+          <p className="uplink-lead">{mailingListDescription}</p>
 
           {status === "success" || status === "already" ? (
             <div className="uplink-result" role="status">
@@ -212,13 +216,14 @@ export function Uplink() {
               </div>
 
               {error ? (
-                <p id="uplink-error" className="uplink-error" role="alert">
+                <p id="uplink-error" ref={errorRef} className="uplink-error" role="alert" tabIndex={-1}>
                   {error}
                 </p>
               ) : null}
               <p id="uplink-note" className="uplink-notice">
-                We&apos;ll use your details to send you updates about the event and manage registration when applications
-                open. See our <Link href="/privacy">Privacy Policy</Link> for how we use and protect your data.
+                We&apos;ll use your details to send you updates about the event and manage registration when
+                applications open. See our <Link href="/privacy">Privacy Policy</Link> for how we use and protect your
+                data.
               </p>
             </form>
           )}

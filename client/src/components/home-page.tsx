@@ -1,17 +1,23 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { usePathname, useRouter } from "next/navigation"
+import { AboutSection } from "@/components/about-section"
 import { ArchiveExplorer } from "@/components/archive-explorer"
 import { LaunchSequence } from "@/components/launch-sequence"
-import { AboutSection } from "@/components/about-section"
 import { MailingListSection } from "@/components/mailing-list-section"
 import { MissionLog } from "@/components/mission-log"
 import { SiteFooter } from "@/components/site-footer"
 import { archives } from "@/lib/archives"
-import { beginProgrammaticScroll, clearHomeScroll, endProgrammaticScroll, peekHomeScroll, scrollToId } from "@/lib/scroll"
+import {
+  beginProgrammaticScroll,
+  clearHomeScroll,
+  endProgrammaticScroll,
+  peekHomeScroll,
+  scrollToId,
+} from "@/lib/scroll"
+import { usePathname, useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 
-export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?: number | null }) {
+export function HomePage({ initialArchiveYear = null }: { initialArchiveYear?: number | null }) {
   const [archiveYear, setArchiveYear] = useState<number | null>(initialArchiveYear)
   const pathname = usePathname()
   const router = useRouter()

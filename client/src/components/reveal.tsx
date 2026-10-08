@@ -1,7 +1,7 @@
 "use client"
 
-import { type CSSProperties, type ReactNode, useEffect, useRef, useState } from "react"
 import { prefersReducedMotion } from "@/lib/scroll"
+import { type CSSProperties, type ReactNode, useEffect, useRef, useState } from "react"
 
 export function Reveal({
   children,

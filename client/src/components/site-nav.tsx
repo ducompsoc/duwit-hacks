@@ -1,13 +1,14 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { usePathname } from "next/navigation"
 import { HashLink } from "@/components/hash-link"
+import { mailingListNavLabel } from "@/lib/site"
+import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
 
 const links = [
   { href: "/", id: "home", label: "Home" },
   { href: "/#about", id: "about", label: "About" },
-  { href: "/#mailinglist", id: "mailinglist", label: "Mailing List" },
+  { href: "/#mailinglist", id: "mailinglist", label: mailingListNavLabel },
   { href: "/#previous-hackathons", id: "previous-hackathons", label: "Previous", full: "Previous Hackathons" },
   { href: "/about", id: "story", label: "Our story" },
 ] as const
@@ -62,7 +63,7 @@ export function SiteNav() {
   const storyCurrent = pathname === "/about"
 
   return (
-    <header className={`site-nav${open ? " is-open" : ""}`} role="banner">
+    <header className={`site-nav${open ? " is-open" : ""}`}>
       <div className="site-nav-bar">
         <button
           type="button"
