@@ -6,7 +6,7 @@ export type Limit = { max: number; windowMs: number }
 export const BROWSER_LIMITS: Limit[] = [{ max: 5, windowMs: 60 * 60_000 }]
 export const NETWORK_LIMITS: Limit[] = [{ max: 200, windowMs: 10 * 60_000 }]
 
-const APPLY_COOKIE = "duwit_apply"
+const MAILING_LIST_COOKIE = "duwit_mailinglist"
 const BROWSER_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
 const LONGEST_WINDOW_MS = 60 * 60_000
 const hits = new Map<string, number[]>()
@@ -87,7 +87,7 @@ export function browserKey(request: Request) {
   if (!header) return null
   for (const part of header.split(";")) {
     const [name, ...rest] = part.trim().split("=")
-    if (name !== APPLY_COOKIE) continue
+    if (name !== MAILING_LIST_COOKIE) continue
     let value = rest.join("=")
     try {
       value = decodeURIComponent(value)
@@ -99,9 +99,9 @@ export function browserKey(request: Request) {
   return null
 }
 
-export function applyCookie(id: string) {
+export function mailingListCookie(id: string) {
   const secure = process.env.NODE_ENV === "production" ? "; Secure" : ""
-  return `${APPLY_COOKIE}=${id}; Path=/; Max-Age=86400; HttpOnly; SameSite=Lax${secure}`
+  return `${MAILING_LIST_COOKIE}=${id}; Path=/; Max-Age=86400; HttpOnly; SameSite=Lax${secure}`
 }
 
 function normalizeIp(value: string | null) {

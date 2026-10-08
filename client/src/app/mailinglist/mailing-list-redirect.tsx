@@ -4,17 +4,17 @@ import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { requestHomeScroll } from "@/lib/scroll"
 
-export function ApplyRedirect() {
+export function MailingListRedirect() {
   const router = useRouter()
 
   useEffect(() => {
-    requestHomeScroll("apply")
+    requestHomeScroll("mailinglist")
     router.replace("/")
   }, [router])
 
   return (
-    <main className="page apply-redirect">
-      <p className="apply-redirect-text">Taking you to apply…</p>
+    <main className="page mailing-list-redirect">
+      <p className="mailing-list-redirect-text">Taking you to the mailing list…</p>
     </main>
   )
 }

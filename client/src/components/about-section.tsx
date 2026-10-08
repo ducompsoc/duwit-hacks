@@ -89,8 +89,8 @@ export function AboutSection() {
 
         <Reveal delay={160}>
           <div className="about-actions">
-            <HashLink className="about-cta about-cta--primary" href="#apply">
-              Apply for 2027
+            <HashLink className="about-cta about-cta--primary" href="#mailinglist">
+              Join the mailing list
             </HashLink>
             <HashLink className="about-cta" href="/about">
               Read the full story

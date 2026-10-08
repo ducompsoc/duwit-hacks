@@ -7,7 +7,7 @@ import { HashLink } from "@/components/hash-link"
 const links = [
   { href: "/", id: "home", label: "Home" },
   { href: "/#about", id: "about", label: "About" },
-  { href: "/#apply", id: "apply", label: "Apply" },
+  { href: "/#mailinglist", id: "mailinglist", label: "Mailing List" },
   { href: "/#previous-hackathons", id: "previous-hackathons", label: "Previous", full: "Previous Hackathons" },
   { href: "/about", id: "story", label: "Our story" },
 ] as const
@@ -27,7 +27,7 @@ export function SiteNav() {
       return
     }
 
-    const nodes = ["about", "apply", "previous-hackathons"]
+    const nodes = ["about", "mailinglist", "previous-hackathons"]
       .map((id) => document.getElementById(id))
       .filter((node): node is HTMLElement => Boolean(node))
 
