@@ -7,6 +7,8 @@ export const BROWSER_LIMITS: Limit[] = [{ max: 5, windowMs: 60 * 60_000 }]
 export const NETWORK_LIMITS: Limit[] = [{ max: 200, windowMs: 10 * 60_000 }]
 
 const MAILING_LIST_COOKIE = "duwit_mailinglist"
+const LEGACY_APPLY_COOKIE = "duwit_apply"
+const BROWSER_COOKIES = [MAILING_LIST_COOKIE, LEGACY_APPLY_COOKIE]
 const BROWSER_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
 const LONGEST_WINDOW_MS = 60 * 60_000
 const hits = new Map<string, number[]>()
@@ -39,9 +41,7 @@ function getUpstashLimiters() {
 function isRateLimitedInMemory(key: string, limits: Limit[]) {
   const now = Date.now()
   const recent = (hits.get(key) ?? []).filter((time) => now - time < LONGEST_WINDOW_MS)
-  const limited = limits.some(
-    ({ max, windowMs }) => recent.filter((time) => now - time < windowMs).length >= max,
-  )
+  const limited = limits.some(({ max, windowMs }) => recent.filter((time) => now - time < windowMs).length >= max)
   if (!limited) recent.push(now)
   if (recent.length === 0) hits.delete(key)
   else hits.set(key, recent)
@@ -82,12 +82,10 @@ export function clientKey(request: Request) {
   return "unknown"
 }
 
-export function browserKey(request: Request) {
-  const header = request.headers.get("cookie")
-  if (!header) return null
+function readBrowserIdFromCookie(header: string, cookieName: string) {
   for (const part of header.split(";")) {
     const [name, ...rest] = part.trim().split("=")
-    if (name !== MAILING_LIST_COOKIE) continue
+    if (name !== cookieName) continue
     let value = rest.join("=")
     try {
       value = decodeURIComponent(value)
@@ -95,6 +93,16 @@ export function browserKey(request: Request) {
       return null
     }
     return BROWSER_ID.test(value) ? value.toLowerCase() : null
+  }
+  return null
+}
+
+export function browserKey(request: Request) {
+  const header = request.headers.get("cookie")
+  if (!header) return null
+  for (const cookieName of BROWSER_COOKIES) {
+    const id = readBrowserIdFromCookie(header, cookieName)
+    if (id) return id
   }
   return null
 }

@@ -1,6 +1,6 @@
-import { type ReactNode } from "react"
 import { SiteFooter } from "@/components/site-footer"
 import { StarBackdrop } from "@/components/star-backdrop"
+import type { ReactNode } from "react"
 
 export function DocLayout({
   title,

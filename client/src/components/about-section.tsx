@@ -1,16 +1,17 @@
 "use client"
 
-import { type CSSProperties, useEffect, useState } from "react"
 import { HashLink } from "@/components/hash-link"
 import { Reveal } from "@/components/reveal"
 import {
   homeAboutBody,
   homeAboutEligibility,
   homeAboutLead,
+  homeFaq,
   manifestoQuote,
   societyPillars,
 } from "@/lib/about"
 import { clamp } from "@/lib/motion"
+import { type CSSProperties, useEffect, useState } from "react"
 
 function useAboutBorn() {
   const [born, setBorn] = useState(1)
@@ -56,25 +57,25 @@ export function AboutSection() {
 
   return (
     <section className="about" id="about" aria-labelledby="about-heading">
-      <div
-        className="about-inner about-birth"
-        style={{ "--about-born": born } as CSSProperties}
-      >
-        <header className="about-head">
-          <p className="about-kicker">New here?</p>
-          <h2 id="about-heading" className="about-title">
-            About DUWiT
-          </h2>
-          <p className="about-lead">{homeAboutLead}</p>
-          <p className="about-intro">{homeAboutBody}</p>
-          <p className="about-eligibility">{homeAboutEligibility}</p>
-        </header>
+      <div className="about-inner about-birth" style={{ "--about-born": born } as CSSProperties}>
+        <div className="about-copy">
+          <header className="about-head">
+            <p className="about-kicker">New here?</p>
+            <h2 id="about-heading" className="about-title">
+              About DUWiT
+            </h2>
+            <p className="about-lead">{homeAboutLead}</p>
+            <p className="about-intro">{homeAboutBody}</p>
+          </header>
 
-        <Reveal delay={80}>
-          <blockquote className="about-quote">
-            <p>{manifestoQuote}</p>
-          </blockquote>
-        </Reveal>
+          <Reveal delay={80}>
+            <blockquote className="about-quote">
+              <p>{manifestoQuote}</p>
+            </blockquote>
+          </Reveal>
+
+          <p className="about-eligibility">{homeAboutEligibility}</p>
+        </div>
 
         <ul className="about-pillars">
           {societyPillars.map((pillar, index) => (
@@ -87,7 +88,16 @@ export function AboutSection() {
           ))}
         </ul>
 
-        <Reveal delay={160}>
+        <dl className="about-faq">
+          {homeFaq.map((item) => (
+            <div key={item.question}>
+              <dt>{item.question}</dt>
+              <dd>{item.answer}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <Reveal delay={160} className="about-cta-row">
           <div className="about-actions">
             <HashLink className="about-cta about-cta--primary" href="#mailinglist">
               Join the mailing list

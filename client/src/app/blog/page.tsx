@@ -1,9 +1,9 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { notFound } from "next/navigation"
 import { BlogShell } from "@/components/blog-shell"
 import { formatPostDate, getAllPosts } from "@/lib/blog"
 import { blogEnabled } from "@/lib/site"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Blog",

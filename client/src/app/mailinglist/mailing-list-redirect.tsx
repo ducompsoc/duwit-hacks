@@ -1,8 +1,8 @@
 "use client"
 
-import { useEffect } from "react"
-import { useRouter } from "next/navigation"
 import { requestHomeScroll } from "@/lib/scroll"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 
 export function MailingListRedirect() {
   const router = useRouter()
@@ -13,8 +13,8 @@ export function MailingListRedirect() {
   }, [router])
 
   return (
-    <main className="page mailing-list-redirect">
-      <p className="mailing-list-redirect-text">Taking you to the mailing list…</p>
+    <main className="page lost">
+      <p className="lost-copy">Taking you to the mailing list…</p>
     </main>
   )
 }

@@ -1,9 +1,9 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { usePathname } from "next/navigation"
 import { WarpField, type WarpSignal } from "@/components/warp-field"
 import { scrollPageTop } from "@/lib/scroll"
+import { usePathname } from "next/navigation"
+import { useEffect, useRef } from "react"
 
 export function StarBackdrop() {
   const pathname = usePathname()

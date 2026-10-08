@@ -1,7 +1,32 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "files": {
-    "ignore": ["client"]
+    "ignore": ["client/.next", "client/node_modules", "client/public/snapshots"]
   },
-  "extends": ["biome-base.json"]
+  "extends": ["biome-base.json"],
+  "overrides": [
+    {
+      "include": ["client/**"],
+      "linter": {
+        "rules": {
+          "security": {
+            "noDangerouslySetInnerHtml": "off"
+          },
+          "suspicious": {
+            "noAssignInExpressions": "off",
+            "noControlCharactersInRegex": "off",
+            "noArrayIndexKey": "off"
+          },
+          "a11y": {
+            "useSemanticElements": "off",
+            "useKeyWithClickEvents": "off",
+            "noAriaHiddenOnFocusable": "off"
+          },
+          "correctness": {
+            "useExhaustiveDependencies": "off"
+          }
+        }
+      }
+    }
+  ]
 }

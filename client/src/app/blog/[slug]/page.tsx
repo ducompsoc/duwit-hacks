@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { notFound } from "next/navigation"
 import { BlogProse } from "@/components/blog-prose"
 import { BlogShell } from "@/components/blog-shell"
 import { formatPostDate, getAllSlugs, getPostBySlug } from "@/lib/blog"
 import { blogEnabled } from "@/lib/site"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 
 type PageProps = {
   params: Promise<{ slug: string }>

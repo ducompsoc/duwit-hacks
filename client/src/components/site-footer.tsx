@@ -1,10 +1,10 @@
 import { HashLink } from "@/components/hash-link"
 import { socialLinks } from "@/lib/about"
-import { contactEmail, eventVenue, eventWhenLabel } from "@/lib/site"
+import { contactEmail, eventVenue, eventWhenLabel, mailingListNavLabel } from "@/lib/site"
 
 const pageLinks = [
   { href: "/#about", label: "About" },
-  { href: "/#mailinglist", label: "Mailing list" },
+  { href: "/#mailinglist", label: mailingListNavLabel },
   { href: "/#previous-hackathons", label: "Previous Hackathons" },
 ] as const
 
@@ -21,9 +21,7 @@ export function SiteFooter() {
       <div className="colophon-inner">
         <div className="colophon-brand">
           <p className="colophon-brand-mark">DUWiT Hacks</p>
-          <p className="colophon-brand-copy">
-            Durham University Women in Tech · Edition III · {eventWhenLabel}
-          </p>
+          <p className="colophon-brand-copy">Durham University Women in Tech · Edition III · {eventWhenLabel}</p>
           <p className="colophon-venue">
             <span>{eventVenue.departments}</span>
             <span>{eventVenue.university}</span>

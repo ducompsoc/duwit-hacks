@@ -8,7 +8,7 @@
     "husky": "^9.1.7"
   },
   "scripts": {
-    "check": "biome check .",
+    "check": "biome check . && pnpm --filter @duwit-hacks/client run check && pnpm --filter @duwit-hacks/client run test",
     "check:fix": "biome check --write .",
     "r:check": "pnpm -r run check",
     "r:check:fix": "pnpm -r run check:fix",
