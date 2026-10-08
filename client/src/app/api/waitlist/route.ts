@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { applyCookie, browserKey, BROWSER_LIMITS, clientKey, isRateLimited, NETWORK_LIMITS } from "@/lib/rate-limit"
+import { browserKey, BROWSER_LIMITS, clientKey, isRateLimited, mailingListCookie, NETWORK_LIMITS } from "@/lib/rate-limit"
 import {
   emailIssue,
   nameIssue,
@@ -9,9 +9,9 @@ import {
 } from "@/lib/waitlist"
 
 const MAILERLITE_SUBSCRIBE_URL = "https://connect.mailerlite.com/api/subscribers"
-const GENERIC_ERROR = "Could not submit your application. Please try again."
-const UNAVAILABLE_ERROR = "Applications are temporarily unavailable."
-const TOO_LONG_ERROR = "That application is too long."
+const GENERIC_ERROR = "Could not add you to the mailing list. Please try again."
+const UNAVAILABLE_ERROR = "Mailing list sign-ups are temporarily unavailable."
+const TOO_LONG_ERROR = "That sign-up is too long."
 
 type WaitlistBody = {
   email?: unknown
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   if (await isRateLimited(`ip:${clientKey(request)}`, NETWORK_LIMITS)) {
     return reply(
       request,
-      { ok: false, error: "Too many people are applying from this network right now. Please wait and try again." },
+      { ok: false, error: "Too many sign-ups from this network right now. Please wait and try again." },
       429,
     )
   }
@@ -124,7 +124,7 @@ export async function POST(request: Request) {
 function reply(request: Request, body: { ok: boolean; error?: string; alreadyRegistered?: boolean }, status = 200) {
   const response = NextResponse.json(body, { status })
   if (!browserKey(request)) {
-    response.headers.append("Set-Cookie", applyCookie(crypto.randomUUID()))
+    response.headers.append("Set-Cookie", mailingListCookie(crypto.randomUUID()))
   }
   return response
 }

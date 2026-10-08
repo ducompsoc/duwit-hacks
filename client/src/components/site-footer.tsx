@@ -4,7 +4,7 @@ import { contactEmail, eventVenue, eventWhenLabel } from "@/lib/site"
 
 const pageLinks = [
   { href: "/#about", label: "About" },
-  { href: "/#apply", label: "Apply" },
+  { href: "/#mailinglist", label: "Mailing list" },
   { href: "/#previous-hackathons", label: "Previous Hackathons" },
 ] as const
 
