@@ -1,7 +1,7 @@
 "use client"
 
+import { type ArchiveEntry, archives, getArchive } from "@/lib/archives"
 import { useEffect, useState } from "react"
-import { archives, getArchive, type ArchiveEntry } from "@/lib/archives"
 
 type ArchiveExplorerProps = {
   year: number
@@ -98,12 +98,7 @@ function ArchiveYearButton({
 }) {
   if (entry.kind === "external") {
     return (
-      <a
-        href={entry.href}
-        target="_blank"
-        rel="noreferrer"
-        className={`archive-year-btn ${active ? "is-active" : ""}`}
-      >
+      <a href={entry.href} target="_blank" rel="noreferrer" className={`archive-year-btn ${active ? "is-active" : ""}`}>
         {entry.year}
       </a>
     )

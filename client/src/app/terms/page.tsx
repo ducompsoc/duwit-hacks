@@ -1,7 +1,7 @@
+import { DocLayout } from "@/components/doc-layout"
+import { HashLink } from "@/components/hash-link"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { HashLink } from "@/components/hash-link"
-import { DocLayout } from "@/components/doc-layout"
 
 export const metadata: Metadata = {
   title: "Terms — DUWiT Hacks 2027",
@@ -14,9 +14,8 @@ export default function TermsPage() {
     <DocLayout title="Terms" meta="Last updated 23 September 2026">
       <p>
         These terms cover the mailing list, event registration and participation in <strong>DUWiT Hacks 2027</strong>,
-        organised by Durham
-        University Women in Tech. Dates, venue and detailed rules will be confirmed closer to the event. If anything
-        here conflicts with later official rules we publish, those later rules apply.
+        organised by Durham University Women in Tech. Dates, venue and detailed rules will be confirmed closer to the
+        event. If anything here conflicts with later official rules we publish, those later rules apply.
       </p>
 
       <h2>Eligibility</h2>
@@ -42,8 +41,8 @@ export default function TermsPage() {
 
       <h2>Cancellation</h2>
       <p>
-        We may change, postpone or cancel the event if we have to (for example venue, weather, or safety). We will
-        tell applicants as soon as we reasonably can.
+        We may change, postpone or cancel the event if we have to (for example venue, weather, or safety). We will tell
+        applicants as soon as we reasonably can.
       </p>
 
       <h2>Contact</h2>

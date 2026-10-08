@@ -1,8 +1,8 @@
 "use client"
 
+import { CONSENT_KEY, type ConsentChoice, GA_MEASUREMENT_ID } from "@/lib/consent"
 import Script from "next/script"
 import { useCallback, useSyncExternalStore } from "react"
-import { CONSENT_KEY, GA_MEASUREMENT_ID, type ConsentChoice } from "@/lib/consent"
 
 const listeners = new Set<() => void>()
 
@@ -69,7 +69,10 @@ export function Analytics() {
 
       {consent === "accepted" && (
         <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            strategy="afterInteractive"
+          />
           <Script id="ga-init" strategy="afterInteractive">
             {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}',{anonymize_ip:true});`}
           </Script>

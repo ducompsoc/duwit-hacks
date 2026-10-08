@@ -1,12 +1,11 @@
+import { DocLayout } from "@/components/doc-layout"
+import { HashLink } from "@/components/hash-link"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { HashLink } from "@/components/hash-link"
-import { DocLayout } from "@/components/doc-layout"
 
 export const metadata: Metadata = {
   title: "Privacy Policy — DUWiT Hacks 2027",
-  description:
-    "How Durham University Women in Tech uses and protects personal data collected for DUWiT Hacks 2027.",
+  description: "How Durham University Women in Tech uses and protects personal data collected for DUWiT Hacks 2027.",
   alternates: { canonical: "/privacy" },
 }
 
@@ -22,8 +21,7 @@ export default function PrivacyPage() {
       <h2>What we collect</h2>
       <p>
         When you join the mailing list, we collect your first name, last name and email address. If you contact us, we
-        also see
-        whatever you send in that message.
+        also see whatever you send in that message.
       </p>
 
       <h2>Why we collect it</h2>
@@ -34,8 +32,8 @@ export default function PrivacyPage() {
 
       <h2>Who stores it</h2>
       <p>
-        We store your mailing list sign-up in <strong>MailerLite Limited</strong> (88 Harcourt Street, Dublin 2, Ireland).
-        MailerLite holds the list for us. We send any emails ourselves. Their privacy information is at{" "}
+        We store your mailing list sign-up in <strong>MailerLite Limited</strong> (88 Harcourt Street, Dublin 2,
+        Ireland). MailerLite holds the list for us. We send any emails ourselves. Their privacy information is at{" "}
         <a href="https://www.mailerlite.com/legal/privacy-policy" rel="noreferrer">
           mailerlite.com/legal/privacy-policy
         </a>
@@ -45,23 +43,23 @@ export default function PrivacyPage() {
       <h2>How long we keep it</h2>
       <p>
         We keep your details until you ask us to delete them, or until we no longer need them for DUWiT Hacks 2027
-        (including a short period after the event). Email{" "}
-        <a href="mailto:hello@duwithacks.com">hello@duwithacks.com</a> and we will delete your information.
+        (including a short period after the event). Email <a href="mailto:hello@duwithacks.com">hello@duwithacks.com</a>{" "}
+        and we will delete your information.
       </p>
 
       <h2>Your rights</h2>
       <p>
-        You can ask us for a copy of your data, to correct it, to delete it, to restrict or object to how we use it,
-        or to receive it in a portable form. Email <a href="mailto:hello@duwithacks.com">hello@duwithacks.com</a>.
+        You can ask us for a copy of your data, to correct it, to delete it, to restrict or object to how we use it, or
+        to receive it in a portable form. Email <a href="mailto:hello@duwithacks.com">hello@duwithacks.com</a>.
       </p>
 
       <h2>Cookies and analytics</h2>
       <p>
-        This site can use <strong>Google Analytics</strong> (Google Ireland Limited) to understand how the site is
-        used. That is a non-essential tracker. We only load it if you accept analytics cookies. If you reject them, we
-        do not set analytics cookies. You can change your choice by clearing this site&apos;s stored data in your
-        browser and visiting again. Joining the mailing list does not set an analytics cookie. It does store one cookie
-        so the same browser cannot submit the form over and over. That cookie is not used for advertising.
+        This site can use <strong>Google Analytics</strong> (Google Ireland Limited) to understand how the site is used.
+        That is a non-essential tracker. We only load it if you accept analytics cookies. If you reject them, we do not
+        set analytics cookies. You can change your choice by clearing this site&apos;s stored data in your browser and
+        visiting again. Joining the mailing list does not set an analytics cookie. It does store one cookie so the same
+        browser cannot submit the form over and over. That cookie is not used for advertising.
       </p>
       <p>
         Google&apos;s privacy information is at{" "}

@@ -7,8 +7,7 @@ const CONTROL = /[\u0000-\u001F\u007F]/
 const NAME_INPUT = /[^\p{L}\p{M} '\-]/gu
 const NAME_VALUE = /^(?:[\p{L}\p{M}]+(?:[ '\-][\p{L}\p{M}]+)*)?$/u
 const EMAIL_INPUT = /[^A-Za-z0-9._%+\-@]/g
-const EMAIL_VALUE =
-  /^[a-z0-9](?:[a-z0-9._%+-]{0,62}[a-z0-9])?@(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/i
+const EMAIL_VALUE = /^[a-z0-9](?:[a-z0-9._%+-]{0,62}[a-z0-9])?@(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/i
 
 export function sanitizeNameInput(value: string, max: number): string {
   return value.replace(NAME_INPUT, "").slice(0, max)
