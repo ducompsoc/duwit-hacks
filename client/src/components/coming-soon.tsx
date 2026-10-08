@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { ArchiveExplorer } from "@/components/archive-explorer"
 import { LaunchSequence } from "@/components/launch-sequence"
 import { AboutSection } from "@/components/about-section"
-import { ApplySection } from "@/components/apply-section"
+import { MailingListSection } from "@/components/mailing-list-section"
 import { MissionLog } from "@/components/mission-log"
 import { SiteFooter } from "@/components/site-footer"
 import { archives } from "@/lib/archives"
@@ -56,7 +56,7 @@ export function ComingSoon({ initialArchiveYear = null }: { initialArchiveYear?:
       <main className="page">
         <LaunchSequence />
         <AboutSection />
-        <ApplySection />
+        <MailingListSection />
         <MissionLog entries={archives} onOpen={setArchiveYear} />
         <SiteFooter />
       </main>

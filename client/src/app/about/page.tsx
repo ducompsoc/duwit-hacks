@@ -53,7 +53,7 @@ export default function AboutPage() {
       </p>
 
       <p className="legal-back">
-        <HashLink href="/#apply">Apply for 2027</HashLink>
+        <HashLink href="/#mailinglist">Join the mailing list</HashLink>
         <span aria-hidden="true"> · </span>
         <HashLink href="/">Home</HashLink>
       </p>

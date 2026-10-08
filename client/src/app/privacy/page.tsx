@@ -21,19 +21,20 @@ export default function PrivacyPage() {
 
       <h2>What we collect</h2>
       <p>
-        When you apply, we collect your first name, last name and email address. If you contact us, we also see
+        When you join the mailing list, we collect your first name, last name and email address. If you contact us, we
+        also see
         whatever you send in that message.
       </p>
 
       <h2>Why we collect it</h2>
       <p>
-        We use these details to manage your hackathon registration and to contact you about DUWiT Hacks 2027. We do
-        not add you to unrelated mailing lists.
+        We use these details to send you updates about DUWiT Hacks 2027 and to manage event registration when
+        applications open. We do not add you to unrelated mailing lists.
       </p>
 
       <h2>Who stores it</h2>
       <p>
-        We store your application in <strong>MailerLite Limited</strong> (88 Harcourt Street, Dublin 2, Ireland).
+        We store your mailing list sign-up in <strong>MailerLite Limited</strong> (88 Harcourt Street, Dublin 2, Ireland).
         MailerLite holds the list for us. We send any emails ourselves. Their privacy information is at{" "}
         <a href="https://www.mailerlite.com/legal/privacy-policy" rel="noreferrer">
           mailerlite.com/legal/privacy-policy
@@ -59,8 +60,8 @@ export default function PrivacyPage() {
         This site can use <strong>Google Analytics</strong> (Google Ireland Limited) to understand how the site is
         used. That is a non-essential tracker. We only load it if you accept analytics cookies. If you reject them, we
         do not set analytics cookies. You can change your choice by clearing this site&apos;s stored data in your
-        browser and visiting again. Applying does not set an analytics cookie. It does store one cookie so the same
-        browser cannot submit the form over and over. That cookie is not used for advertising.
+        browser and visiting again. Joining the mailing list does not set an analytics cookie. It does store one cookie
+        so the same browser cannot submit the form over and over. That cookie is not used for advertising.
       </p>
       <p>
         Google&apos;s privacy information is at{" "}

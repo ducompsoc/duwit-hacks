@@ -1222,23 +1222,23 @@ body:has(.archive-shell) .site-nav {
   color: rgb(255 231 169 / 0.62);
 }
 
-.apply-band {
+.mailing-list-band {
   position: relative;
   z-index: 2;
   padding: clamp(4rem, 10vh, 6rem) 1.25rem clamp(5rem, 12vh, 7rem);
 }
 
-.apply-band-inner {
+.mailing-list-band-inner {
   width: min(44rem, 100%);
   margin: 0 auto;
 }
 
-.apply-band-head {
+.mailing-list-band-head {
   max-width: 34rem;
   margin-bottom: 1.5rem;
 }
 
-.apply-band-kicker {
+.mailing-list-band-kicker {
   margin: 0 0 0.65rem;
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.68rem;
@@ -1247,7 +1247,7 @@ body:has(.archive-shell) .site-nav {
   color: var(--space-gold-light);
 }
 
-.apply-band-title {
+.mailing-list-band-title {
   margin: 0;
   font-family: var(--font-display), sans-serif;
   font-size: clamp(1.75rem, 4.5vw, 2.35rem);
@@ -1256,39 +1256,39 @@ body:has(.archive-shell) .site-nav {
   color: #fff4d6;
 }
 
-.apply-band-lead {
+.mailing-list-band-lead {
   margin: 0.85rem 0 0;
   font-size: 1rem;
   line-height: 1.6;
   color: rgb(255 231 169 / 0.82);
 }
 
-.apply-band-form .uplink-body {
+.mailing-list-band-form .uplink-body {
   padding: clamp(1.35rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 1.85rem);
 }
 
-.apply-band-form .uplink-lead {
+.mailing-list-band-form .uplink-lead {
   margin-bottom: 1.25rem;
   font-size: 1rem;
   line-height: 1.55;
 }
 
-.apply-band-form .uplink-input {
+.mailing-list-band-form .uplink-input {
   padding: 0.85rem 0;
   font-size: 1rem;
 }
 
-.apply-band-form .uplink-label {
+.mailing-list-band-form .uplink-label {
   font-size: 0.72rem;
 }
 
-.apply-band-form .uplink-send {
+.mailing-list-band-form .uplink-send {
   min-height: 2.65rem;
   padding: 0.7rem 1.25rem;
   font-size: 0.68rem;
 }
 
-.apply-band-form .uplink-field {
+.mailing-list-band-form .uplink-field {
   padding: 0.55rem 0.95rem 0.15rem;
 }
 

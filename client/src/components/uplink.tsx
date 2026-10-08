@@ -18,7 +18,7 @@ import {
 type Status = "idle" | "submitting" | "success" | "already" | "error"
 type Field = "firstName" | "lastName" | "email" | null
 
-const FALLBACK_ERROR = "Could not submit your application. Please try again."
+const FALLBACK_ERROR = "Could not add you to the mailing list. Please try again."
 
 export function Uplink() {
   const [firstName, setFirstName] = useState("")
@@ -116,7 +116,7 @@ export function Uplink() {
             <div className="uplink-result" role="status">
               <p className="uplink-ok">
                 {status === "already"
-                  ? "That email is already registered. No need to apply again."
+                  ? "That email is already on the list. No need to sign up again."
                   : "You're on the list. We'll be in touch."}
               </p>
             </div>
@@ -207,7 +207,7 @@ export function Uplink() {
                 </div>
 
                 <button className="uplink-send" type="submit" disabled={submitting}>
-                  {submitting ? "Sending" : "Apply"}
+                  {submitting ? "Sending" : "Join"}
                 </button>
               </div>
 
@@ -217,8 +217,8 @@ export function Uplink() {
                 </p>
               ) : null}
               <p id="uplink-note" className="uplink-notice">
-                We&apos;ll use your details to manage your hackathon registration and send you information about the
-                event. See our <Link href="/privacy">Privacy Policy</Link> for how we use and protect your data.
+                We&apos;ll use your details to send you updates about the event and manage registration when applications
+                open. See our <Link href="/privacy">Privacy Policy</Link> for how we use and protect your data.
               </p>
             </form>
           )}
