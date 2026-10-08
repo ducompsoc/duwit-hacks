@@ -5,7 +5,7 @@ import { DocLayout } from "@/components/doc-layout"
 
 export const metadata: Metadata = {
   title: "Terms — DUWiT Hacks 2027",
-  description: "Terms for applying to and taking part in DUWiT Hacks 2027.",
+  description: "Terms for joining the mailing list and taking part in DUWiT Hacks 2027.",
   alternates: { canonical: "/terms" },
 }
 
@@ -13,7 +13,8 @@ export default function TermsPage() {
   return (
     <DocLayout title="Terms" meta="Last updated 23 September 2026">
       <p>
-        These terms cover applications and participation in <strong>DUWiT Hacks 2027</strong>, organised by Durham
+        These terms cover the mailing list, event registration and participation in <strong>DUWiT Hacks 2027</strong>,
+        organised by Durham
         University Women in Tech. Dates, venue and detailed rules will be confirmed closer to the event. If anything
         here conflicts with later official rules we publish, those later rules apply.
       </p>
@@ -21,13 +22,13 @@ export default function TermsPage() {
       <h2>Eligibility</h2>
       <p>
         The event is aimed at students. We will publish any extra eligibility rules (for example age or team size)
-        before the event. Applying does not guarantee a place.
+        before the event. Joining the mailing list does not guarantee a place at the event.
       </p>
 
       <h2>Registration</h2>
       <p>
-        Apply with your real first name, last name and email. Keep your details accurate. We may close applications,
-        or refuse a place if information is false or if we are oversubscribed.
+        Sign up with your real first name, last name and email. Keep your details accurate. We may close the mailing
+        list or event registration, or refuse a place if information is false or if we are oversubscribed.
       </p>
 
       <h2>Participation</h2>
