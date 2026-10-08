@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/reveal"
 import { Uplink } from "@/components/uplink"
 import { aboutSections } from "@/lib/about"
+import { eventWhenLabel } from "@/lib/site"
 
 export function MailingListSection() {
   return (
@@ -12,9 +13,7 @@ export function MailingListSection() {
             <h2 id="mailinglist-heading" className="mailing-list-band-title">
               Join the mailing list
             </h2>
-            <p className="mailing-list-band-lead">
-              February 2027 — Exact dates TBC. Sign up and we&apos;ll be in touch.
-            </p>
+            <p className="mailing-list-band-lead">{eventWhenLabel}. Sign up and we&apos;ll be in touch.</p>
           </header>
         </Reveal>
         <Reveal delay={120}>

@@ -1,12 +1,13 @@
-import { NextResponse } from "next/server"
-import { browserKey, BROWSER_LIMITS, clientKey, isRateLimited, mailingListCookie, NETWORK_LIMITS } from "@/lib/rate-limit"
 import {
-  emailIssue,
-  nameIssue,
-  normalizeEmail,
-  normalizeName,
-  WAITLIST_BODY_MAX,
-} from "@/lib/waitlist"
+  BROWSER_LIMITS,
+  NETWORK_LIMITS,
+  browserKey,
+  clientKey,
+  isRateLimited,
+  mailingListCookie,
+} from "@/lib/rate-limit"
+import { WAITLIST_BODY_MAX, emailIssue, nameIssue, normalizeEmail, normalizeName } from "@/lib/waitlist"
+import { NextResponse } from "next/server"
 
 const MAILERLITE_SUBSCRIBE_URL = "https://connect.mailerlite.com/api/subscribers"
 const GENERIC_ERROR = "Could not add you to the mailing list. Please try again."

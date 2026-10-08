@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation"
-import { ComingSoon } from "@/components/coming-soon"
+import { HomePage } from "@/components/home-page"
 import { getArchive } from "@/lib/archives"
+import { notFound } from "next/navigation"
 
 export default async function ArchiveYearPage({
   params,
@@ -15,5 +15,5 @@ export default async function ArchiveYearPage({
     notFound()
   }
 
-  return <ComingSoon initialArchiveYear={parsed} />
+  return <HomePage initialArchiveYear={parsed} />
 }

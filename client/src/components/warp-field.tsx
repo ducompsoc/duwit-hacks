@@ -1,8 +1,8 @@
 "use client"
 
-import { type RefObject, useEffect, useRef } from "react"
 import { clamp } from "@/lib/motion"
 import { isProgrammaticScroll } from "@/lib/scroll"
+import { type RefObject, useEffect, useRef } from "react"
 
 export type WarpSignal = { speed: number }
 

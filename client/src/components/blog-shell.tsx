@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { BlogNav } from "@/components/blog-nav"
+import Link from "next/link"
 import "@/styles/blog.css"
 
 type BlogShellProps = {

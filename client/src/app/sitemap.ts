@@ -1,6 +1,6 @@
-import type { MetadataRoute } from "next"
 import { getAllPosts } from "@/lib/blog"
 import { blogEnabled } from "@/lib/site"
+import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()

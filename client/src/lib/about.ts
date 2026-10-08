@@ -28,6 +28,10 @@ export const societyPillars = [
     title: "Hackathon",
     body: "DUWiT Hacks — our flagship build weekend. Team projects, mentors, sponsors, and something real to show afterwards.",
   },
+  {
+    title: "Careers",
+    body: "We're looking at CV support and internship connections through our sponsors and partners. Nothing is confirmed yet — we'll share more when we can.",
+  },
 ] as const
 
 export const homeAboutLead =
@@ -47,8 +51,7 @@ export const homeFaq = [
   },
   {
     question: "I've never been to a hackathon. Is that OK?",
-    answer:
-      "Yes. We design for beginners and returners. Questions are expected; showing up is enough.",
+    answer: "Yes. We design for beginners and returners. Questions are expected; showing up is enough.",
   },
 ] as const
 
@@ -58,7 +61,7 @@ export const aboutSections = {
     paragraphs: [
       "We're not chasing equal headcount in every room. Women-dominated fields exist and work fine without a headcount campaign — that's not what this is.",
       "DUWiT Hacks exists because too many of us were told tech feels like a boys' job, and told we could do it anyway, like that was the whole conversation. We want it to stop feeling like a boys' job and just be a job — one where ordinary medical realities aren't an inconvenient exception, and parental leave is just leave, shared, no gender attached.",
-      "We're here because the idea that gets waved off in a meeting still tends to land the second a man says it, and because \"decisive\" and \"difficult\" still describe the same behaviour depending on who's doing it.",
+      'We\'re here because the idea that gets waved off in a meeting still tends to land the second a man says it, and because "decisive" and "difficult" still describe the same behaviour depending on who\'s doing it.',
       "The room keeps getting smaller: mixed classroom, then the subject where you're the only girl who picked it, then a degree course that's around one in four women nationally (and fewer at plenty of universities), then an office where hardly any of the women left hold the technical or leadership seats. Some of the best friendships in this industry start as work friendships — and when there's no one else left who looks like you, that stops happening quietly.",
       "DUWiT Hacks is a room built to catch that early, while you're still a student — with mentors and sponsors who are actually hiring.",
     ],
@@ -66,14 +69,13 @@ export const aboutSections = {
   theme: {
     title: "One Giant Leap",
     paragraphs: [
-      "Edition III takes its name from the moon landing — and from Margaret Hamilton, whose code ran the guidance system that got Apollo to the moon and back. At the time, \"software engineer\" wasn't even a job title yet; she more or less invented it on the way.",
+      'Edition III takes its name from the moon landing — and from Margaret Hamilton, whose code ran the guidance system that got Apollo to the moon and back. At the time, "software engineer" wasn\'t even a job title yet; she more or less invented it on the way.',
       "We called 2024 Launch. This year, we land.",
     ],
   },
   expect: {
     title: "What to expect",
-    body:
-      "Early 2027 — exact dates TBC (likely February). Team-based hackathon, and socials run by women in the roles you're aiming for. Whether you're writing your first line of code or your fiftieth project, you'll leave with something built that didn't exist forty-eight hours earlier.",
+    body: "Early 2027 — exact dates TBC (likely February). Team-based hackathon, and socials run by women in the roles you're aiming for. Whether you're writing your first line of code or your fiftieth project, you'll leave with something built that didn't exist forty-eight hours earlier.",
   },
   track: {
     title: "Our track record",

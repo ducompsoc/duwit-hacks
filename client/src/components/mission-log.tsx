@@ -1,5 +1,5 @@
-import type { ArchiveEntry } from "@/lib/archives"
 import { Reveal } from "@/components/reveal"
+import type { ArchiveEntry } from "@/lib/archives"
 
 export function MissionLog({ entries, onOpen }: { entries: ArchiveEntry[]; onOpen: (year: number) => void }) {
   return (

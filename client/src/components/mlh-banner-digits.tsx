@@ -104,7 +104,6 @@ export function Digits({ value }: { value: number }) {
   return (
     <>
       {digitComponents.map((Item, index) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey: order of elements is unchanging
         <Item className="h-full" key={index} />
       ))}
     </>

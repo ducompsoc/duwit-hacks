@@ -1,9 +1,9 @@
 "use client"
 
-import { type CSSProperties, useEffect, useRef } from "react"
 import { WarpField, type WarpSignal } from "@/components/warp-field"
 import { clamp, ease, progress } from "@/lib/motion"
-import { isProgrammaticScroll, NAV_LOCK_EVENT, NAV_UNLOCK_EVENT } from "@/lib/scroll"
+import { NAV_LOCK_EVENT, NAV_UNLOCK_EVENT, isProgrammaticScroll } from "@/lib/scroll"
+import { type CSSProperties, useEffect, useRef } from "react"
 
 const TITLE = ["D", "U", "W", "i", "T"]
 
@@ -11,7 +11,7 @@ function Orbit({ id, className }: { id: string; className: string }) {
   return (
     <div className={className}>
       <div className="orbit-plane">
-        <svg className="orbit-svg" viewBox="0 0 200 200">
+        <svg className="orbit-svg" viewBox="0 0 200 200" aria-hidden="true">
           <defs>
             <linearGradient id={`${id}-gold`} x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stopColor="#fff4d6" />
@@ -181,7 +181,7 @@ export function LaunchSequence() {
                 <div className="title-lock">
                   <p className="title" data-text="DUWiT">
                     {TITLE.map((letter, i) => (
-                      <span key={i} className="title-letter" style={{ "--i": i } as CSSProperties}>
+                      <span key={letter} className="title-letter" style={{ "--i": i } as CSSProperties}>
                         {letter}
                       </span>
                     ))}
