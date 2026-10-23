@@ -1,10 +1,7 @@
 import { Reveal } from "@/components/reveal"
 import { forSponsors } from "@/lib/about"
-import { contactEmail } from "@/lib/site"
 
 export function SponsorsSection() {
-  const sponsorPackMail = `mailto:${contactEmail}?subject=${encodeURIComponent("DUWiT Hacks sponsor pack")}`
-
   return (
     <section className="page-band page-band--sponsors" id="sponsors" aria-labelledby="sponsors-heading">
       <div className="page-band-inner page-band-inner--wide">
@@ -15,11 +12,6 @@ export function SponsorsSection() {
             </h2>
           </header>
           <p className="page-band-lead">{forSponsors.body}</p>
-          <div className="about-actions">
-            <a className="about-cta about-cta--primary" href={sponsorPackMail}>
-              Get the Sponsor Pack
-            </a>
-          </div>
         </Reveal>
       </div>
     </section>
