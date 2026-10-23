@@ -3,7 +3,7 @@ title: "Why hackathons matter for women in tech"
 description: "Hackathons are more than competitions - they're spaces to learn, connect, and build confidence. Here's why DUWiT Hacks exists."
 date: "2026-09-01"
 author: "DUWiT Hacks team"
-authorBio: "Durham University Women in Tech."
+authorBio: "The DUWiT Hacks organising team."
 authorType: team
 published: true
 tags:

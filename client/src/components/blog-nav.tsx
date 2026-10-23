@@ -6,7 +6,7 @@ export function BlogNav({ active }: { active?: "blog" }) {
   return (
     <header className="site-nav">
       <Link className="site-nav-brand" href="/">
-        DUWiT
+        DUWiT Hacks
       </Link>
       <nav className="site-nav-links" aria-label="Site">
         <Link href="/">Home</Link>

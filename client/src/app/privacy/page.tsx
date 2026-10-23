@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Privacy Policy — DUWiT Hacks 2027",
-  description: "How Durham University Women in Tech uses and protects personal data collected for DUWiT Hacks 2027.",
+  description: "How DUWiT Hacks uses and protects personal data collected for DUWiT Hacks 2027.",
   alternates: { canonical: "/privacy" },
 }
 
@@ -13,8 +13,8 @@ export default function PrivacyPage() {
   return (
     <DocLayout title="Privacy Policy" meta="Last updated 23 September 2026">
       <p>
-        This notice explains how <strong>Durham University Women in Tech (DUWiT)</strong> uses personal data for{" "}
-        <strong>DUWiT Hacks 2027</strong>. We are the organisation responsible for this data. Contact us at{" "}
+        This notice explains how <strong>DUWiT Hacks</strong> uses personal data for <strong>DUWiT Hacks 2027</strong>.
+        We are the organisation responsible for this data. Contact us at{" "}
         <a href="mailto:hello@duwithacks.com">hello@duwithacks.com</a>.
       </p>
 

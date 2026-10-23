@@ -14,7 +14,7 @@ export default function TermsPage() {
     <DocLayout title="Terms" meta="Last updated 23 September 2026">
       <p>
         These terms cover the mailing list, event registration and participation in <strong>DUWiT Hacks 2027</strong>,
-        organised by Durham University Women in Tech. Dates, venue and detailed rules will be confirmed closer to the
+        organised by DUWiT Hacks. Dates, venue and detailed rules will be confirmed closer to the
         event. If anything here conflicts with later official rules we publish, those later rules apply.
       </p>
 

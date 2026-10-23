@@ -58,7 +58,7 @@ title: "Five things to bring to your first hackathon"
 description: "A practical packing list for DUWiT Hacks - laptop, charger, and the rest."
 date: "2026-09-15"
 author: "DUWiT Hacks team"
-authorBio: "Durham University Women in Tech."
+authorBio: "The DUWiT Hacks organising team."
 authorType: team
 published: true
 tags:

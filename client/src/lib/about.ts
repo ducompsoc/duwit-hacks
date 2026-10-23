@@ -30,7 +30,7 @@ export const eventPillars = [
   },
   {
     title: "Careers",
-    body: "We work with sponsors and partners to share careers advice, internships, and hiring opportunities where we can.",
+    body: "We work with sponsors and partners to share careers advice and hiring opportunities where we can.",
   },
 ] as const
 
@@ -42,6 +42,12 @@ export const homeAboutBody =
 
 export const homeAboutEligibility =
   "The hackathon is for women and non-binary participants. Anyone can volunteer to help run it."
+
+export const aboutPageIntro =
+  "DUWiT Hacks is Durham's women-in-tech hackathon, run by students. Below is why we run it, what to expect at Edition III, how past events went, and who can take part."
+
+export const aboutParticipation =
+  "Hackathon participants must be women or non-binary people. Volunteers who help organise and run the event can be anyone."
 
 export const homeFaq = [
   {
@@ -69,14 +75,13 @@ export const aboutSections = {
   theme: {
     title: "One Giant Leap",
     paragraphs: [
-      'Edition III takes its name from the moon landing and from Margaret Hamilton, whose software guided Apollo. She helped establish software engineering as a discipline in its own right.',
+      "Edition III takes its name from the moon landing and from Margaret Hamilton, whose software guided Apollo. She helped establish software engineering as a discipline in its own right.",
       "Our 2024 edition was Launch; Edition III is One Giant Leap.",
     ],
   },
   expect: {
     title: "What to expect",
-    body:
-      "Early 2027 — exact dates to be confirmed (likely February). You will work in teams, attend workshops, and meet sponsors over the hackathon weekend. Whether it is your first project or your fiftieth, you should leave with something you built during the event.",
+    body: "Early 2027 — exact dates to be confirmed (likely February). You will work in teams, attend workshops, and meet sponsors over the hackathon weekend. Whether it is your first project or your fiftieth, you should leave with something you built during the event.",
   },
   track: {
     title: "Our track record",

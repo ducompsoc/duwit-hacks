@@ -18,7 +18,7 @@ export function BlogShell({ children, active }: BlogShellProps) {
           <div>
             <p className="font-display text-sm tracking-[0.16em] text-white">DUWiT HACKS 2027</p>
             <p className="font-mono mt-2 text-[10px] tracking-[0.18em] text-white/45 uppercase">
-              Durham University Women in Tech
+              Durham&apos;s women-in-tech hackathon
             </p>
           </div>
           <Link className="site-footer-mail" href="/">
