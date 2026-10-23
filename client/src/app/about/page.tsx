@@ -1,6 +1,6 @@
 import { DocLayout } from "@/components/doc-layout"
 import { HashLink } from "@/components/hash-link"
-import { aboutSections, manifestoQuote } from "@/lib/about"
+import { aboutPageIntro, aboutParticipation, aboutSections } from "@/lib/about"
 import { contactEmail } from "@/lib/site"
 import type { Metadata } from "next"
 
@@ -19,11 +19,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <DocLayout title="Our story" meta="DUWiT Hacks">
-      <p>Why DUWiT Hacks exists, what we&apos;re building toward, and who belongs in the room.</p>
-
-      <blockquote className="about-quote">
-        <p>{manifestoQuote}</p>
-      </blockquote>
+      <p>{aboutPageIntro}</p>
 
       <h2>{aboutSections.why.title}</h2>
       {aboutSections.why.paragraphs.map((paragraph) => (
@@ -45,9 +41,7 @@ export default function AboutPage() {
 
       <h2>Who can take part</h2>
       <p>
-        <strong>Hackathon participants</strong> must be women or non-binary people. <strong>Volunteers</strong> who help
-        organise and run the event can be anyone — email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> if
-        you&apos;d like to help.
+        {aboutParticipation} Email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> if you would like to volunteer.
       </p>
 
       <p className="legal-back">
