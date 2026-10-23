@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "DUWiT Hacks 2027 — Durham University Women in Tech"
+export const alt = "DUWiT Hacks 2027"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 

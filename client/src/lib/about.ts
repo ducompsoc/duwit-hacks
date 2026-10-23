@@ -30,7 +30,7 @@ export const eventPillars = [
   },
   {
     title: "Careers",
-    body: "We work with sponsors and partners to share careers advice, internships, and hiring opportunities where we can.",
+    body: "We work with sponsors and partners to share careers advice and hiring opportunities where we can.",
   },
 ] as const
 
