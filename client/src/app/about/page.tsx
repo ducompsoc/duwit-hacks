@@ -5,13 +5,12 @@ import { contactEmail } from "@/lib/site"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Our story — DUWiT & DUWiT Hacks",
-  description:
-    "Durham University Women in Tech: who we are, why DUWiT Hacks exists, who can take part, and how to get involved.",
+  title: "Our story — DUWiT Hacks",
+  description: "Who we are, why DUWiT Hacks exists, who can take part, and how to get involved.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "Our story — DUWiT Hacks",
-    description: "Student society and hackathon for women and non-binary people in tech at Durham. Beginners welcome.",
+    description: "Durham's women-in-tech hackathon for women and non-binary people. Beginners welcome.",
     url: "https://duwithacks.com/about",
     type: "website",
   },
@@ -19,8 +18,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <DocLayout title="Our story" meta="Durham University Women in Tech">
-      <p>Why DUWiT exists, what we&apos;re building toward, and who belongs in the room.</p>
+    <DocLayout title="Our story" meta="DUWiT Hacks">
+      <p>Why DUWiT Hacks exists, what we&apos;re building toward, and who belongs in the room.</p>
 
       <blockquote className="about-quote">
         <p>{manifestoQuote}</p>
