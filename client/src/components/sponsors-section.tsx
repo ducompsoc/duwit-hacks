@@ -3,7 +3,7 @@ import { forSponsors } from "@/lib/about"
 import { contactEmail } from "@/lib/site"
 
 export function SponsorsSection() {
-  const sponsorMail = `mailto:${contactEmail}?subject=${encodeURIComponent("DUWiT Hacks sponsorship")}`
+  const sponsorPackMail = `mailto:${contactEmail}?subject=${encodeURIComponent("DUWiT Hacks sponsor pack")}`
 
   return (
     <section className="page-band page-band--sponsors" id="sponsors" aria-labelledby="sponsors-heading">
@@ -16,8 +16,8 @@ export function SponsorsSection() {
           </header>
           <p className="page-band-lead">{forSponsors.body}</p>
           <div className="about-actions">
-            <a className="about-cta about-cta--primary" href={sponsorMail}>
-              Email {contactEmail}
+            <a className="about-cta about-cta--primary" href={sponsorPackMail}>
+              Get the Sponsor Pack
             </a>
           </div>
         </Reveal>

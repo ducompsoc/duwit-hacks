@@ -6,8 +6,8 @@ export function MissionLog({ entries, onOpen }: { entries: ArchiveEntry[]; onOpe
     <section className="log" id="previous-hackathons" aria-labelledby="log-heading">
       <div className="log-inner">
         <Reveal>
-          <header className="log-head">
-            <h2 id="log-heading" className="log-title">
+          <header className="page-band-head">
+            <h2 id="log-heading" className="page-band-title">
               Previous Hackathons
             </h2>
           </header>
