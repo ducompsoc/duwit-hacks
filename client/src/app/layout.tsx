@@ -52,10 +52,6 @@ const siteJsonLd = {
       name: "DUWiT Hacks",
       url: "https://duwithacks.com",
       email: contactEmail,
-      parentOrganization: {
-        "@type": "Organization",
-        name: "Durham University Women in Tech",
-      },
     },
     {
       "@type": "WebSite",
@@ -76,7 +72,7 @@ const siteJsonLd = {
       },
       organizer: {
         "@type": "Organization",
-        name: "Durham University Women in Tech",
+        name: "DUWiT Hacks",
         url: "https://duwithacks.com",
       },
       startDate: "2027-02-01",

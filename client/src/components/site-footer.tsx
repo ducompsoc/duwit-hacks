@@ -8,7 +8,7 @@ const pageLinks = [
   { href: "/#previous-hackathons", label: "Previous Hackathons" },
 ] as const
 
-const societyLinks = [{ href: "/about", label: "Our story" }] as const
+const storyLinks = [{ href: "/about", label: "Our story" }] as const
 
 const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
@@ -21,7 +21,7 @@ export function SiteFooter() {
       <div className="colophon-inner">
         <div className="colophon-brand">
           <p className="colophon-brand-mark">DUWiT Hacks</p>
-          <p className="colophon-brand-copy">Durham University Women in Tech · Edition III · {eventWhenLabel}</p>
+          <p className="colophon-brand-copy">Durham&apos;s women-in-tech hackathon · Edition III · {eventWhenLabel}</p>
           <p className="colophon-venue">
             <span>{eventVenue.departments}</span>
             <span>{eventVenue.university}</span>
@@ -44,10 +44,10 @@ export function SiteFooter() {
             </ul>
           </section>
 
-          <section className="colophon-group" aria-labelledby="footer-society">
-            <h2 id="footer-society">Society</h2>
+          <section className="colophon-group" aria-labelledby="footer-story">
+            <h2 id="footer-story">The event</h2>
             <ul>
-              {societyLinks.map((link) => (
+              {storyLinks.map((link) => (
                 <li key={link.href}>
                   <HashLink href={link.href}>{link.label}</HashLink>
                 </li>

@@ -2,14 +2,7 @@
 
 import { HashLink } from "@/components/hash-link"
 import { Reveal } from "@/components/reveal"
-import {
-  homeAboutBody,
-  homeAboutEligibility,
-  homeAboutLead,
-  homeFaq,
-  manifestoQuote,
-  societyPillars,
-} from "@/lib/about"
+import { eventPillars, homeAboutBody, homeAboutEligibility, homeAboutLead, homeFaq, manifestoQuote } from "@/lib/about"
 import { clamp } from "@/lib/motion"
 import { type CSSProperties, useEffect, useState } from "react"
 
@@ -62,7 +55,7 @@ export function AboutSection() {
           <header className="about-head">
             <p className="about-kicker">New here?</p>
             <h2 id="about-heading" className="about-title">
-              About DUWiT
+              About DUWiT Hacks
             </h2>
             <p className="about-lead">{homeAboutLead}</p>
             <p className="about-intro">{homeAboutBody}</p>
@@ -78,7 +71,7 @@ export function AboutSection() {
         </div>
 
         <ul className="about-pillars">
-          {societyPillars.map((pillar, index) => (
+          {eventPillars.map((pillar, index) => (
             <li key={pillar.title}>
               <Reveal delay={120 + index * 90}>
                 <h3 className="about-pillar-title">{pillar.title}</h3>
