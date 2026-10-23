@@ -1,14 +1,13 @@
 import { HashLink } from "@/components/hash-link"
 import { socialLinks } from "@/lib/about"
-import { contactEmail, eventVenue, eventWhenLabel, mailingListNavLabel } from "@/lib/site"
+import { contactEmail, eventVenue, eventWhenLabel } from "@/lib/site"
 
 const pageLinks = [
   { href: "/#about", label: "About" },
-  { href: "/#mailinglist", label: mailingListNavLabel },
+  { href: "/#sponsors", label: "Sponsors" },
+  { href: "/#mailinglist", label: "Mailing list" },
   { href: "/#previous-hackathons", label: "Previous Hackathons" },
 ] as const
-
-const storyLinks = [{ href: "/about", label: "Our story" }] as const
 
 const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
@@ -34,20 +33,9 @@ export function SiteFooter() {
 
         <div className="colophon-grid">
           <section className="colophon-group" aria-labelledby="footer-pages">
-            <h2 id="footer-pages">Pages</h2>
+            <h2 id="footer-pages">On this page</h2>
             <ul>
               {pageLinks.map((link) => (
-                <li key={link.href}>
-                  <HashLink href={link.href}>{link.label}</HashLink>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="colophon-group" aria-labelledby="footer-story">
-            <h2 id="footer-story">The event</h2>
-            <ul>
-              {storyLinks.map((link) => (
                 <li key={link.href}>
                   <HashLink href={link.href}>{link.label}</HashLink>
                 </li>

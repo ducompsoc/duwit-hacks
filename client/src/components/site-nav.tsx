@@ -1,17 +1,18 @@
 "use client"
 
 import { HashLink } from "@/components/hash-link"
-import { mailingListNavLabel } from "@/lib/site"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 
 const links = [
   { href: "/", id: "home", label: "Home" },
   { href: "/#about", id: "about", label: "About" },
-  { href: "/#mailinglist", id: "mailinglist", label: mailingListNavLabel },
-  { href: "/#previous-hackathons", id: "previous-hackathons", label: "Previous", full: "Previous Hackathons" },
-  { href: "/about", id: "story", label: "Our story" },
+  { href: "/#sponsors", id: "sponsors", label: "Sponsors" },
+  { href: "/#mailinglist", id: "mailinglist", label: "Mailing list" },
+  { href: "/#previous-hackathons", id: "previous-hackathons", label: "Previous Hackathons" },
 ] as const
+
+const scrollSectionIds = ["about", "sponsors", "mailinglist", "previous-hackathons"] as const
 
 export function SiteNav() {
   const pathname = usePathname()
@@ -24,11 +25,11 @@ export function SiteNav() {
 
   useEffect(() => {
     if (pathname !== "/") {
-      setActive(pathname === "/about" ? "story" : null)
+      setActive(null)
       return
     }
 
-    const nodes = ["about", "mailinglist", "previous-hackathons"]
+    const nodes = scrollSectionIds
       .map((id) => document.getElementById(id))
       .filter((node): node is HTMLElement => Boolean(node))
 
@@ -60,8 +61,6 @@ export function SiteNav() {
     }
   }, [pathname])
 
-  const storyCurrent = pathname === "/about"
-
   return (
     <header className={`site-nav${open ? " is-open" : ""}`}>
       <div className="site-nav-bar">
@@ -83,22 +82,15 @@ export function SiteNav() {
           onClick={() => setOpen(false)}
         >
           {links.map((link) => {
-            const current = link.id === "story" ? storyCurrent : pathname === "/" && active === link.id
+            const current = pathname === "/" && active === link.id
             return (
               <HashLink
                 key={link.href}
                 href={link.href}
                 className="site-nav-link"
-                aria-current={current ? (link.id === "story" ? "page" : "true") : undefined}
+                aria-current={current ? "true" : undefined}
               >
-                {"full" in link ? (
-                  <>
-                    <span className="site-nav-link-full">{link.full}</span>
-                    <span className="site-nav-link-short">{link.label}</span>
-                  </>
-                ) : (
-                  link.label
-                )}
+                {link.label}
               </HashLink>
             )
           })}

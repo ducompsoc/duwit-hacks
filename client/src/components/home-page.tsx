@@ -1,11 +1,12 @@
 "use client"
 
-import { AboutSection } from "@/components/about-section"
 import { ArchiveExplorer } from "@/components/archive-explorer"
 import { LaunchSequence } from "@/components/launch-sequence"
 import { MailingListSection } from "@/components/mailing-list-section"
 import { MissionLog } from "@/components/mission-log"
 import { SiteFooter } from "@/components/site-footer"
+import { SponsorsSection } from "@/components/sponsors-section"
+import { StorySections } from "@/components/story-sections"
 import { archives } from "@/lib/archives"
 import {
   beginProgrammaticScroll,
@@ -61,7 +62,8 @@ export function HomePage({ initialArchiveYear = null }: { initialArchiveYear?: n
     <>
       <main className="page">
         <LaunchSequence />
-        <AboutSection />
+        <StorySections />
+        <SponsorsSection />
         <MailingListSection />
         <MissionLog entries={archives} onOpen={setArchiveYear} />
         <SiteFooter />
