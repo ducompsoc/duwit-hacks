@@ -14,7 +14,7 @@ export function AboutRedirect() {
 
   return (
     <main className="page lost">
-      <p className="lost-copy">Taking you to our story…</p>
+      <p className="lost-copy">Taking you to About…</p>
     </main>
   )
 }

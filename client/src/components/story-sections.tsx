@@ -54,7 +54,6 @@ export function StorySections() {
         style={{ "--about-born": born } as CSSProperties}
       >
         <header className="page-band-head">
-          <p className="about-kicker">New here?</p>
           <h2 id="about-heading" className="page-band-title">
             About DUWiT Hacks
           </h2>

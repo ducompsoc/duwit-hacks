@@ -17,7 +17,7 @@ export const archives: ArchiveEntry[] = [
   {
     year: 2025,
     title: "DUWiT Hacks 2025",
-    summary: "The Devpost DUWiT Hacks - 1–2 March 2025 at Durham University.",
+    summary: "The Devpost DUWiT Hacks - 1-2 March 2025 at Durham University.",
     kind: "external",
     href: "https://duwit-hacks.devpost.com/",
   },
