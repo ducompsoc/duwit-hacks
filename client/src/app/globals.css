@@ -1035,10 +1035,6 @@ body:has(.archive-shell) .site-nav {
   margin: 2rem 0 0;
 }
 
-.page-band--sponsors .about-actions {
-  margin-top: 1.5rem;
-}
-
 .about-inner {
   display: grid;
   gap: 1.75rem;
